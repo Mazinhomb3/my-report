@@ -65,7 +65,7 @@ else
 
 	<div >
 
-	<form name="cadastrar" method="POST" action="cadastro.php"   onsubmit="return validaCampo(); return false;" >
+	<form id="form" name="cadastrar" method="POST" action="cadastro.php"   onsubmit="return validaCampo(); return false;" >
   
 	
 	<table class='tabela'>
@@ -117,11 +117,9 @@ else
         
     <tr >
       <td  colspan="2"><p>
-        <input name="cadastrar" type="submit" id="cadastrar" value="Concluir meu Envio!" /> 
-        <br />
-          <input name="limpar" type="reset" id="limpar" value="Limpar Campos preenchidos!" />
-          <br />
-          <span class="style1">* Campos com * s&atilde;o obrigat&oacute;rios!         </span></p>
+        <input name="cadastrar" type="submit" id="cadastrar" value="Concluir meu Envio!" /><br/><br>
+          <input name="limpar" type="reset" id="limpar" value="Limpar Campos preenchidos!" /></br>
+          <span class="style1">* Campos com * s&atilde;o obrigat&oacute;rios!</span></p>
       <p>&nbsp; </p></td>
     </tr>
   </table>

@@ -4,9 +4,12 @@ background-size: 100%;
 padding: 5%;
 text-align: center;
 background-color: aqua;
-
+align-content: center;
 
 }
+
+
+
 
 h2{
 
@@ -22,3 +25,24 @@ color: aliceblue;
 
 }
 
+.style1{
+text-align: center;
+color: aliceblue;
+
+}
+
+#limpar{
+border-color: rgb(255, 255, 255);
+border-radius: 5%;
+text-shadow: 2px;
+border-width: 3px;
+
+}
+
+#cadastrar{
+
+    border-color: rgb(255, 255, 255);
+border-radius: 5%;
+text-shadow: 2px;
+border-width: 3px;
+}
