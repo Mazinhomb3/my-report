@@ -1,72 +1,26 @@
-<!doctype html>
-<html lang "pt-Br">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-<meta charset="utf-8">
-<title>Documento sem título</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <script type="text/javascript">
+	
 
-<link rel="stylesheet" type="text/css" href="" media="screen" />
-
-<script type="text/javascript">
-	
-function validaCampo()
-{
-if(document.cadastrar.usuario.value=="")
-{
-	alert("O campo Usuario é obrigatório")
-	return false;
-}
-else
-	if(document.cadastrar.idcelula.value=="")
-	{
-	alert("O Campo Id de Célula é obrigatório!");
-	return false;
-	}
-	
-	else
-	if(document.cadastrar.mtp.value=="")
-	{
-	alert("O Campo Membros Totais Presentes é obrigatório!");
-	return false;
-	}
-	
-	else
-	if(document.cadastrar.mcp.value=="")
-	{
-	alert("O Campo Membros Compromissados Presentes é obrigatório!");
-	return false;
-	}
-	
-	
-else
-	if(document.cadastrar.cp.value=="")
-	{
-	alert("O Campo Convidados Presentes é obrigatório!");
-	return false;
-	}
-	else
-	if(document.cadastrar.cria.value=="")
-	{
-	alert("O Campo Crianças é obrigatório!");
-	return false;
-	}
-
-else
-   return true;
-}
-<!-- Fim do JavaScript que validará os campos obrigatórios! -->
-</script>
 
 </head>
 
-<body>
 
-	<div>
+<body background="./img/neve-hero-2.png" >
+<div>
 	<h2>CADASTRE SEU RELATÓRIO</h2>
-	
+</div>
+<div >
 	<form id="cadastrar" name="cadastrar" method="POST" action="cadastro.php"  class="form" onsubmit="return validaCampo(); return false;">
   
 	
-	<table width="400" >
+	<table width="400" class="tabela" >
     <tr>
       <td class='texto' >Nome</td><br>
 	  </tr>
@@ -127,7 +81,52 @@ else
 	
 
 </div>
+function validaCampo()
+{
+if(document.cadastrar.usuario.value=="")
+{
+	alert("O campo Usuario é obrigatório")
+	return false;
+}
+else
+	if(document.cadastrar.idcelula.value=="")
+	{
+	alert("O Campo Id de Célula é obrigatório!");
+	return false;
+	}
+	
+	else
+	if(document.cadastrar.mtp.value=="")
+	{
+	alert("O Campo Membros Totais Presentes é obrigatório!");
+	return false;
+	}
+	
+	else
+	if(document.cadastrar.mcp.value=="")
+	{
+	alert("O Campo Membros Compromissados Presentes é obrigatório!");
+	return false;
+	}
+	
+	
+else
+	if(document.cadastrar.cp.value=="")
+	{
+	alert("O Campo Convidados Presentes é obrigatório!");
+	return false;
+	}
+	else
+	if(document.cadastrar.cria.value=="")
+	{
+	alert("O Campo Crianças é obrigatório!");
+	return false;
+	}
 
-
+else
+   return true;
+}
+<!-- Fim do JavaScript que validará os campos obrigatórios! -->
+</script>
 </body>
 </html>
