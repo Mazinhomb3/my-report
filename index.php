@@ -63,18 +63,17 @@ else
 	<h2>CADASTRE SEU RELATÓRIO</h2>
 
 
-	<div >
-
-	<form id="form" name="cadastrar" method="POST" action="cadastro.php"   onsubmit="return validaCampo(); return false;" >
-  
 	
+
+	<form name="cadastrar" method="POST" action="cadastro.php"  onsubmit="return validaCampo(); return false;" >
+  
 	<table class='tabela'>
     <tr>
       <td class='texto' >Nome</td><br>
 	  </tr>
 	  <tr>
       <td  class='texto'>
-	  <input name="usuario" class="texto" type="text" id="usuario"  maxlength="30" placeholder="Usuario" />
+	  <input name="usuario"  type="text" id="usuario"  maxlength="30" placeholder="Usuario" />
         <span class="style1">*</span></td>
     </tr>
     <tr>
@@ -125,7 +124,7 @@ else
   </table>
 </form>
 	
-</div>
+
 
 
 </body>

@@ -1,48 +1,41 @@
-body{
+body{ 
+align-items: center;      
 background-image: url(../img/neve-hero-2.png);
 background-size: 100%;
-padding: 5%;
+background-color: rgb(255, 255, 255);
+background-size:cover;
+justify-content: center;
+}
+
+.formulario{
+
 text-align: center;
-background-color: aqua;
-align-content: center;
+
 
 }
 
-
-
-
-h2{
+.sub{
 
     text-align: center;
     color: aliceblue;
-    
 }
 
+div{
 
-.texto{
-text-align: center;
 color: aliceblue;
-
-}
-
-.style1{
 text-align: center;
-color: aliceblue;
+}
+
+
+
+td{
+text-align:center;
 
 }
 
-#limpar{
-border-color: rgb(255, 255, 255);
-border-radius: 5%;
-text-shadow: 2px;
-border-width: 3px;
+.inputs{
+width: 300px;
+text-align: center;
 
 }
 
-#cadastrar{
-
-    border-color: rgb(255, 255, 255);
-border-radius: 5%;
-text-shadow: 2px;
-border-width: 3px;
-}
