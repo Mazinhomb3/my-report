@@ -1,4 +1,4 @@
-body{ 
+body { 
 align-items: center;      
 background-image: url(../img/neve-hero-2.png);
 background-size: 100%;
@@ -7,20 +7,23 @@ background-size:cover;
 justify-content: center;
 }
 
-.formulario{
-
-text-align: center;
-
-
+ul{
+list-style-type: none;
+margin: 0;
+padding: 0;
 }
 
-.sub{
+li{
+    display: inline;
+}
+
+.sub {
 
     text-align: center;
     color: aliceblue;
 }
 
-div{
+div {
 
 color: aliceblue;
 text-align: center;
@@ -28,7 +31,7 @@ text-align: center;
 
 
 
-td{
+td {
 text-align:center;
 
 }
@@ -36,6 +39,7 @@ text-align:center;
 .inputs{
 width: 300px;
 text-align: center;
-
+padding: 10px 20px;
+box-sizing: border-box;
 }
 
