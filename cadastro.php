@@ -6,7 +6,16 @@ $dados = Handler::arrayHandler();
 
 ?>
 
+<?php
+session_start();
+include('conexao.php');
 
+if(empty($_POST['usuario']) || empty($_POST['senha'])) {
+	header('Location: index.php');
+	exit();
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="pt-Br">
@@ -96,9 +105,6 @@ $dados = Handler::arrayHandler();
 	<button style="text-align: center" onclick="history.back()">Corrigir!</button>
 	</div>
 	
-	
-
-
 	</div>
 
 </body>
