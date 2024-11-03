@@ -4,7 +4,7 @@ $conexao = mysql_connect ("localhost" , "root", "Fbcostame$1")
 mysql_select_db ("tbl_relatorios") 
      or die ("base de dados não existe");
  
-$sql = mysql_query("select campo1, campo2 from tabela");
+$sql = mysql_query("select distinct * from tbl_dados where ");
  
 while($linha = mysql_fetch_array($sql)){
    $vNome      = $linha["campo1"];

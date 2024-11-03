@@ -57,8 +57,6 @@ else
 </script>
 
 
-
-
 </head>
 
 <body>
@@ -72,7 +70,7 @@ else
     </div>
 
     <div class="form">
-    <form id="cadastrar" name="cadastrar" method="POST" action="cadastro.php"  onsubmit="return validaCampo(); return false;">
+    <form id="cadastrar" name="cadastrar" method="POST" action="login.php"  onsubmit="return validaCampo(); return false;">
     
 <table class="tabela" border="0" align="center">
 
@@ -90,7 +88,7 @@ else
     </tr>
     <tr>
         <td>
-                <input  name="id-celula" class="inputs" type="number" id="id-celula" placeholder="Id-Célula">
+                <input  name="idcelula" class="inputs" type="number" id="idcelula" placeholder="Id-Célula">
         </td>
     </tr>
 

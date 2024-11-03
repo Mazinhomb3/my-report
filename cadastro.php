@@ -6,16 +6,7 @@ $dados = Handler::arrayHandler();
 
 ?>
 
-<?php
-session_start();
-include('conexao.php');
 
-if(empty($_POST['usuario']) || empty($_POST['senha'])) {
-	header('Location: index.php');
-	exit();
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="pt-Br">
@@ -57,7 +48,7 @@ if(empty($_POST['usuario']) || empty($_POST['senha'])) {
               </th>
            <tr>
               <th style="color: #FF0004">
-                  <?=$dados['idcelula'] ?>
+                  <?=$dados['id-celula']?>
               </th>
            <tr>
                 <th style="color: #000000">
