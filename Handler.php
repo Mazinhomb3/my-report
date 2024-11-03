@@ -9,7 +9,7 @@ class Handler
         $a = [];
 
         $a['usuario'] = $_POST['usuario'];
-        $a['idcelula'] = $_POST['idcelula'];
+        $a['id-celula'] = $_POST['id-celula'];
         $a['mtp'] = $_POST['mtp'];
         $a['mcp'] = $_POST['mcp'];
         $a['cp'] = $_POST['cp'];

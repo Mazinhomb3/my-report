@@ -1,4 +1,5 @@
 body { 
+   
 align-items: center;      
 background-image: url(../img/neve-hero-2.png);
 background-size: 100%;
@@ -7,21 +8,7 @@ background-size:cover;
 justify-content: center;
 }
 
-ul{
-list-style-type: none;
-margin: 0;
-padding: 0;
-}
 
-li{
-    display: inline;
-}
-
-.sub {
-
-    text-align: center;
-    color: aliceblue;
-}
 
 div {
 
@@ -39,7 +26,8 @@ text-align:center;
 .inputs{
 width: 300px;
 text-align: center;
-padding: 10px 20px;
+padding: 5px 10px;
 box-sizing: border-box;
+font-size: 12px;
 }
 

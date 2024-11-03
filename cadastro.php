@@ -29,10 +29,7 @@ $dados = Handler::arrayHandler();
 
 <h2 align="center">Confirmação de Dados Enviados</h2><br>
 	
-	
-	
-	 
-	  
+  
 <form id="cadastro" name="cadastro" method="post" action="cadastro.php" >
 	      
   <table width="300" border="1" align="center" cellpadding="0" cellspacing="0" class="tabela">
