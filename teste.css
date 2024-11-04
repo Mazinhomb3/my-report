@@ -10,17 +10,22 @@
 
 
 body {
+   
     box-sizing: border-box;
     background-color: blue;
+    background-image: url(./img/neve-hero-2.png);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 2px;
     min-height: 100vh;
+    margin: 0;
+  
 }
 
 .sub {
+    vertical-align: top;
     text-align: center;
     align-items: center;
     color: aliceblue;
@@ -30,8 +35,7 @@ body {
 
 .form {
 text-align: center;
-color: aliceblue;
-margin: 5%;
+margin: 0%;
 padding-top: 2%;
 padding-left: 2%;
 padding-right: 2%;
