@@ -14,7 +14,8 @@ body {
     text-align: center;
     align-items: center;
     color: aliceblue;
-    margin: 3%;
+    margin-top: 3%;
+    margin-bottom: 0;
 }
 
 .form {
@@ -36,3 +37,10 @@ font-size: 14px;
 padding-top: 2px;
 padding-bottom: 5px;
 }
+
+.resposta {
+
+color:chartreuse;
+
+}
+

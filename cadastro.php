@@ -1,10 +1,29 @@
+
+
 <?php
+session_start();
 
-require 'Handler.php';
+if (!isset($_SESSION['nome_lider'])) {
+  header('Location: login.php');
+}
 
-$dados = Handler::arrayHandler();
+
+$dados['supervisor_rede_lider']=$_SESSION['supervisor_rede_lider'];
+$dados['rede_lider']=$_SESSION['rede_lider'];
+$dados['cor_rede_lider']=$_SESSION['cor_rede_lider'];
+$dados['distrito_lider']=$_SESSION['distrito_lider'];
+$dados['area_lider']=$_SESSION['area_lider'];
+$dados['setor_lider']=$_SESSION['setor_lider'];
+$dados['cod_lider_rede']=$_SESSION['cod_lider_rede'];
+$dados['nome_lider']=$_SESSION['nome_lider'];
+$dados['mtp']=$_SESSION['mtp'];
+$dados['mcp']=$_SESSION['mcp'];
+$dados['cp']=$_SESSION['cp'];
+$dados['cria']=$_SESSION['cria'];
 
 ?>
+
+
 
 
 
@@ -14,7 +33,7 @@ $dados = Handler::arrayHandler();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confimar Dados</title>
-	<link rel="style" type="text/css" href="./css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./teste.css">
   
 	<script>
   document.getElementById("backBtn").addEventListener("click", function(){
@@ -24,67 +43,71 @@ $dados = Handler::arrayHandler();
 
 </head>
 	
-<body background="./img/neve-hero-2.png"  background-size: "cover" >
-<div >
-
-<h2 align="center">Confirmação de Dados Enviados</h2><br>
+<body>
+<div class="sub">
+<?php echo "Bem-vindo, " . $_SESSION['nome_lider'];?>
+<h3> Confirmação de dados a serem enviados!</h3>
 	
-  
+</div>
+
+<div class="form">
 <form id="cadastro" name="cadastro" method="post" action="cadastro.php" >
 	      
-  <table width="300" border="1" align="center" cellpadding="0" cellspacing="0" class="tabela">
+  <table class="tabela" border="1" align="center">
 	        
 	        <tr>
 	          
-	          <th align="center" valign="middle" class="dados" style="color: #000000">Nome</th>
+	          <th>
+              Nome
+            </th>
 	          
            <tr>
-              <th style="color: #FF0004">
-	              <?=$dados['usuario'] ?>
+              <th class="resposta">
+	              <?=$dados['nome_lider'] ?>
               </th>
            <tr>
-                <th style="color: #000000">
+                <th>
                   Id-Célula
               </th>
            <tr>
-              <th style="color: #FF0004">
-                  <?=$dados['id-celula']?>
+              <th class="resposta">
+              <?=$dados['cod_lider_rede'] ?>
               </th>
            <tr>
-                <th style="color: #000000">
+                <th>
                   Membros Total Presentes
               </th>
            <tr>
-              <th style="color: #FF0004">
+              <th class="resposta">
                   <?=$dados['mtp'] ?>
               </th>
            <tr>
-                <th style="color: #000000">
+                <th>
                   Membros Compromissados Presentes
               </th>
            <tr>
-              <th style="color: #FF0004">
+              <th class="resposta">
                   <?=$dados['mcp'] ?>
               </th>
            <tr>
-                <th style="color: #000000">
+                <th>
                   Convidados Presentes
               </th>
            <tr>
-              <th style="color: #FF0004">
+              <th class="resposta">
                   <?=$dados['cp'] ?>
               </th>
            <tr>
-                <th style="color: #000000">
+                <th>
                   Crianças
               </th>
            <tr>
-              <th style="color: #FF0004">
+              <th class="resposta">
                   <?=$dados['cria'] ?>
               </th>
            <tr>
                 <th height="70">
-                    <input name="completar_cadastro" type="submit" id="completar_cadastro" value="Completar Cadastro!" class="botton">
+                    <input name="completar_cadastro" type="submit" id="completar_cadastro" value="Cocluir Envio" class="botton">
               </th>
 		   </tr>                    
           
