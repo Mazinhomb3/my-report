@@ -3,9 +3,9 @@ body {
     background-color: blue;
     background-image: url(./img/neve-hero-2.png);
     background-repeat: no-repeat;
-    padding: 3%;
-    margin-top: 5%;
-    margin-bottom: 30%;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
     margin-left: 5%;
     margin-right: 5%;
 }
@@ -14,7 +14,7 @@ body {
     text-align: center;
     align-items: center;
     color: aliceblue;
-    margin-top: 3%;
+    margin-top: 0;
     margin-bottom: 0;
 }
 
@@ -44,3 +44,8 @@ color:chartreuse;
 
 }
 
+#button {
+height: 50px;
+color: red;
+
+}

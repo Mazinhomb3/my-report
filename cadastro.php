@@ -53,7 +53,7 @@ $dados['cria']=$_SESSION['cria'];
 <div class="form">
 <form id="cadastro" name="cadastro" method="post" action="cadastro.php" >
 	      
-  <table class="tabela" border="1" align="center">
+  <table class="tabela" border="0" align="center">
 	        
 	        <tr>
 	          
@@ -102,12 +102,12 @@ $dados['cria']=$_SESSION['cria'];
                   Crianças
               </th>
            <tr>
-              <th class="resposta">
+              <th>
                   <?=$dados['cria'] ?>
               </th>
            <tr>
-                <th height="70">
-                    <input name="completar_cadastro" type="submit" id="completar_cadastro" value="Cocluir Envio" class="botton">
+                <th height="50">
+                    <input name="Cocluir Envio" id="button" type="submit" value="Cocluir Envio" class="botton">
               </th>
 		   </tr>                    
           
