@@ -33,7 +33,7 @@ $dados['cria']=$_SESSION['cria'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confimar Dados</title>
-    <link rel="stylesheet" type="text/css" href="./teste.css">
+    <link rel="stylesheet" type="text/css" href="./estilo.css">
   
 	<script>
   document.getElementById("backBtn").addEventListener("click", function(){

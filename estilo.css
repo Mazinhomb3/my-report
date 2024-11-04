@@ -1,0 +1,46 @@
+body {
+    background-color: blue;
+    background-image: url(./img/neve-hero-2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    padding: 2px;
+    min-height: 90vh;
+    margin: 0;
+    color: aliceblue;
+}
+
+.sub {
+
+    text-align: center;
+    align-items: center;
+    color: aliceblue;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.form {
+    text-align: center;
+
+}
+
+.inputs {
+    border-radius: 3%;
+    width: 300px;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    }
+
+    .resposta {
+
+        color:chartreuse;
+        
+        }
+
+        #button {
+            height: 30px;
+            color: red;
+            
+            }       
