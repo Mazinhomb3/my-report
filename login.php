@@ -45,11 +45,45 @@ if ($result->num_rows > 0) {
 
   header('Location: cadastro.php');
 } else {
- 
-echo "Lider ou ID de celula errado!";
+
+
+
 
 }
 
 ?>
 
+<style type="text/css">
+body {
+  align-items: center;
+    background-image: url(img/neve-hero-2.png);
+}
 
+td {
+
+color: white;
+
+}
+
+.boton {
+
+align-items: center;
+text-align: center;
+
+
+}
+
+
+</style>
+
+
+<table align="center" width="200" border="1">
+  <tbody>
+    <tr>
+      <td><?php echo "<center>Lider ou ID de celula errado!</center>"; ?></td>
+    </tr>
+    <tr>
+      <td class="boton"><button onClick="javascript:window.location.href='index.php'">Retornar e corrigir!</button></td>
+    </tr>
+  </tbody>
+</table>
