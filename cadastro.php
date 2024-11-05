@@ -20,7 +20,14 @@ $dados['mtp']=$_SESSION['mtp'];
 $dados['mcp']=$_SESSION['mcp'];
 $dados['cp']=$_SESSION['cp'];
 $dados['cria']=$_SESSION['cria'];
+$data = $_SESSION['data'];
+$hoje = date('Y/m/d');
 
+if("$data" == "$hoje" ){
+
+echo "Seus dados ja foram enviados";
+
+}
 ?>
 
 
@@ -51,7 +58,7 @@ $dados['cria']=$_SESSION['cria'];
 </div>
 
 <div class="form">
-<form id="cadastro" name="cadastro" method="post" action="cadastro.php" >
+<form id="cadastro" name="cadastro" method="post" action="enviar.php" >
 	      
   <table class="tabela" border="0" align="center">
 	        
@@ -124,24 +131,3 @@ $dados['cria']=$_SESSION['cria'];
 </body>
 </html>
 
-<?php
-include "conect.php";
-
-// Adicionar as informações do produto no banco de dados
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    $supervisor_rede_lider = $dados['supervisor_rede_lider'];
-    $rede_lider = $dados['rede_lider'];
-    $cor_rede_lider = $dados['cor_rede_lider'];
-    $distrito_lider = $dados['distrito_lider'];
-    $area_lider = $dados['area_lider'];
-    $setor_lider = $dados['setor_lider'];
-    $insertDados = "INSERT INTO produtos(nome, quantidade, valor) VALUES ('$nome', '$quantidade', '$valor')";
-    $connection->query($insertDados);
-}
-
-$url = "index.php";
-
-header('Location: '.$url);
-
-$connection->close();
-?>

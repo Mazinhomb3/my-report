@@ -42,14 +42,10 @@ if ($result->num_rows > 0) {
   $_SESSION['distrito_lider'] = $row['distrito_lider'];
   $_SESSION['area_lider'] = $row['area_lider'];
   $_SESSION['setor_lider'] = $row['setor_lider'];
+  $_SESSION['data'] = $row['data_lider'];
 
   header('Location: cadastro.php');
-} else {
-
-
-
-
-}
+} 
 
 ?>
 
