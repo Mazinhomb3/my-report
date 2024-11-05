@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="./estilo.css">
+    <link rel="stylesheet" type="text/css" href="./css/estilo.css">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
 
     <script type="text/javascript">
 
@@ -62,7 +63,9 @@ else
 
 <body>
   <div class="sub">
-    <h1>Sejam bem vindos aqui você pode enviar seu relatorio!</h1>
+    <img src="./img/logo.png" alt="">
+    <p>My-Report</p>
+    <h1>Sejam bem vindos ao My-Report, aqui você pode enviar seu relatorio!</h1>
     </div>
     <div class="sub">
 

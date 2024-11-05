@@ -33,7 +33,7 @@ $dados['cria']=$_SESSION['cria'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confimar Dados</title>
-    <link rel="stylesheet" type="text/css" href="./estilo.css">
+    <link rel="stylesheet" type="text/css" href="./css/estilo.css">
   
 	<script>
   document.getElementById("backBtn").addEventListener("click", function(){
@@ -107,7 +107,7 @@ $dados['cria']=$_SESSION['cria'];
               </th>
            <tr>
                 <th height="50">
-                    <input name="Cocluir Envio" id="button" type="submit" value="Cocluir Envio" class="botton">
+                    <input name="Cocluir Envio" id="button" type="submit" value="Concluir Envio" class="botton">
               </th>
 		   </tr>                    
           
@@ -123,3 +123,25 @@ $dados['cria']=$_SESSION['cria'];
 
 </body>
 </html>
+
+<?php
+include "conect.php";
+
+// Adicionar as informações do produto no banco de dados
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    $supervisor_rede_lider = $dados['supervisor_rede_lider'];
+    $rede_lider = $dados['rede_lider'];
+    $cor_rede_lider = $dados['cor_rede_lider'];
+    $distrito_lider = $dados['distrito_lider'];
+    $area_lider = $dados['area_lider'];
+    $setor_lider = $dados['setor_lider'];
+    $insertDados = "INSERT INTO produtos(nome, quantidade, valor) VALUES ('$nome', '$quantidade', '$valor')";
+    $connection->query($insertDados);
+}
+
+$url = "index.php";
+
+header('Location: '.$url);
+
+$connection->close();
+?>
