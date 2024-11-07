@@ -23,15 +23,14 @@ $dados['cria']=$_SESSION['cria'];
 $data = $_SESSION['data'];
 $hoje = date('Y/m/d');
 
+
+
 if("$data" == "$hoje" ){
 
 echo "Seus dados ja foram enviados";
 
 }
 ?>
-
-
-
 
 
 <!DOCTYPE html>
@@ -51,6 +50,7 @@ echo "Seus dados ja foram enviados";
 </head>
 	
 <body>
+   <br>
 <div class="sub">
 <?php echo "Bem-vindo, " . $_SESSION['nome_lider'];?>
 <h3> Confirmação de dados a serem enviados!</h3>
@@ -71,6 +71,7 @@ echo "Seus dados ja foram enviados";
            <tr>
               <th class="resposta">
 	              <?=$dados['nome_lider'] ?>
+                 
               </th>
            <tr>
                 <th>
@@ -109,7 +110,7 @@ echo "Seus dados ja foram enviados";
                   Crianças
               </th>
            <tr>
-              <th>
+              <th class="resposta">
                   <?=$dados['cria'] ?>
               </th>
            <tr>
@@ -121,7 +122,9 @@ echo "Seus dados ja foram enviados";
   </table>
 	
 	<br>
+  
 </form>
+
 <div align="center">
 	<button style="text-align: center" onclick="history.back()">Corrigir!</button>
 	</div>

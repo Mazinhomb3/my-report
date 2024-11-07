@@ -45,7 +45,7 @@ if ($result->num_rows > 0) {
   $_SESSION['data'] = $row['data_lider'];
 
   header('Location: cadastro.php');
-} 
+}
 
 ?>
 

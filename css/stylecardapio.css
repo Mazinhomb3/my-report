@@ -2,8 +2,7 @@
 @media (max-width: 768px){
     .img {
         height: 90vh;
-        object-fit: cover;
-        width: 90%;
+        object-fit:cover;
         margin-top: 5%;
       
     }
@@ -12,8 +11,6 @@
 
 body {
 background-color: black;
-
-background-repeat: no-repeat;
 background-size:cover;
 background-attachment: fixed;
 justify-content: center;

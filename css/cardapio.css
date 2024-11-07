@@ -1,0 +1,31 @@
+
+@media (max-width: 768px){
+    .img {
+        height: 80%;
+        object-fit:cover;
+        margin-top: 5%;
+      p {
+
+font-size: 15px;
+
+      }
+    }
+}
+
+
+body {
+background-color: black;
+background-image: url(../img/3.png);
+border: 0;
+
+}
+
+.topo {
+text-align: center;
+
+}
+p {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
