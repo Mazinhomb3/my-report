@@ -21,7 +21,7 @@ $_SESSION['cria'] = $_POST['cria'];
 $_SESSION['tipo'] = $_POST['tipo'];
 $_SESSION['valor'] = $_POST['valor'];
 
-
+echo "nada";
 
 // Usuário não forneceu a senha ou o login
 if(!$usuario || !$idcelula)

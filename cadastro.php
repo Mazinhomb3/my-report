@@ -11,7 +11,7 @@ if (!isset($_SESSION['nome_lider']) && (time() - $_SESSION['LAST_ACTIVITY'] > 18
     session_destroy();   //Destruir os dados da sessão no armazenamento
   
    header('Location: login.php');
-   die();
+   
 }
 $_SESSION['LAST_ACTIVITY'] = time();
 

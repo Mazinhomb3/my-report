@@ -11,6 +11,7 @@ if (!isset($_SESSION['nome_lider']) && (time() - $_SESSION['LAST_ACTIVITY'] > 18
 
   header('Location: index.php');
   die();
+ 
 }
 $_SESSION['LAST_ACTIVITY'] = time();
 ?>
@@ -26,6 +27,11 @@ $_SESSION['LAST_ACTIVITY'] = time();
   <link rel="stylesheet" type="text/css" href="./css/estilo.css">
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
   <title>Documento Enviado</title>
+  <script type="text/javascript"> // Tipo do Script
+function redirectTime(){ // Função que define o tempo
+window.location = "http://www.my-report.site" //Define o link de redirecionamento
+}
+</script>
 <style>
 div {
   margin-top: 10%;
@@ -36,13 +42,13 @@ div {
 
 </style>
 </head>
-<body>
+<body onLoad="setTimeout('redirectTime()', 4200)">
   <div><table align="center"; border="0">
 <tr>
-  <td><?php echo "Bem-vindo novamente, " . $_SESSION['nome_lider'] . ", ";?></td>
+  <td><?php echo "Bem-vindo novamente, " . $_SESSION['nome_lider'] . ". ";?></td>
 </tr>
 <tr>
-  <td><?php echo "mas seu dados ja foram enviados!";?></td>
+  <td><?php echo "Seus dados ja foram enviados!";?></td>
 </tr>
 
 
