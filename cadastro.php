@@ -3,9 +3,17 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['nome_lider'])) {
-  header('Location: login.php');
+if (!isset($_SESSION['nome_lider']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+  
+  
+    //A última solicitação foi há mais de 30 minutos
+    session_unset();     //Variável para o tempo de execução 
+    session_destroy();   //Destruir os dados da sessão no armazenamento
+  
+   header('Location: login.php');
+   die();
 }
+$_SESSION['LAST_ACTIVITY'] = time();
 
 
 $dados['supervisor_rede_lider']=$_SESSION['supervisor_rede_lider'];
@@ -20,16 +28,27 @@ $dados['mtp']=$_SESSION['mtp'];
 $dados['mcp']=$_SESSION['mcp'];
 $dados['cp']=$_SESSION['cp'];
 $dados['cria']=$_SESSION['cria'];
-$data = $_SESSION['data'];
-$hoje = date('Y/m/d');
+$dados['tipo']=$_SESSION['tipo'];
+$dados['valor']=$_SESSION['valor'];
+
+$data = $_SESSION['data_lider'];
+$datahoje = date('Y-m-d');
 
 
+if ($data == $datahoje) {
 
-if("$data" == "$hoje" ){
+ $url = "imprimir.php";
 
-echo "Seus dados ja foram enviados";
+header('Location: '.$url);
+
+
+}else{
+
+//echo "Dados diferentes";
 
 }
+
+
 ?>
 
 
@@ -53,7 +72,7 @@ echo "Seus dados ja foram enviados";
    <br>
 <div class="sub">
 <?php echo "Bem-vindo, " . $_SESSION['nome_lider'];?>
-<h3> Confirmação de dados a serem enviados!</h3>
+<h3> Confirme se os dados enviados estão corretos!</h3>
 	
 </div>
 
@@ -108,6 +127,15 @@ echo "Seus dados ja foram enviados";
            <tr>
                 <th>
                   Crianças
+              </th>
+           <tr>
+              <th class="resposta">
+                  <?=$dados['cria'] ?>
+              </th>
+           <tr>
+           <tr>
+                <th>
+                  Tipo de Célula
               </th>
            <tr>
               <th class="resposta">

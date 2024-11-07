@@ -18,6 +18,8 @@ $_SESSION['mtp'] = $_POST['mtp'];
 $_SESSION['mcp'] = $_POST['mcp'];
 $_SESSION['cp'] = $_POST['cp'];
 $_SESSION['cria'] = $_POST['cria'];
+$_SESSION['tipo'] = $_POST['tipo'];
+$_SESSION['valor'] = $_POST['valor'];
 
 
 
@@ -28,7 +30,7 @@ if(!$usuario || !$idcelula)
 	exit;
 }
 
-$sql = "SELECT * FROM tbl_dados WHERE nome_lider = '$usuario' AND cod_lider_rede = '$idcelula'";
+$sql = "SELECT * FROM tbl_dados WHERE nome_lider = '$usuario' AND cod_lider_rede = '$idcelula' ORDER BY data_lider DESC";
 
 $result = $conexao->query($sql);
 
@@ -42,7 +44,7 @@ if ($result->num_rows > 0) {
   $_SESSION['distrito_lider'] = $row['distrito_lider'];
   $_SESSION['area_lider'] = $row['area_lider'];
   $_SESSION['setor_lider'] = $row['setor_lider'];
-  $_SESSION['data'] = $row['data_lider'];
+  $_SESSION['data_lider'] = $row['data_lider'];
 
   header('Location: cadastro.php');
 }

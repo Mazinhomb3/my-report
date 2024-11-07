@@ -79,7 +79,7 @@ else
 <table class="tabela" border="0" align="center">
 
     <tr>
-        <td>Nome: </td>
+        <td class="inputs">Nome: </td>
     </tr>
     <tr>
         <td>
@@ -88,7 +88,7 @@ else
     </tr>
 
     <tr>
-        <td>Id-Célula: </td>
+        <td class="inputs">Id-Célula: </td>
     </tr>
     <tr>
         <td>
@@ -97,7 +97,7 @@ else
     </tr>
 
     <tr>
-        <td>Membros Total Presentes: </td>
+        <td class="inputs">Membros Total Presentes: </td>
     </tr>
     <tr>
         <td>
@@ -106,7 +106,7 @@ else
     </tr>
 
     <tr>
-        <td>Membros Compromissados Presentes: </td>
+        <td class="inputs">Membros Compromissados Presentes: </td>
     </tr>
     <tr>
         <td>
@@ -115,7 +115,7 @@ else
     </tr>
 
     <tr>
-        <td>Convidados Presentes: </td>
+        <td class="inputs">Convidados Presentes: </td>
     </tr>
     <tr>
         <td>
@@ -124,17 +124,30 @@ else
     </tr>
 
     <tr>
-        <td>Crianças Presentes: </td>
+        <td class="inputs">Crianças Presentes: </td>
     </tr>
     <tr>
         <td>
                 <input  name="cria" class="inputs" type="number" id="cria" placeholder="Crianças">
         </td>
     </tr>
+    <TR>
+        <td class="inputs">Tipo de Célula</td>
+    </TR>
     <tr>
-
-    <td><input  type="submit" id="enviar"></td>
-
+    <td>
+        <INPUT TYPE="RADIO" NAME="tipo" id="ADULTO" VALUE="ADULTO"> ADULTO
+        <INPUT TYPE="RADIO" NAME="tipo" id="CRIANÇA" VALUE="CRIANÇA"> CRIANÇA
+    </td>
+    </tr>  
+    <tr>
+        <td class="inputs">Valor da Oferta de Célula</td>
+    </tr>
+    <tr>
+        <td>R$ <input  name="valor" type="float"  maxlength="10" placeholder="Oferta célula"></td>
+    </tr>
+    <tr>
+      <td><input  type="submit" id="enviar"></td>
     </tr>
 
     </table>
