@@ -10,8 +10,7 @@ if (!isset($_SESSION['nome_lider']) && (time() - $_SESSION['LAST_ACTIVITY'] > 18
 
 
   header('Location: index.php');
-  die();
- 
+  
 }
 $_SESSION['LAST_ACTIVITY'] = time();
 ?>
@@ -38,6 +37,7 @@ div {
   align-items: center;
   text-align: center;
   font-size: 30px;
+  color: red;
 }
 
 </style>
@@ -45,10 +45,10 @@ div {
 <body onLoad="setTimeout('redirectTime()', 4200)">
   <div><table align="center"; border="0">
 <tr>
-  <td><?php echo "Bem-vindo novamente, " . $_SESSION['nome_lider'] . ". ";?></td>
+  <td><?php echo "Olá, " . $_SESSION['nome_lider'] . ". ";?></td>
 </tr>
 <tr>
-  <td><?php echo "Seus dados ja foram enviados!";?></td>
+  <td><?php echo "mas seus dados ja foram enviados! ";?></td>
 </tr>
 
 

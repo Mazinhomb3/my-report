@@ -1,52 +1,21 @@
-
-
-
 <?php
+/*$servername = "br210.hostgator.com.br"; // ou o endereço do servidor MySQL
+$username = "myrepo89_mazinho";
+$password = "#(J4B7U?x9^C";
+$dbname = "myrepo89_db_relatorios";
+*/
+$servername = "localhost"; // ou o endereço do servidor MySQL
+$username = "root";
+$password = "";
+$dbname = "db_relatorios";
 
+// Criar conexão
+$conexao = new mysqli($servername, $username, $password, $dbname);
 
-class Conexao{
-
-    public string $host = "localhost";
-    public string $usuario = "root";
-    public string $senha = "";
-    public string $dbnome = "db_relatorios";
-    public int $porta = 3306;
-    public object | null $conexao = null;
-
-
-    public function conectar(){
-
-try {
-
-    //Conexao com porta
-   //$this->conexao = new PDO("mysql:host={$this->host};port={$this->porta}; dbname=" . $this->dbnome, 
-   //$this->usuario, $this->senha  ); 
-
-    $this->conexao = new PDO("mysql:host={$this->host}; dbname=" . $this->dbnome, 
-    $this->usuario, $this->senha  ); 
-
-     //echo "Conexao realizada com sucesso!";
-
-     return $this->conexao;
-
-
-} catch (Exception $e) 
-{
-
-    die("Conexao não pode ser realizada!" .$e->getMessage());
-
-   return false;
-}
-
-
-
-
-    }
-   
-
-
-}
-
-
-
+// Verificar conexão
+if ($conexao->connect_error) {
+    die("Conexão falhou: " . $conexao->connect_error);
+} 
+//echo "Conexão bem-sucedida!";
+//$conexao->close();
 ?>

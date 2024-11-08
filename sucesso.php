@@ -9,7 +9,7 @@ if (!isset($_SESSION['nome_lider']) && (time() - $_SESSION['LAST_ACTIVITY'] > 18
    
    
      header('Location: index.php');
-     die();
+   
    }
    $_SESSION['LAST_ACTIVITY'] = time();
 ?>
