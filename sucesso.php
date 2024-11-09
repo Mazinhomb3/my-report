@@ -39,6 +39,7 @@ div {
   align-items: center;
   text-align: center;
   font-size: 30px;
+  color: green;
 }
 
 </style>
@@ -47,7 +48,7 @@ div {
 <body onLoad="setTimeout('redirectTime()', 4200)">
   <div><table align="center"; border="0">
 <tr>
-  <td><?php echo "Obrigado, " . $_SESSION['nome_lider'] . ", ";?></td>
+  <td><?php echo "Obrigado " . $_SESSION['nome_lider'] . ", ";?></td>
 </tr>
 <tr>
   <td><?php echo "seus dados foram enviados com sucesso!";?></td>

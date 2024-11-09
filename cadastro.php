@@ -1,19 +1,21 @@
-
-
 <?php
 session_start();
 
+
+
 if (!isset($_SESSION['nome_lider']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+   //A última solicitação foi há mais de 30 minutos
+   session_unset();     //Variável para o tempo de execução 
+   session_destroy();   //Destruir os dados da sessão no armazenamento
   
   
-    //A última solicitação foi há mais de 30 minutos
-    session_unset();     //Variável para o tempo de execução 
-    session_destroy();   //Destruir os dados da sessão no armazenamento
   
-   header('Location: login.php');
-   
-}
-$_SESSION['LAST_ACTIVITY'] = time();
+    header('Location: index.php');
+    
+  }
+  $_SESSION['LAST_ACTIVITY'] = time();
+
+
 
 
 $dados['supervisor_rede_lider']=$_SESSION['supervisor_rede_lider'];
@@ -34,17 +36,19 @@ $dados['valor']=$_SESSION['valor'];
 $data = $_SESSION['data_lider'];
 $datahoje = date('Y-m-d');
 
+$soma_mtp = $dados['mcp'];
+$soma_cp = $dados['cp'];
+$soma_cria = $dados['cria'];
+
+
+
+echo ($soma_total);
+
 
 if ($data == $datahoje) {
 
- $url = "imprimir.php";
+   header('Location: erro.php');
 
-header('Location: '.$url);
-
-
-}else{
-
-//echo "Dados diferentes";
 
 }
 
@@ -59,7 +63,7 @@ header('Location: '.$url);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confimar Dados</title>
     <link rel="stylesheet" type="text/css" href="./css/estilo.css">
-  
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
 	<script>
   document.getElementById("backBtn").addEventListener("click", function(){
     history.back();
@@ -77,7 +81,8 @@ header('Location: '.$url);
 </div>
 
 <div class="form">
-<form id="cadastro" name="cadastro" method="post" action="enviar.php" >
+
+<form id="cadastro" name="cadastro" method="POST" action="enviar.php"  >
 	      
   <table class="tabela" border="0" align="center">
 	        
@@ -89,7 +94,7 @@ header('Location: '.$url);
 	          
            <tr>
               <th class="resposta">
-	              <?=$dados['nome_lider'] ?>
+	              <?=$_SESSION['nome_lider'] ?>
                  
               </th>
            <tr>
@@ -139,11 +144,11 @@ header('Location: '.$url);
               </th>
            <tr>
               <th class="resposta">
-                  <?=$dados['cria'] ?>
+                  <?=$dados['tipo'] ?>
               </th>
            <tr>
                 <th height="50">
-                    <input name="Cocluir Envio" id="button" type="submit" value="Concluir Envio" class="botton">
+                    <input type="submit" name="enviar" id="enviar"  value="Concluir Envio" >
               </th>
 		   </tr>                    
           
