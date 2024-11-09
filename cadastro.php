@@ -85,7 +85,7 @@ $_SESSION['totalpres_celula']=$soma_total;
    <br>
 <div class="sub">
 <?php echo "Bem-vindo, " . $_SESSION['nome_lider'];?>
-<h3> Confirme se os dados enviados estão corretos!</h3>
+<h4> Confirme se os dados enviados estão corretos!</h4>
 	
 </div>
 

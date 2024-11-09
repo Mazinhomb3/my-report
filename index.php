@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="./css/estilo.css">
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/logo_paz.ico" type="image/x-icon">
 
     <script type="text/javascript">
 
@@ -50,6 +50,11 @@ else
 	{
 	alert("O Campo Crianças é obrigatório!");
 	return false;
+	}else
+	if(document.cadastrar.tipo.value=="")
+	{
+	alert("O Campo Tipo de célula é obrigatório!");
+	return false;
 	}
 
 else
@@ -63,13 +68,13 @@ else
 
 <body>
   <div class="sub">
-    <img src="./img/logo.png" alt="">
-    <p>My-Report</p>
-    <h2>Sejam bem vindos ao My-Report, aqui você pode enviar seu relatorio!</h2>
+    <img src="./img/logo_paz.png" alt="">
+    <p>Paz Santarém</p>
+    <h4>Sejam bem vindos, aqui você pode enviar seu relatorio!</h4>
     </div>
     <div class="sub">
 
-<h3>Preencha seu Relatório</h3>
+<h4>Preencha seu Relatório</h4>
 
     </div>
 
@@ -136,8 +141,8 @@ else
     </TR>
     <tr>
     <td>
-        <INPUT TYPE="RADIO" NAME="tipo" id="ADULTO" VALUE="ADULTO"> ADULTO
-        <INPUT TYPE="RADIO" NAME="tipo" id="CRIANÇA" VALUE="CRIANÇA"> CRIANÇA
+        <INPUT TYPE="RADIO" NAME="tipo" id="tipo" VALUE="ADULTO"> ADULTO
+        <INPUT TYPE="RADIO" NAME="tipo" id="tipo" VALUE="CRIANÇA"> CRIANÇA
     </td>
     </tr>  
     <tr>
