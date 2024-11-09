@@ -65,11 +65,11 @@ else
   <div class="sub">
     <img src="./img/logo.png" alt="">
     <p>My-Report</p>
-    <h1>Sejam bem vindos ao My-Report, aqui você pode enviar seu relatorio!</h1>
+    <h2>Sejam bem vindos ao My-Report, aqui você pode enviar seu relatorio!</h2>
     </div>
     <div class="sub">
 
-<h2>Preencha seu Relatório</h2>
+<h3>Preencha seu Relatório</h3>
 
     </div>
 
@@ -144,10 +144,11 @@ else
         <td class="inputs">Valor da Oferta de Célula</td>
     </tr>
     <tr>
-        <td>R$ <input  name="valor" type="float"  maxlength="10" placeholder="Oferta célula"></td>
+        <td>R$ <input  class="valor" type="float"  maxlength="10"  placeholder="Oferta"></td>
     </tr>
+    
     <tr>
-      <td><input  type="submit" id="enviar"></td>
+      <td><input  type="submit"  width="90" id="enviar" value="Enviar Dados"></td>
     </tr>
 
     </table>

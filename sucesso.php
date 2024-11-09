@@ -39,7 +39,7 @@ div {
   align-items: center;
   text-align: center;
   font-size: 30px;
-  color: green;
+  color:greenyellow;
 }
 
 </style>

@@ -24,7 +24,7 @@ body {
 
 .inputs {
     border-radius: 3%;
-    width: 300px;
+    width: 200px;
     text-align: center;
     font-size: 14px;
     padding-top: 2px;
@@ -52,4 +52,18 @@ body {
 
             img, p {
                 float:left;
+            }
+
+            #enviar {
+                background-color: green;
+                color: white;
+                font-weight: bolder;
+                height: 30px;
+                border-radius: 15px;
+            }
+
+            .valor{
+
+width: 50px;
+
             }

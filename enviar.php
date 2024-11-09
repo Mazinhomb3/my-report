@@ -35,10 +35,13 @@ $_SESSION['LAST_ACTIVITY'] = time();
     $tipo = $_SESSION['tipo'];
     $valor = $_SESSION['valor'];
     $hoje = date('Y-m-d');
+    $total = $_SESSION['totalpres_celula'];
+
+    
 
     $insertDados = "INSERT INTO tbl_dados(cod_lider_rede, nome_lider, supervisor_rede_lider, rede_lider, cor_rede_lider, distrito_lider, area_lider, setor_lider, 
-    data_lider, membros_celula, membroscomp_celula, convidadospres_celula, criancas_celula, oferta_celula, tipo_cel_dados) VALUES ('$cod_lider_rede', '$lider', '$supervisor_rede_lider', 
-    '$rede_lider', '$cor_rede_lider', '$distrito_lider', '$area_lider', '$setor_lider', '$hoje', '$mtp', '$mcp', '$convPres', '$cria', '$valor', '$tipo')";
+    data_lider, membros_celula, membroscomp_celula, convidadospres_celula, criancas_celula, totalpres_celula,oferta_celula, tipo_cel_dados) VALUES ('$cod_lider_rede', '$lider', '$supervisor_rede_lider', 
+    '$rede_lider', '$cor_rede_lider', '$distrito_lider', '$area_lider', '$setor_lider', '$hoje', '$mtp', '$mcp', '$convPres', '$cria', '$total','$valor', '$tipo')";
   
 //print_r($_SESSION);
 

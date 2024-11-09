@@ -1,4 +1,7 @@
 <?php
+
+
+
 session_start();
 
 
@@ -32,25 +35,31 @@ $dados['cp']=$_SESSION['cp'];
 $dados['cria']=$_SESSION['cria'];
 $dados['tipo']=$_SESSION['tipo'];
 $dados['valor']=$_SESSION['valor'];
-
 $data = $_SESSION['data_lider'];
 $datahoje = date('Y-m-d');
-
-$soma_mtp = $dados['mcp'];
-$soma_cp = $dados['cp'];
-$soma_cria = $dados['cria'];
-
-
-
-echo ($soma_total);
-
-
+// Compara a data de envio
 if ($data == $datahoje) {
 
    header('Location: erro.php');
 
 
 }
+
+//Soma os dados
+
+$soma_mcp = Intval($dados['mcp']);
+$soma_cp = intval($dados['cp']);
+$soma_cria = intval($dados['cria']);
+
+$soma_total = $soma_mcp + $soma_cp + $soma_cria;
+
+//Coloca os dados na sessao
+
+$_SESSION['totalpres_celula']=$soma_total;
+
+
+
+
 
 
 ?>
