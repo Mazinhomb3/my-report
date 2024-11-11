@@ -1,0 +1,53 @@
+body {
+    background-color: rgb(4, 4, 150);
+    background-image: url(../img/gradient_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    padding: 2px;
+    min-height: 100vh;
+    margin: 0;
+    color: aliceblue;    
+}
+
+div {
+    align-content: center;
+    text-align: center;
+}
+
+.logopaz {
+    color: aliceblue;
+    margin-top: 5%;
+    margin-bottom: 0;
+    padding-left: 15px;
+    padding-bottom: 0;
+    height: 30%;
+    width: 30%;
+    align-content: center;
+            }
+  
+          
+.botao {
+display: inline-block;
+background-color:darkcyan;
+color: #fff;
+border: none;
+padding: 15px 25px;
+font-size: 20px;
+font-weight: bold;
+text-decoration: none;
+cursor: pointer;
+border-radius: 15px;
+width: 180px; /* largura do botão */
+margin-top: 0;
+margin-right: 20px;
+margin-bottom: 3px;
+
+}
+
+.imgbt {
+width: 30px; /* largura da imagem */
+height: 30px; /* altura da imagem */
+margin-right: 10px; /* espaço entre a imagem e o texto */
+vertical-align: middle; /* alinhamento vertical da imagem */
+}
