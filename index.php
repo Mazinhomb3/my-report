@@ -1,165 +1,73 @@
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="./css/estilo.css">
-    <link rel="shortcut icon" href="/img/logo_paz.ico" type="image/x-icon">
-
-    <script type="text/javascript">
-
-    function validaCampo()
-{
-if(document.cadastrar.usuario.value=="")
-{
-	alert("O campo Nome é obrigatório")
-	return false;
+    <title>PAZ-STM</title>
+<style>
+body {
+    background-color: rgb(4, 4, 150);
+    background-image: url(../my-report/img/gradient_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    padding: 2px;
+    min-height: 90vh;
+    margin: 0;
+    color: aliceblue;    
 }
-else
-	if(document.cadastrar.idcelula.value=="")
-	{
-	alert("O Campo Id de Célula é obrigatório!");
-	return false;
-	}
-	
-	else
-	if(document.cadastrar.mtp.value=="")
-	{
-	alert("O Campo Membros Totais Presentes é obrigatório!");
-	return false;
-	}
-	
-	else
-	if(document.cadastrar.mcp.value=="")
-	{
-	alert("O Campo Membros Compromissados Presentes é obrigatório!");
-	return false;
-	}
-	
-	
-else
-	if(document.cadastrar.cp.value=="")
-	{
-	alert("O Campo Convidados Presentes é obrigatório!");
-	return false;
-	}
-	else
-	if(document.cadastrar.cria.value=="")
-	{
-	alert("O Campo Crianças é obrigatório!");
-	return false;
-	}else
-	if(document.cadastrar.tipo.value=="")
-	{
-	alert("O Campo Tipo de célula é obrigatório!");
-	return false;
-	}
 
-else
-   return true;
+img {
+    
+    text-align: center;
+    align-items: center;
+    color: aliceblue;
+    margin-top: 5px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    height: 20%;
+    width: 20%;
+    align-content: center;
+            }
+  
+            link {
+    text-align: center;
+    color: white;
+}            
+a {
+
+    display: inline-block;
+background-color: #4CAF50;
+color: #fff;
+border: none;
+padding: 10px 20px;
+font-size: 16px;
+font-weight: bold;
+text-decoration: none;
+cursor: pointer;
+border-radius: 5px;
+width: 200px; /* largura do botão */
+
 }
-<!-- Fim do JavaScript que validará os campos obrigatórios! -->
-</script>
+
+</style>
 
 
 </head>
-
 <body>
-  <div class="sub">
-    <img src="./img/logo_paz.png" alt="">
-    <p>Paz Santarém</p>
-    <h4>Sejam bem vindos, aqui você pode enviar seu relatorio!</h4>
-    </div>
-    <div class="sub">
-
-<h4>Preencha seu Relatório</h4>
-
+    <div class="img" align="center">
+    <img src="./img/paz.png" alt="">
     </div>
 
-    <div class="form">
-    <form id="cadastrar" name="cadastrar" method="POST" action="login.php"  onsubmit="return validaCampo(); return false;">
-    
-<table class="tabela" border="0" align="center">
-
-    <tr>
-        <td class="inputs">Nome: </td>
-    </tr>
-    <tr>
-        <td>
-                <input id="usuario" class="inputs" name="usuario" type="text"  placeholder="Nome">
-        </td>
-    </tr>
-
-    <tr>
-        <td class="inputs">Id-Célula: </td>
-    </tr>
-    <tr>
-        <td>
-                <input  name="idcelula" class="inputs" type="number" id="idcelula" placeholder="Id-Célula">
-        </td>
-    </tr>
-
-    <tr>
-        <td class="inputs">Membros Total Presentes: </td>
-    </tr>
-    <tr>
-        <td>
-                <input  name="mtp" class="inputs" type="number" id="mtp" placeholder="MTP">
-        </td>
-    </tr>
-
-    <tr>
-        <td class="inputs">Membros Compromissados Presentes: </td>
-    </tr>
-    <tr>
-        <td>
-                <input  name="mcp" class="inputs" type="number" id="mcp" placeholder="MCP">
-        </td>
-    </tr>
-
-    <tr>
-        <td class="inputs">Convidados Presentes: </td>
-    </tr>
-    <tr>
-        <td>
-                <input  name="cp" class="inputs" type="number" id="cp" placeholder="Convidados Presentes">
-        </td>
-    </tr>
-
-    <tr>
-        <td class="inputs">Crianças Presentes: </td>
-    </tr>
-    <tr>
-        <td>
-                <input  name="cria" class="inputs" type="number" id="cria" placeholder="Crianças">
-        </td>
-    </tr>
-    <TR>
-        <td class="inputs">Tipo de Célula</td>
-    </TR>
-    <tr>
-    <td>
-        <INPUT TYPE="RADIO" NAME="tipo" id="tipo" VALUE="ADULTO"> ADULTO
-        <INPUT TYPE="RADIO" NAME="tipo" id="tipo" VALUE="CRIANÇA"> CRIANÇA
-    </td>
-    </tr>  
-    <tr>
-        <td class="inputs">Valor da Oferta de Célula</td>
-    </tr>
-    <tr>
-        <td>R$ <input  class="valor" type="float"  maxlength="10"  placeholder="Oferta"></td>
-    </tr>
-    
-    <tr>
-      <td><input  type="submit"  width="90" id="enviar" value="Enviar Dados"></td>
-    </tr>
-
-    </table>
-
-</form>
-</div>
+    <div align="center">
+ <ul class="link">
+<a class="link" href="index2.php">Enviar Relatório</a><br><br>
+<a href="https://whatsapp.com/channel/0029Vajb4YBGJP8ERCaAcS0h"><img src="./img/logo.png" alt="Descrição da imagem">Canal Whatsapp</a><br>
+<a href="https://www.youtube.com/@pazsantarempa">YouTube</a><br>
+<a href="https://www.instagram.com/pazsantarempa/">Instagram</a><br>
+<a href="https://www.facebook.com/PazSantaremPA">Facebook</a><br>
+</ul>
+    </div>
     
 </body>
 </html>
