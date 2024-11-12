@@ -1,3 +1,13 @@
+<?php
+require('../conexao.php');
+
+$corQuery="SELECT DISTINCT cor_rede FROM tbl_redes ORDER BY cor_rede ASC";
+
+$result = mysqli_query($conexao, $corQuery);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -8,6 +18,7 @@
     <title>Administrador</title>
 </head>
 <body>
+    
 <div class="">
     <h3>Bem vindo!</h3>
 </div>
@@ -16,20 +27,29 @@
 <table align="center" border="0">
 <tr>
         <td class="inputs">Nome: </td>
-        <td><input type="text"  class="respostas"></td>
+        <td><input type="text"  class="respostas" required></td>
     </tr>
    
     <tr>
         <td class="inputs">Rede: </td><td>
-        <input type="text" class="respostas"></tr>
+        <select name="cor_rede" id="cor_rede" align="center"  class="respostas">
+        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+    <option value="<?php echo $row['cor_rede']; ?>"><?php echo $row['cor_rede']; ?></option>
+  <?php } ?>
+            
+            
+
+        </select>
+    </tr>
     </tr>
     <tr>
         <td class="inputs">Senha: </td><td>
-        <input type="text" class="respostas"></tr>
+        <input type="password" class="respostas"></tr>
     </tr>
     
     <tr>
-        <td class="inputs">Função: </td><td>
+        <td class="inputs">Função: </td>
+        <td>
         <select name="funcao" id="funcao" align="center"  class="respostas">
             <option value="supderede">Sup. de Rede</option>
             <option value="supderede">Pr. de Rede</option>
@@ -44,11 +64,8 @@
 
 
 
-
-
-
-
-</form></div>
+</form>
+</div>
     
 </body>
 </html>
