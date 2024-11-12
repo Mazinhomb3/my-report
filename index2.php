@@ -27,14 +27,14 @@ else
 	else
 	if(document.cadastrar.mtp.value=="")
 	{
-	alert("O Campo Membros Totais Presentes é obrigatório!");
+	alert("O Campo Total de Membros da Célula é obrigatório!");
 	return false;
 	}
 	
 	else
 	if(document.cadastrar.mcp.value=="")
 	{
-	alert("O Campo Membros Compromissados Presentes é obrigatório!");
+	alert("O Campo Membros Presentes na Célula é obrigatório!");
 	return false;
 	}
 	
@@ -56,7 +56,11 @@ else
 	alert("O Campo Tipo de célula é obrigatório!");
 	return false;
 	}
-
+    if(document.cadastrar.oferta.value=="")
+	{
+	alert("O Campo oferta de célula é obrigatório!");
+	return false;
+	}
 else
    return true;
 }
@@ -102,25 +106,25 @@ else
     </tr>
 
     <tr>
-        <td class="inputs">Membros Total Presentes: </td>
+        <td class="inputs">Total de Membros da Célula</td>
     </tr>
     <tr>
         <td>
-                <input  name="mtp" class="inputs" type="number" id="mtp" placeholder="MTP">
+                <input  name="mtp" class="inputs" type="number" id="mtp" placeholder="TMC">
         </td>
     </tr>
 
     <tr>
-        <td class="inputs">Membros Compromissados Presentes: </td>
+        <td class="inputs">Membros Presentes na Célula</td>
     </tr>
     <tr>
         <td>
-                <input  name="mcp" class="inputs" type="number" id="mcp" placeholder="MCP">
+                <input  name="mcp" class="inputs" type="number" id="mcp" placeholder="MPC">
         </td>
     </tr>
 
     <tr>
-        <td class="inputs">Convidados Presentes: </td>
+        <td class="inputs">Convidados Presentes </td>
     </tr>
     <tr>
         <td>
@@ -129,7 +133,7 @@ else
     </tr>
 
     <tr>
-        <td class="inputs">Crianças Presentes: </td>
+        <td class="inputs">Crianças Presentes </td>
     </tr>
     <tr>
         <td>
@@ -149,7 +153,7 @@ else
         <td class="inputs">Valor da Oferta de Célula</td>
     </tr>
     <tr>
-        <td>R$ <input  class="valor" type="float"  maxlength="10"  placeholder="Oferta"></td>
+        <td>R$ <input  class="valor" type="float"  maxlength="10" id="oferta" placeholder="Oferta"></td>
     </tr>
     
     <tr>
