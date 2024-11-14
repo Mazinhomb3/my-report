@@ -1,0 +1,209 @@
+
+
+
+
+/* Small devices (portrait tablets and large phones, 300px and up) */
+@media only screen and (min-width: 300px) {
+
+  body {
+    background-color: rgb(4, 4, 150);
+    background-image: url(../img/gradient_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    padding: 2%;
+    min-height:98vh;
+    margin: 0;
+    color: aliceblue;    
+}
+
+.logo {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  text-align: center;
+  align-content: center;
+  text-align: center;
+}
+
+.div-botao1 {
+  text-align: center;
+  align-content: center;
+  text-align: center;
+}
+
+.logopaz {
+  color: aliceblue;
+  margin-top: 5%;
+  margin-bottom: 0;
+  padding-left: 15px;
+  padding-bottom: 0;
+  height: 40%;
+  width: 40%;
+  align-content: center;
+          }
+
+        
+.botao {
+display: inline-block;
+background-color:darkcyan;
+color: #fff;
+border: none;
+padding: 15px 25px;
+font-size: 22px;
+font-weight: bold;
+text-decoration: none;
+cursor: pointer;
+border-radius: 15px;
+width: 150px; /* largura do botão */
+margin-top: 0;
+margin-right: 20px;
+margin-bottom: 4px;
+
+}
+
+.imgbt {
+width: 30px; /* largura da imagem */
+height: 30px; /* altura da imagem */
+margin-right: 10px; /* espaço entre a imagem e o texto */
+vertical-align: middle; /* alinhamento vertical da imagem */
+}
+
+
+}
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  body {
+    background-color: rgb(4, 4, 150);
+    background-image: url(../img/gradient_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    padding: 2%;
+    min-height:100vh;
+    margin: 0;
+    color: aliceblue;    
+}
+
+.logo {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  text-align: center;
+  align-content: center;
+  text-align: center;
+}
+
+.div-botao1 {
+  text-align: center;
+  align-content: center;
+  text-align: center;
+}
+
+.logopaz {
+  color: aliceblue;
+  margin-top: 5%;
+  margin-bottom: 0;
+  padding-left: 15px;
+  padding-bottom: 0;
+  height: 30%;
+  width: 30%;
+  align-content: center;
+          }
+
+        
+.botao {
+display: inline-block;
+background-color:darkcyan;
+color: #fff;
+border: none;
+padding: 15px 25px;
+font-size: 30px;
+font-weight: bold;
+text-decoration: none;
+cursor: pointer;
+border-radius: 15px;
+width: 220px; /* largura do botão */
+margin-top: 0;
+margin-right: 20px;
+margin-bottom: 4px;
+
+}
+
+.imgbt {
+width: 50px; /* largura da imagem */
+height: 50px; /* altura da imagem */
+margin-right: 10px; /* espaço entre a imagem e o texto */
+vertical-align: middle; /* alinhamento vertical da imagem */
+}
+
+}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  body {
+    background-color: rgb(4, 4, 150);
+    background-image: url(../img/gradient_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    padding: 2%;
+    min-height: 88vh;
+    margin: 0;
+    color: aliceblue;    
+}
+
+.logo {
+  margin-top: 0;
+  margin-bottom: 2px;
+  text-align: center;
+  align-content: center;
+  text-align: center;
+}
+
+.div-botao1 {
+  margin:0%;
+  text-align: center;
+  align-content: center;
+  text-align: center;
+}
+
+.logopaz {
+  color: aliceblue;
+  margin: 3px;
+  padding-left: 15px;
+  padding-bottom: 0;
+  height: 15%;
+  width: 15%;
+  align-content: center;
+          }
+
+        
+.botao {
+display: inline-block;
+background-color:darkcyan;
+color: #fff;
+border: none;
+padding: 15px 25px;
+font-size: 20px;
+font-weight: bold;
+text-decoration: none;
+cursor: pointer;
+border-radius: 15px;
+width: 180px; /* largura do botão */
+margin-top: 0;
+margin-right: 20px;
+margin-bottom: 3px;
+
+}
+
+.imgbt {
+width: 40px; /* largura da imagem */
+height: 40px; /* altura da imagem */
+margin-right: 10px; /* espaço entre a imagem e o texto */
+vertical-align: middle; /* alinhamento vertical da imagem */
+}
+
+}
