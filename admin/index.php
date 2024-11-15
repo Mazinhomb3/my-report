@@ -19,12 +19,17 @@ $result = mysqli_query($conexao, $corQuery);
 </head>
 <body>
     
-<div class="">
-    <h3>Bem vindo!</h3>
-</div>
-<div><form id="cadastrar" name="cadastrar" method="POST" action="login.php"  onsubmit="return validaCampo(); return false;">
+<div class="div-img">
+    <img src="../img/logo_paz.png" alt="" class="img">
+    </div>
+    <div class="titulo">
+    <h4>Bem vindo!</h4>
+    <h4>Aqui você terá acesso as dados de sua Rede.</h4>
+    </div>
+<div class="form">
+    <form id="form" name="cadastrar" method="POST" action=""  onsubmit="return validaCampo(); return false;">
 
-<table align="center" border="0">
+<table align="center" border="1" class="table">
 <tr>
         <td class="inputs">Nome: </td>
         <td><input type="text"  class="respostas" required></td>
