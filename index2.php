@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="./css/estilo.css">
-    <link rel="shortcut icon" href="/img/logo_paz.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/logo_paz.ico" type="image/x-icon">
 
     <script type="text/javascript">
 
@@ -71,14 +71,14 @@ else
 </head>
 
 <body>
-  <div class="sub">
-    <img src="./img/logo_paz.png" alt="">
+  <div class="divsub">
+    <img class="logo" src="./img/logo_paz.png" alt="">
     <p>Paz Santarém</p>
-    <h4>Sejam bem vindos, aqui você pode enviar seu relatorio!</h4>
+    <p>Sejam bem vindos, aqui você pode enviar seu relatorio!</p>
     </div>
     <div class="sub">
 
-<h4>Preencha seu Relatório</h4>
+<p>Preencha seu Relatório</p>
 
     </div>
 
@@ -88,7 +88,7 @@ else
 <table class="tabela" border="0" align="center">
 
     <tr>
-        <td class="inputs">Nome: </td>
+        <td class="inputs">Nome </td>
     </tr>
     <tr>
         <td>
@@ -97,7 +97,7 @@ else
     </tr>
 
     <tr>
-        <td class="inputs">Id-Célula: </td>
+        <td class="inputs">Id-Célula </td>
     </tr>
     <tr>
         <td>
@@ -144,7 +144,7 @@ else
         <td class="inputs">Tipo de Célula</td>
     </TR>
     <tr>
-    <td>
+    <td  align="center">
         <INPUT TYPE="RADIO" NAME="tipo" id="tipo" VALUE="ADULTO"> ADULTO
         <INPUT TYPE="RADIO" NAME="tipo" id="tipo" VALUE="CRIANÇA"> CRIANÇA
     </td>
@@ -153,11 +153,11 @@ else
         <td class="inputs">Valor da Oferta de Célula</td>
     </tr>
     <tr>
-        <td>R$ <input  class="valor" type="float"  maxlength="10" id="oferta" placeholder="Oferta"></td>
+        <td align="center">R$ <input  class="valor" type="float"  maxlength="10" id="oferta" placeholder="Oferta"></td>
     </tr>
    
     <tr>
-      <td><input  type="submit"  width="90" id="enviar" value="Enviar Dados"></td>
+      <td  align="center"><input  type="submit"  width="90" id="enviar" value="Enviar Dados"></td>
     </tr>
     </div>
     </table>

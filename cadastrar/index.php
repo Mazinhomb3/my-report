@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,15 +17,15 @@
     <h3>Cadastrar Surpervisores</h3>
 </div>
     <div class="form">
-        <form action="login.php">
+        <form id="login" method="POST" name="login" action="./login.php">
             <table align="center" border="0" class="tabela">
                 <tr>
                     <td class="inputs">Nome: </td>
-                    <td><input type="text" class="respostas" require></td>
+                    <td><input name="usuario" id="usuario" type="text" class="respostas" placeholder="Usuario" require></td>
                 </tr>
                 <tr>
                     <td>Senha: </td>
-                    <td><input type="password" class="respostas" require></td>
+                    <td><input name="senha" type="password" class="respostas" placeholder="senha" require></td>
                 </tr>
             
             <div class="divbuton">

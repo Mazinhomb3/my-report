@@ -1,18 +1,16 @@
 <?php
  session_start();
 
- require('../conexao.php');
+ require('../Conexao.php');
 
-$usuario = $_POST["senha"];
+$usuario = $_POST["usuario"];
 $usuariomd5=md5($usuario);
 $senha = $_POST["senha"];
 $senhamd5 = md5("$senha");
-$cor_rede = $_POST["cor_rede"];
-$funcao = $_POST["funcao"];
 
 
 
-$sql = "SELECT * FROM tbl_login_sup where senha = '$usuariomd5' && senha = '$senhamd5' ";
+$sql = "SELECT * FROM tbl_login_sup where nome_login = '$usuariomd5' && senha = '$senhamd5' ";
 
 $result = $conexao->query($sql);
 
@@ -23,14 +21,13 @@ if ($result->num_rows > 0) {
    
     $_SESSION['id'] = $row['id'];
     $_SESSION['nome'] = $row['nome'];
-    $_SESSION['rede'] = $row['rede'];
     $_SESSION['senha'] = $row['senha'];
-    $_SESSION['funcao'] = $row['funcao'];
+    
     
 
     
     
-    header('Location: logado.php');
+    header('Location: listar.php');
   } else {
     echo "Usuário ou senha incorretos.";
   }
