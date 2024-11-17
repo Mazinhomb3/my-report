@@ -23,6 +23,11 @@ body {
     text-align: center;
 }
 
+.tabela {
+    text-align: center;
+    align-content: center;
+}
+
 .inputs {
     border-radius: 3%;
     width: 200px;

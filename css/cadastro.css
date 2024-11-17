@@ -1,0 +1,39 @@
+body {
+    background-color: rgb(4, 4, 150);
+    background-image: url(../img/gradient_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    padding: 2px;
+    min-height: 90vh;
+    margin: 0;
+    color: aliceblue;
+}
+
+.sub {
+    text-align: center;
+    align-items: center;
+    color: aliceblue;
+    margin-top: 0px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.logo {
+    margin-top: 0;
+    margin-bottom: 2px;
+    text-align: center;
+    align-content: center;
+    text-align: center;
+  
+  }
+
+  .logopaz {
+    color: aliceblue;
+    margin: 3px;
+    padding-left: 15px;
+    padding-bottom: 0;
+    height: 15%;
+    width: 15%;
+    align-content: center;
+    }
