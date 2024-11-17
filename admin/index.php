@@ -37,7 +37,7 @@ $result = mysqli_query($conexao, $corQuery);
 <table align="center" border="1" class="table">
 <tr>
         <td class="inputs">Nome: </td>
-        <td><input type="text"  class="respostas" required></td>
+        <td><input name="usuario" id="usuario" type="text"  class="respostas" required></td>
     </tr>
    
     <tr>

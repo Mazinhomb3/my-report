@@ -3,7 +3,7 @@
 
  require('../conexao.php');
 
-$usuario = $_POST["usuario"];
+$usuario = $_POST["senha"];
 $usuariomd5=md5($usuario);
 $senha = $_POST["senha"];
 $senhamd5 = md5("$senha");
@@ -12,7 +12,7 @@ $funcao = $_POST["funcao"];
 
 
 
-$sql = "SELECT * FROM tbl_login_sup where nome_login = '$usuariomd5' && senha = '$senhamd5' ";
+$sql = "SELECT * FROM tbl_login_sup where senha = '$usuariomd5' && senha = '$senhamd5' ";
 
 $result = $conexao->query($sql);
 

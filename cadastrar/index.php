@@ -14,21 +14,34 @@
     </div>
 
 <div class="sub">
-    <h4>Cadastrar Surpervisores</h4>
+    <h3>Cadastrar Surpervisores</h3>
 </div>
     <div class="form">
         <form action="login.php">
             <table align="center" border="0" class="tabela">
                 <tr>
                     <td class="inputs">Nome: </td>
-                    <td><input type="text" class="respostas"></td>
+                    <td><input type="text" class="respostas" require></td>
                 </tr>
                 <tr>
                     <td>Senha: </td>
-                    <td><input type="password" class="respostas"></td>
+                    <td><input type="password" class="respostas" require></td>
                 </tr>
-            </table>
+            
+            <div class="divbuton">
+            <tr>
+                <td></td>
+            <td><button class="buton" type="submit">Entrar</button></td>
+            
+        
+            
         </form>
+        </table>
+   
+        </div>
     </div>
 </body>
 </html>
+<?php
+
+?>

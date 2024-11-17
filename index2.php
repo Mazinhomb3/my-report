@@ -155,15 +155,15 @@ else
     <tr>
         <td>R$ <input  class="valor" type="float"  maxlength="10" id="oferta" placeholder="Oferta"></td>
     </tr>
-    
+   
     <tr>
       <td><input  type="submit"  width="90" id="enviar" value="Enviar Dados"></td>
     </tr>
-
+    </div>
     </table>
 
 </form>
-</div>
+
     
 </body>
 </html>

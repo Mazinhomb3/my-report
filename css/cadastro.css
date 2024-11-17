@@ -37,3 +37,24 @@ body {
     width: 15%;
     align-content: center;
     }
+
+    .divbuton {
+
+        align-content: center;
+        text-align: center;
+    }
+
+    .buton {
+        text-align: center;
+        align-content: center;
+        border-radius: 15px;
+        width: 80px;
+        font-size: 15px;
+        padding: 10px 20px;
+        margin-top: 3px;
+        
+    }
+
+    .buton:hover {
+        background-color: green;
+    }
