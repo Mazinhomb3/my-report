@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require('../conexao.php');
 
 $corQuery="SELECT DISTINCT cor_rede FROM tbl_redes ORDER BY cor_rede ASC";
@@ -6,45 +8,6 @@ $corQuery="SELECT DISTINCT cor_rede FROM tbl_redes ORDER BY cor_rede ASC";
 $result = mysqli_query($conexao, $corQuery);
 
 
-$usuario = $_POST["senha"];
-$senha = $_POST["senha"];
-$cor_rede = $_POST["cor_rede"];
-$funcao = $_POST["funcao"];
-
-
-$sql = "INSERT INTO `tbl_login_sup` (`id`, `nome`, `rede`, `senha`, `funcao`) VALUES (NULL, 'Mazinho', 'ROYAL', MD5('43965148249'), 'admin');";
-
-$result = $conexao->query($sql);
-
-if ($result->num_rows > 0) {
-
-    $row = $result->fetch_assoc();
-
-    
-
-    $_SESSION['cod_lider_rede'] = $row['cod_lider_rede'];
-    $_SESSION['nome_lider'] = $row['nome_lider'];
-    $_SESSION['supervisor_rede_lider'] = $row['supervisor_rede_lider'];
-    $_SESSION['rede_lider'] = $row['rede_lider'];
-    $_SESSION['cor_rede_lider'] = $row['cor_rede_lider'];
-    $_SESSION['distrito_lider'] = $row['distrito_lider'];    
-    $_SESSION['area_lider'] = $row['area_lider'];
-    $_SESSION['setor_lider'] = $row['setor_lider'];
-    $_SESSION['data_lider'] = $row['data_lider'];
-
-    $_SESSION['mtp'] = $mtp;
-    $_SESSION['mcp'] = $mcp;
-    $_SESSION['cp'] = $cp;
-    $_SESSION['cria'] = $cria;
-    $_SESSION['tipo'] = $tipo;
-    $_SESSION['valor'] = $valor;
- 
-
-    
-    header('Location: cadastro.php');
-  } else {
-    echo "Usuário ou senha incorretos.";
-  }
 
 ?>
 
@@ -69,7 +32,7 @@ if ($result->num_rows > 0) {
     <h4>Aqui você terá acesso as dados de sua Rede.</h4>
     </div>
 <div class="form">
-    <form id="form" name="cadastrar" method="POST" action="" >
+    <form id="form" name="cadastrar" method="POST" action="login.php" >
 
 <table align="center" border="1" class="table">
 <tr>
@@ -103,16 +66,22 @@ if ($result->num_rows > 0) {
             <option value="supderede">Sup. de Distrito</option>
             <option value="supderede">Sup. de Área</option>
             <option value="supderede">Sup. de Setor</option>
+            <option value="supderede">Admin</option>
         </select>
         </td>
     </tr>
     
 </table>
 
-
+<tr>
+      <td><input  type="submit"  width="90" id="enviar" value="Login"></td>
+    </tr>
 
 </form>
 </div>
-    
+
+
+
+
 </body>
 </html>
