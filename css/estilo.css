@@ -92,7 +92,7 @@
 
 }
 
-@media only screen and (min-width: 768px) and (max-device-width: 1200px) {
+@media only screen and (min-width: 768px) and (max-device-width: 1200px) { 
     body {
         background-color: rgb(4, 4, 150);
         background-image: url(../img/gradient_2.jpg);
@@ -105,10 +105,20 @@
         color: aliceblue;
     }
 
+    .logo {
+        margin-top: 3%;
+        margin-bottom: 0;
+        width: 10%;
+        height: 10%;
+        align-content: center;
+        padding: 3%;
+       }
+
     .divsub {
         text-align: center;
         align-content: center;
-
+        margin: 0;
+        padding: 0;
     }  
 
     .sub {
@@ -184,7 +194,7 @@
 
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px){
     body {
         background-color: rgb(4, 4, 150);
         background-image: url(../img/gradient_2.jpg);
@@ -192,11 +202,26 @@
         background-size: cover;
         justify-content: center;
         padding: 2px;
-        min-height: 90vh;
+        min-height: 100vh;
         margin: 0;
         color: aliceblue;
     }
-    
+
+    .logo {
+        margin-top: 5px;
+        margin-bottom: 0;
+        width: 10%;
+        height: 10%;
+        align-content: center;
+        padding: 3%;
+       }
+
+       .divsub {
+        text-align: center;
+        align-content: center;
+        margin: 0;
+    } 
+
     .sub {
         text-align: center;
         align-items: center;
@@ -205,16 +230,7 @@
         margin-bottom: 0;
         padding-bottom: 0;
     }
-    
-    .form {
-        text-align: center;
-    }
-    
-    .tabela {
-        text-align: center;
-        align-content: center;
-    }
-    
+
     .inputs {
         border-radius: 3%;
         width: 200px;
@@ -225,40 +241,42 @@
        
        
         }
+
+        .resposta {
     
-    .resposta {
-    
-        color:chartreuse;
-            
-     }
-    
-    #button {
-        height: 30px;
-        color: red;
+            color:chartreuse;
                 
-     }       
-    
-    img {
-        margin-top: 2%;
-        margin-bottom: 0;
+         }
+         #button {
+            height: 30px;
+            color: red;
+                    
+         }       
+        
+        img {
+            margin-top: 2%;
+            margin-bottom: 0;
+            width: 50px;
+            height: 50px;
+        }
+        
+                   
+        
+        #enviar {
+            background-color: green;
+            color: white;
+            font-weight: bolder;
+            height: 30px;
+            border-radius: 15px;
+            margin-top: 5%;
+        }
+        
+        .valor{
+        
         width: 50px;
-        height: 50px;
-    }
-    
-               
-    
-    #enviar {
-        background-color: green;
-        color: white;
-        font-weight: bolder;
-        height: 30px;
-        border-radius: 15px;
-        margin-top: 5%;
-    }
-    
-    .valor{
-    
-    width: 50px;
-    
-    }
+        
+        }
+         
+
 }
+    
