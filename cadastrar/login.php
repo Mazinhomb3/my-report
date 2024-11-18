@@ -18,16 +18,12 @@ if ($result->num_rows > 0) {
 
     $row = $result->fetch_assoc();
 
-   
     $_SESSION['id'] = $row['id'];
     $_SESSION['nome'] = $row['nome'];
     $_SESSION['senha'] = $row['senha'];
     
     
-
-    
-    
-    header('Location: listar.php');
+    header('Location: index2.php');
   } else {
     echo "Usuário ou senha incorretos.";
   }

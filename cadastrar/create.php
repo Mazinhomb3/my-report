@@ -10,19 +10,16 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/medias.css">
-    <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
     <title>Celke</title>
 </head>
 
 <body>
-<div class="logo">           
-    <img src="../img/logosup.png" class="logopaz"  alt="">
-    </div>
-     
-<div class="titulo">
+
+    <!-- Links para navegação entre as páginas de listagem e cadastro de usuários -->
+    <a href="index.php">Listar</a><br>
+    <a href="create.php">Cadastrar</a><br><br>
+
     <h2>Cadastrar Usuário</h2>
-    </div>
 
     <?php
 
@@ -58,55 +55,18 @@ session_start();
         }
     }
     ?>
-<div class="form">
-    <table align="center" border="0">
+
     <!-- Formulário para cadastro de um novo usuário -->
     <form method="POST" action="">
-    <tr>
-        <td>
-        <label class="inputs">Nome: </label>
-        <input type="text" name="nome" placeholder="Primeiro nome" class="respostas" required><br><br>
-        </td>
-    </tr>
-    <tr>
-        <td>
-        <label class="inputs">Rede: </label>
-        <input type="text" name="rede" placeholder="Rede" class="respostas" required><br><br>
-        </td>
-    </tr>
-    <tr>
-        <td>
-        <label class="inputs">Senha: </label>
-        <input type="password" name="senha" placeholder="Senha" class="respostas" required><br><br>    
-        </td>
-    </tr>
-    <tr>
-        <td>
-        <label class="inputs">Função: </label>
-        <input type="text" name="funcao" placeholder="Função" class="respostas" required><br><br>    
-        </td>
-    </tr>
-    <tr>
-        <td>
-        
-        <input type="submit" name="AddUser" class="botao2" value="Cadastrar"><br>
-        </td>
-    </tr>
+
+        <label>Nome: </label>
+        <input type="text" name="name" placeholder="Nome completo" required><br><br>
+
+        <label>E-mail: </label>
+        <input type="email" name="email" placeholder="Melhor e-mail" required><br><br>
+
+        <input type="submit" name="AddUser" value="Cadastrar">
     </form>
-    
-    </div>
-
-<div class="div-botao1">
- <ul class="link">
-
-<tr><td><a href="listar.php" class="botao2">Listar</a><br>
-<tr><td><a href="https://www.youtube.com/@pazsantarempa" class="botao2">Auterar</a><br></td></tr>
-<tr><td><a href="https://www.instagram.com/pazsantarempa/" class="botao2">Deletar</a><br></td></tr>
-</table>
-</ul>
-    </div>
-
-
 
 </body>
 

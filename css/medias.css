@@ -199,11 +199,38 @@ margin-bottom: 3px;
 
 }
 
+.botao2 {
+display: inline-block;
+background-color:darkcyan;
+color: #fff;
+border: none;
+padding: 10px 20px;
+font-size: 20px;
+font-weight: bold;
+text-decoration: none;
+cursor: pointer;
+border-radius: 15px;
+width: 150px; /* largura do botão */
+margin-top: 0;
+margin-right: 20px;
+margin-bottom: 3px;
+}
+
 .imgbt {
 width: 40px; /* largura da imagem */
 height: 40px; /* altura da imagem */
 margin-right: 10px; /* espaço entre a imagem e o texto */
 vertical-align: middle; /* alinhamento vertical da imagem */
+}
+
+.form {
+
+text-align: center;
+
+}
+
+.titulo {
+text-align: center;
 }
 
 }
