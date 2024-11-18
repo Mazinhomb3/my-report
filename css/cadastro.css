@@ -55,6 +55,23 @@ body {
         
     }
 
+    .botao2 {
+        display: inline-block;
+        background-color:darkcyan;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 15px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 15px;
+        width: 150px; /* largura do botão */
+        margin-top: 3px;
+        margin-right: 20px;
+        margin-bottom: 3px;
+        }
+
     .buton:hover {
         background-color: green;
     }
@@ -67,3 +84,16 @@ body {
         text-align: center;
         width: 15 0px;
     }
+
+    .titulo {
+        text-align: center;
+        }
+
+    .div-botao1 {
+           
+            
+          }
+
+          .botaocentro {
+            text-align: center;
+          }

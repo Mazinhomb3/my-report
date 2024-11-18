@@ -22,8 +22,8 @@
  <ul class="link">
 <a href="cadastrar.php" class="botao">Cadastrar</a><br>
 <a href="listar.php" class="botao">Listar</a><br>
-<a href="https://www.youtube.com/@pazsantarempa" class="botao">Auterar</a><br>
-<a href="https://www.instagram.com/pazsantarempa/" class="botao">Deletar</a><br>
+<a href="edit.php" class="botao">Auterar</a><br>
+<a href="listar.php" class="botao">Deletar</a><br>
 </ul>
     </div>
     

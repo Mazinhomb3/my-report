@@ -1,7 +1,7 @@
 <?php
  session_start();
 
- require('../Conexao.php');
+ require ('../conexao.php');
 
 $usuario = $_POST["usuario"];
 $usuariomd5=md5($usuario);

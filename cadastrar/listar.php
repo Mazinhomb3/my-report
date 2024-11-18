@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
+    <link rel="shortcut icon" href="../img/logo_paz.ico" type="image/x-icon">
     <title>Celke</title>
 </head>
 
 <body>
-
+<div class="titulo">
     <h2>Listar Usuários</h2>
-
+    </div>
     <?php
     // Importa a classe Connection que estabelece a conexão com o banco de dados.
     require './Connection.php';
@@ -32,7 +34,11 @@
         // Exibe o ID, nome e e-mail do usuário.
         echo "ID: $id <br>";
         echo "Nome: $nome <br>";
+        echo "Rede: $rede <br>";
         echo "Função: $funcao <br>";
+
+        echo "<a href='view.php?id=$id'>Visualizar</a>";
+        
         echo "<hr>";
     }
     ?>
