@@ -59,6 +59,12 @@ body {
         
     }
 
+   .list {
+    width: 200px;
+    height: 20px;
+    text-align: center;
+   }
+
     .botao2 {
         display: inline-block;
         background-color:darkcyan;
@@ -74,6 +80,19 @@ body {
         margin-top: 3px;
         margin-right: 20px;
         margin-bottom: 3px;
+        }
+        .botao3 {
+            text-align: center;
+            display: inline-block;
+            background-color: darkcyan;
+            color: aliceblue;
+            border: none;
+            padding: 5px 10%;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 15px;
+            margin-top: 3%;
         }
 
     .buton:hover {

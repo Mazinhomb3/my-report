@@ -21,7 +21,7 @@ if (!isset($_SESSION['nome']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
     <link rel="shortcut icon" href="../img/logo_paz.ico" type="image/x-icon">
-    <title>Celke</title>
+    <title>Paz Santarém</title>
 </head>
 
 <body>
@@ -47,22 +47,37 @@ if (!isset($_SESSION['nome']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
         // Extrai as chaves do array associativo para variáveis individuais.
         extract($rowUser);
 
-        // Exibe o ID, nome e e-mail do usuário.
-        echo "Id: $id <br>";
-        echo "Nome: $nome <br>";
-        echo "Rede: $rede <br>";
-        echo "Função: $funcao <br>";
-
-        echo "<a href='view.php?id=$id'><span style='color:red;'>Visualizar</span></a>";
-        
-        echo "<hr>";
-    }
-    ?>
-
     
-        
-        
+   
+    ?>
+    <div class="tabela">
+<table align="center" border="0">
+        <?php extract($rowUser);?>
+        <tr>
+            <td class="list">ID: <?php echo "$id <br>";?></td>
+            
+        </tr>
+        <tr>
+            <td class="list">Nome: <?php echo "$nome <br>";?></td>
+            
+        </tr>
+        <tr>
+            <td class="list">Rede: <?php echo "$rede <br>";?></td>
+            
+        </tr>
+        <tr>
+            <td class="list">Função: <?php echo "$funcao <br>";?></td>
            
+        </tr>
+        <tr align="center">
+            <td class="botao3">
+            <?php echo "<a href='view.php?id=$id'><span style='color:white;'>Visualizar</span></a>";?>
+            </td>
+        </tr>
+        <tr class="list"><?php echo "<br>";?></tr>
+    </table> 
+        <?php }?>
+        </div>    
             
 
 </body>

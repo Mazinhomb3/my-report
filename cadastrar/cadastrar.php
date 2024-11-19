@@ -35,7 +35,7 @@ $result1 = mysqli_query($conexao, $corQuery);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
     <link rel="shortcut icon" href="../img/logo_paz.ico" type="image/x-icon">
-    <title>Cadastrar Usuario</title>
+    <title>Paz Santarém</title>
 </head>
 
 <body>
