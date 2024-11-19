@@ -33,6 +33,10 @@ require './Users.php';
 
 <body>
 
+    <!-- Links para navegação entre as páginas de listagem e cadastro de usuários -->
+    <a href="index.php">Listar</a><br>
+    <a href="view.php?id=<?php echo $id ?? ''; ?>">Visualizar</a><br><br>
+
     <h2>Cadastrar Usuário</h2>
 
     <?php

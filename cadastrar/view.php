@@ -32,7 +32,7 @@ $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 <body>
 
     <h2>Visualizar Usuário</h2>
-
+    <a href="edit.php?id=<?php echo $id ?? ''; ?>">Editar</a><br><br>
     <?php
 // Verifica se existe uma mensagem armazenada na sessão.
     if (isset($_SESSION['msg'])) {
