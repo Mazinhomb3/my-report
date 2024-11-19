@@ -49,12 +49,12 @@ background-color:darkcyan;
 color: #fff;
 border: none;
 padding: 15px 25px;
-font-size: 15px;
+font-size: 17px;
 font-weight: bold;
 text-decoration: none;
 cursor: pointer;
 border-radius: 15px;
-width: 200px; /* largura do botão */
+width: 180px; /* largura do botão */
 margin-top: 0;
 margin-right: 20px;
 margin-bottom: 4px;
@@ -62,8 +62,8 @@ margin-bottom: 4px;
 }
 
 .imgbt {
-width: 25px; /* largura da imagem */
-height: 25px; /* altura da imagem */
+width: 30px; /* largura da imagem */
+height: 30px; /* altura da imagem */
 margin-right: 10px; /* espaço entre a imagem e o texto */
 vertical-align: middle; /* alinhamento vertical da imagem */
 }
