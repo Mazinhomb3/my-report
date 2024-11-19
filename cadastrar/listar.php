@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+
+if (!isset($_SESSION['nome']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+    //A última solicitação foi há mais de 30 minutos
+    session_unset();     //Variável para o tempo de execução 
+    session_destroy();   //Destruir os dados da sessão no armazenamento
+
+     header('Location: index.php');
+     
+   }
+   $_SESSION['LAST_ACTIVITY'] = time();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -10,6 +25,7 @@
 </head>
 
 <body>
+<div class="login"><?php echo "Bem vindo, " . $_SESSION['nome'] . "!";?></div>
 <div class="titulo">
     <h2>Listar Usuários</h2>
     </div>
@@ -32,16 +48,22 @@
         extract($rowUser);
 
         // Exibe o ID, nome e e-mail do usuário.
-        echo "ID: $id <br>";
+        echo "Id: $id <br>";
         echo "Nome: $nome <br>";
         echo "Rede: $rede <br>";
         echo "Função: $funcao <br>";
 
-        echo "<a href='view.php?id=$id'>Visualizar</a>";
+        echo "<a href='view.php?id=$id'><span style='color:red;'>Visualizar</span></a>";
         
         echo "<hr>";
     }
     ?>
+
+    
+        
+        
+           
+            
 
 </body>
 

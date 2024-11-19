@@ -10,6 +10,10 @@ body {
     color: aliceblue;
 }
 
+.login {
+    text-align: center;
+  }
+
 .sub {
     text-align: center;
     align-items: center;
@@ -77,12 +81,13 @@ body {
     }
     
     .inputs {
-        text-align: center;
+        text-align:right;
+    color: #fff;    
     }
 
     .respostas {
-        text-align: center;
-        width: 15 0px;
+        text-align:left ;
+        width: 150px;
     }
 
     .titulo {
