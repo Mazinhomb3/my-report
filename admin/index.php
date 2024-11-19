@@ -41,7 +41,8 @@ $result = mysqli_query($conexao, $corQuery);
     </tr>
    
     <tr>
-        <td class="inputs">Rede: </td><td>
+        <td class="inputs">Rede: </td>
+        <td>
         <select name="cor_rede" id="cor_rede" align="center"  class="respostas">
         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
     <option value="<?php echo $row['cor_rede']; ?>"><?php echo $row['cor_rede']; ?></option>

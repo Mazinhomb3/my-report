@@ -3,6 +3,12 @@
 // Inicia a sessão para armazenar e acessar variáveis de sessão.
 session_start();
 
+
+require('../conexao.php');
+$corQuery="SELECT DISTINCT rede FROM tbl_login_sup ORDER BY rede ASC";
+
+$result = mysqli_query($conexao, $corQuery);
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -75,7 +81,10 @@ session_start();
         <label class="inputs">Rede: </label>
         </td>
         <td>
-        <input type="text" name="rede" placeholder="Rede" class="respostas" required>
+        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+            <select name="cor_rede" id="cor_rede" align="center"  class="respostas">
+            <option value="<?php echo $row['rede']; ?>"><?php echo $row['rede']; ?></option><?php } ?>
+            </select>
         </td>
     </tr>
     <tr>
