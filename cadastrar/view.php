@@ -104,19 +104,17 @@ $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
             <td class="list">Função: <?php echo "$funcao <br>";?></td>
             </tr>
             
-            <td class="btviews">
-            <a href="edit.php?id=<?php echo $id ?? ''; ?>">Editar</a>
-            </td> 
+                <td align="center" class="btviews">
+    <a href="edit.php?id=<?php echo $id ?? ''; ?>">Editar</a>           
+            </td>
+            
+            
             
         </table>
 
     </div>
-    <div >
-           
-</div>
-    <?php
-    
-    ?>
+  
+   
 </body>
 
 </html>

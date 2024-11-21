@@ -21,6 +21,17 @@ require './Connection.php';
 // Importa a classe Users que realiza a consulta ao usuário.
 require './Users.php';
 
+require('../conexao.php');
+
+$corQuery="SELECT DISTINCT rede FROM tbl_login_sup ORDER BY rede ASC";
+
+$result = mysqli_query($conexao, $corQuery);
+
+$corQuery="SELECT DISTINCT funcao FROM tbl_login_sup ORDER BY funcao ASC";
+
+$result1 = mysqli_query($conexao, $corQuery);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -28,7 +39,9 @@ require './Users.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celke</title>
+    <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
+    <link rel="shortcut icon" href="../img/logo_paz.ico" type="image/x-icon">
+    <title>Paz Santarém</title>
 </head>
 
 <body>
@@ -36,9 +49,9 @@ require './Users.php';
     <!-- Links para navegação entre as páginas de listagem e cadastro de usuários -->
     <a href="index.php">Listar</a><br>
     <a href="view.php?id=<?php echo $id ?? ''; ?>">Visualizar</a><br><br>
-
+    <div class="titulo">
     <h2>Cadastrar Usuário</h2>
-
+    </div>
     <?php
 
     // Filtra os dados do formulário enviados via POST.
@@ -95,25 +108,48 @@ require './Users.php';
         }
     }
     ?>
-
+<table border="1" align="center">
     <!-- Formulário para edição de um usuário existente -->
     <form method="POST" action="">
 
         <!-- Campo oculto para armazenar o ID do usuário -->
         <input type="hidden" name="id" value="<?php echo $id ?? ''; ?>">
-
+    <tr><td>
         <!-- Campo para edição do nome do usuário -->
         <label>Nome: </label>
-        <input type="text" name="name" placeholder="Nome completo" value="<?php echo $name ?? ''; ?>" required><br><br>
-
+        <input type="text" name="name" placeholder="Nome completo" value="<?php echo $name ?? ''; ?>" required>
+        </td>    
+    </tr>
+    <tr><td>
         <!-- Campo para edição do e-mail do usuário -->
-        <label>E-mail: </label>
-        <input type="email" name="email" placeholder="Melhor e-mail" value="<?php echo $email ?? ''; ?>" required><br><br>
+        <label>Rede: </label>
+        
+        <select name="rede" id="rede" align="center" class="respostas" >
+        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+        <option  value="<?php echo $row['rede']; ?>"><?php echo $row['rede']; ?></option>
+        <?php } ?>
+        </select>
+        </td>
+        <tr><td>
+        <label>Função: </label>
+        
+        
+        <select name="funcao" id="funcao" align="center"  class="respostas">
+        <?php while ($row = mysqli_fetch_assoc($result1)) { ?>
+        <option value="<?php echo $row['funcao']; ?>"><?php echo $row['funcao']; ?></option>
+        <?php } ?>
+        </select>
+        </td>
+        </tr>
+        <tr><td align="center">
+            <!-- Botão para submeter as alterações -->
+        <input align="center"  class="botao3" type="submit" name="EditUser" value="Editar">
+        </td></tr>
 
-        <!-- Botão para submeter as alterações -->
-        <input type="submit" name="EditUser" value="Editar">
+
+        
     </form>
-
+    </table>
 </body>
 
 </html>
