@@ -26,13 +26,13 @@ $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
     <link rel="shortcut icon" href="../img/logo_paz.ico" type="image/x-icon">
-    <title>Celke</title>
+    <title>Paz Santarém</title>
 </head>
 
 <body>
-
+    <div class="titulo">
     <h2>Visualizar Usuário</h2>
-    <a href="edit.php?id=<?php echo $id ?? ''; ?>">Editar</a><br><br>
+    </div>
     <?php
 // Verifica se existe uma mensagem armazenada na sessão.
     if (isset($_SESSION['msg'])) {
@@ -66,10 +66,12 @@ $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
             extract($valueUser);
 
             // Exibe o ID, nome e e-mail do usuário.
+           /*
             echo "Id do usuário: $id <br>";
             echo "Nome do usuário: $nome <br>";
             echo "Nome do usuário: $rede <br>";
             echo "Função do usuário: $funcao <br>";
+            */
         } else {
 
             // Armazena uma mensagem de erro na sessão se o usuário não for encontrado.
@@ -87,6 +89,34 @@ $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
     }
     ?>
 
+    <div class="tabela">
+        <table align="center" border="0">
+            <tr>
+            <td class="list">ID: <?php echo "$id <br>";?></td>
+            </tr>
+            <tr>
+            <td class="list">Nome: <?php echo "$nome <br>";?></td>
+            </tr>
+            <tr>
+            <td class="list">Rede: <?php echo "$rede <br>";?></td>
+            </tr>
+            <tr>
+            <td class="list">Função: <?php echo "$funcao <br>";?></td>
+            </tr>
+            
+            <td class="btviews">
+            <a href="edit.php?id=<?php echo $id ?? ''; ?>">Editar</a>
+            </td> 
+            
+        </table>
+
+    </div>
+    <div >
+           
+</div>
+    <?php
+    
+    ?>
 </body>
 
 </html>

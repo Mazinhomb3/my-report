@@ -23,6 +23,7 @@ body {
     padding-bottom: 0;
 }
 
+
 .logo {
     margin-top: 0;
     margin-bottom: 2px;
@@ -93,6 +94,22 @@ body {
             cursor: pointer;
             border-radius: 15px;
             margin-top: 3%;
+            width: 100px;
+        }
+
+        .btviews {
+            text-align: center;
+            background-color: darkcyan;
+            color: aliceblue;
+            border: none;
+            padding: 5px 10px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 15px;
+            margin-top: 15px;
+            width: 40px;
+            font-size: 15px;
         }
 
     .buton:hover {
@@ -117,3 +134,9 @@ body {
           .botaocentro {
             text-align: center;
           }
+
+          .list {
+            margin-top: 5%;
+          }
+
+          
