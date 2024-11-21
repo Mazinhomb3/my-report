@@ -20,7 +20,6 @@ $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,26 +30,26 @@ $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
 <body>
     <div class="titulo">
-    <h2>Visualizar Usuário</h2>
+        <h2>Visualizar Usuário</h2>
     </div>
     <?php
-// Verifica se existe uma mensagem armazenada na sessão.
+    // Verifica se existe uma mensagem armazenada na sessão.
     if (isset($_SESSION['msg'])) {
-    // Imprime a mensagem na tela.
-    echo $_SESSION['msg'];
+        // Imprime a mensagem na tela.
+        echo $_SESSION['msg'];
 
-    // Remove a mensagem da sessão para evitar que ela seja exibida novamente ao recarregar a página.
-    unset($_SESSION['msg']);
-}
+        // Remove a mensagem da sessão para evitar que ela seja exibida novamente ao recarregar a página.
+        unset($_SESSION['msg']);
+    }
 
     // Verifica se o ID foi fornecido e não está vazio.
     if (!empty($id)) {
 
         // Importa a classe Connection que estabelece a conexão com o banco de dados.
-        require ('./Connection.php');
+        require('./Connection.php');
 
         // Importa a classe Users que realiza a consulta ao usuário.
-        require ('./Users.php');
+        require('./Users.php');
 
         // Instancia a classe Users e define o ID do usuário a ser visualizado.
         $viewUser = new Users();
@@ -66,7 +65,7 @@ $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
             extract($valueUser);
 
             // Exibe o ID, nome e e-mail do usuário.
-           /*
+            /*
             echo "Id do usuário: $id <br>";
             echo "Nome do usuário: $nome <br>";
             echo "Nome do usuário: $rede <br>";
@@ -92,29 +91,29 @@ $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
     <div class="tabela">
         <table align="center" border="0">
             <tr>
-            <td class="list">ID: <?php echo "$id <br>";?></td>
+                <td class="list">ID: <?php echo "$id <br>"; ?></td>
             </tr>
             <tr>
-            <td class="list">Nome: <?php echo "$nome <br>";?></td>
+                <td class="list">Nome: <?php echo "$nome <br>"; ?></td>
             </tr>
             <tr>
-            <td class="list">Rede: <?php echo "$rede <br>";?></td>
+                <td class="list">Rede: <?php echo "$rede <br>"; ?></td>
             </tr>
             <tr>
-            <td class="list">Função: <?php echo "$funcao <br>";?></td>
+                <td class="list">Função: <?php echo "$funcao <br>"; ?></td>
             </tr>
-            
-                <td align="center" class="btviews">
-    <a href="edit.php?id=<?php echo $id ?? ''; ?>">Editar</a>           
+
+            <td align="center">
+                <a class="botaoedit" href="edit.php?id=<?php echo $id ?? ''; ?>">Editar</a>
             </td>
-            
-            
-            
+
+
+
         </table>
 
     </div>
-  
-   
+
+
 </body>
 
 </html>

@@ -12,7 +12,7 @@ body {
 
 .login {
     text-align: center;
-  }
+}
 
 .sub {
     text-align: center;
@@ -30,10 +30,10 @@ body {
     text-align: center;
     align-content: center;
     text-align: center;
-  
-  }
 
-  .logopaz {
+}
+
+.logopaz {
     color: aliceblue;
     margin-top: 5%;
     padding-left: 15px;
@@ -41,103 +41,125 @@ body {
     height: 10%;
     width: 10%;
     align-content: center;
-    }
+}
 
-    .divbuton {
+.divbuton {
 
-        align-content: center;
-        text-align: center;
-    }
+    align-content: center;
+    text-align: center;
+}
 
-    .buton {
-        text-align: center;
-        align-content: center;
-        border-radius: 15px;
-        width: 80px;
-        font-size: 15px;
-        padding: 5px 10px;
-        margin-top: 3px;
-        
-    }
+.buton {
+    text-align: center;
+    align-content: center;
+    border-radius: 15px;
+    width: 80px;
+    font-size: 15px;
+    padding: 5px 10px;
+    margin-top: 3px;
 
-   .list {
+}
+
+.list {
     width: 200px;
     height: 20px;
     text-align: center;
-   }
+}
 
-    .botao2 {
-        display: inline-block;
-        background-color:darkcyan;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        font-size: 15px;
-        font-weight: bold;
-        text-decoration: none;
-        cursor: pointer;
-        border-radius: 15px;
-        width: 150px; /* largura do botão */
-        margin-top: 3px;
-        margin-right: 20px;
-        margin-bottom: 3px;
-        }
-        .botao3 {
-            text-align: center;
-            display: inline-block;
-            background-color: darkcyan;
-            color: aliceblue;
-            border: none;
-            padding: 5px 10%;
-            font-weight: bold;
-            text-decoration: none;
-            cursor: pointer;
-            border-radius: 15px;
-            margin-top: 3%;
-            width: 100px;
-        }
+.botao2 {
+    display: inline-block;
+    background-color: darkcyan;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 150px;
+    /* largura do botão */
+    margin-top: 3px;
+    margin-right: 20px;
+    margin-bottom: 3px;
+}
 
-        .btviews {
-            text-align: center;
-            background-color: darkcyan;
-            color: aliceblue;
-            border: none;
-            padding: 5px 10px;
-            font-weight: bold;
-            text-decoration: none;
-            cursor: pointer;
-            border-radius: 15px;
-            margin-top: 15px;
-            width: 40px;
-            font-size: 15px;
-        }
+.botao3 {
+    text-align: center;
+    display: inline-block;
+    background-color: darkcyan;
+    color: aliceblue;
+    border: none;
+    padding: 10px 10%;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-top: 3%;
+    width: 58%;
 
-    .buton:hover {
-        background-color: green;
-    }
-    
-    .inputs {
-        text-align:right;
-    color: #fff;    
-    }
+}
 
-    .respostas {
-        text-align:left ;
-        width: 150px;
-    }
+.botaoedit {
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 10px;
+    background-color: darkcyan;
+    color: aliceblue;
+    border: none;
+    padding: 10px 10%;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-top: 3%;
+    width: 70px;
 
-    .titulo {
-        text-align: center;
-        }
+}
+
+.btviews {
+    text-align: center;
+    background-color: darkcyan;
+    color: aliceblue;
+    border: none;
+    padding: 5px 10px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-top: 10px;
+    width: 40px;
+    font-size: 15px;
+}
+
+.buton:hover {
+    background-color: green;
+}
+
+.inputs {
+    text-align: right;
+    color: #fff;
+}
+
+.respostas {
+    text-align: left;
+    width: 150px;
+}
+
+.titulo {
+    text-align: center;
+}
 
 
-          .botaocentro {
-            text-align: center;
-          }
+.botaocentro {
+    text-align: center;
+}
 
-          .list {
-            text-align: left;
-            margin-top: 5%;
-          }
+.list {
+    text-align: left;
+    margin-top: 5%;
+}
 
-          
+.label {
+    text-align: left;
+}

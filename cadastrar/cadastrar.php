@@ -3,6 +3,7 @@
 // Inicia a sessão para armazenar e acessar variáveis de sessão.
 session_start();
 
+require('../conexao.php');
 
 if (!isset($_SESSION['nome']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
     //A última solicitação foi há mais de 30 minutos
@@ -51,7 +52,7 @@ $result1 = mysqli_query($conexao, $corQuery);
     <?php
 
     // Importa a classe Connection que estabelece a conexão com o banco de dados.
-    require './Connection.php';
+    require ('./Connection.php');
 
     // Importa a classe Users que realiza a consulta aos usuários.
     require './Users.php';

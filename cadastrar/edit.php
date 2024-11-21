@@ -23,11 +23,11 @@ require './Users.php';
 
 require('../conexao.php');
 
-$corQuery="SELECT DISTINCT rede FROM tbl_login_sup ORDER BY rede ASC";
+$corQuery = "SELECT DISTINCT rede FROM tbl_login_sup ORDER BY rede ASC";
 
 $result = mysqli_query($conexao, $corQuery);
 
-$corQuery="SELECT DISTINCT funcao FROM tbl_login_sup ORDER BY funcao ASC";
+$corQuery = "SELECT DISTINCT funcao FROM tbl_login_sup ORDER BY funcao ASC";
 
 $result1 = mysqli_query($conexao, $corQuery);
 
@@ -46,11 +46,9 @@ $result1 = mysqli_query($conexao, $corQuery);
 
 <body>
 
-    <!-- Links para navegação entre as páginas de listagem e cadastro de usuários -->
-    <a href="index.php">Listar</a><br>
-    <a href="view.php?id=<?php echo $id ?? ''; ?>">Visualizar</a><br><br>
+
     <div class="titulo">
-    <h2>Cadastrar Usuário</h2>
+        <h2>Editar Usuário</h2>
     </div>
     <?php
 
@@ -108,48 +106,56 @@ $result1 = mysqli_query($conexao, $corQuery);
         }
     }
     ?>
-<table border="1" align="center">
-    <!-- Formulário para edição de um usuário existente -->
-    <form method="POST" action="">
+    <table border="0" align="center">
+        <!-- Formulário para edição de um usuário existente -->
+        <form method="POST" action="">
 
-        <!-- Campo oculto para armazenar o ID do usuário -->
-        <input type="hidden" name="id" value="<?php echo $id ?? ''; ?>">
-    <tr><td>
-        <!-- Campo para edição do nome do usuário -->
-        <label>Nome: </label>
-        <input type="text" name="name" placeholder="Nome completo" value="<?php echo $name ?? ''; ?>" required>
-        </td>    
-    </tr>
-    <tr><td>
-        <!-- Campo para edição do e-mail do usuário -->
-        <label>Rede: </label>
-        
-        <select name="rede" id="rede" align="center" class="respostas" >
-        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-        <option  value="<?php echo $row['rede']; ?>"><?php echo $row['rede']; ?></option>
-        <?php } ?>
-        </select>
-        </td>
-        <tr><td>
-        <label>Função: </label>
-        
-        
-        <select name="funcao" id="funcao" align="center"  class="respostas">
-        <?php while ($row = mysqli_fetch_assoc($result1)) { ?>
-        <option value="<?php echo $row['funcao']; ?>"><?php echo $row['funcao']; ?></option>
-        <?php } ?>
-        </select>
-        </td>
-        </tr>
-        <tr><td align="center">
-            <!-- Botão para submeter as alterações -->
-        <input align="center"  class="botao3" type="submit" name="EditUser" value="Editar">
-        </td></tr>
+            <!-- Campo oculto para armazenar o ID do usuário -->
+            <input type="hidden" name="id" value="<?php echo $id ?? ''; ?>">
+            <tr>
+                <td>
+                    <!-- Campo para edição do nome do usuário -->
+                    <label>Nome: </label>
+                <td>
+                    <input type="text" name="name" placeholder="Nome" value="<?php echo $name ?? ''; ?>" required>
+                </td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!-- Campo para edição do e-mail do usuário -->
+                    <label>Rede: </label>
+                <td>
+                    <select name="rede" id="rede" align="center" class="respostas">
+                        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                            <option value="<?php echo $row['rede']; ?>"><?php echo $row['rede']; ?></option>
+                        <?php } ?>
+                    </select>
+                </td>
+                </td>
+            <tr>
+                <td>
+                    <label>Função: </label>
+                <td>
 
+                    <select name="funcao" id="funcao" align="center" class="respostas">
+                        <?php while ($row = mysqli_fetch_assoc($result1)) { ?>
+                            <option value="<?php echo $row['funcao']; ?>"><?php echo $row['funcao']; ?></option>
+                        <?php } ?>
+                    </select>
+                </td>
+                </td>
+            </tr>
+            <td></td>
+            <td>
+                <input align="center" class="botao3" type="submit" name="EditUser" value="Editar">
+                <a class="botaoedit" href="listar.php">Listar</a>
+                <a class="botaoedit" href="view.php?id=<?php echo $id ?? ''; ?>">Visualizar</a>
+            </td>
+            <td></td>
 
-        
-    </form>
-    </table>
+        </form>
+
 </body>
 
 </html>
