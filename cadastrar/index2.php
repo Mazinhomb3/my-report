@@ -22,7 +22,7 @@ if (!isset($_SESSION['nome']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/medias.css">
     <link rel="shortcut icon" href="/img/logo_paz.ico" type="image/x-icon">
-    <title>PAZ-STM</title>
+    <title>Paz Santarém</title>
 <style>
 
 </style>

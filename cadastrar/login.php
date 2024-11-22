@@ -21,6 +21,7 @@ if ($result->num_rows > 0) {
     $_SESSION['id'] = $row['id'];
     $_SESSION['nome'] = $row['nome'];
     $_SESSION['senha'] = $row['senha'];
+    $_SESSION['funcao'] = $row['funcao'];
     
     
     header('Location: index2.php');

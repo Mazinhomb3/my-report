@@ -30,11 +30,30 @@
     .inputs {
         width: 50px;
         font-size: 18px;
+        text-align: right;
     }
 
     .respostas {
         width: 180px;
         font-size: 18px;
+        text-align: left;
+    }
+
+    .botaoadmin {
+        display: inline-block;
+        background-color: darkcyan;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 15px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 15px;
+        width: 150px;/* largura do botão */
+        margin-top: 3px;
+        margin-right: 20px;
+        margin-bottom: 3px;
     }
 
   }

@@ -12,7 +12,7 @@ $funcao = $_POST["funcao"];
 
 
 
-$sql = "SELECT * FROM tbl_login_sup where nome_login = '$usuariomd5' && senha = '$senhamd5' ";
+$sql = "SELECT * FROM tbl_login_sup where nome_login = '$usuariomd5' && senha = '$senhamd5' and funcao = '$funcao' limit 1";
 
 $result = $conexao->query($sql);
 
@@ -26,11 +26,12 @@ if ($result->num_rows > 0) {
     $_SESSION['rede'] = $row['rede'];
     $_SESSION['senha'] = $row['senha'];
     $_SESSION['funcao'] = $row['funcao'];
+    $_SESSION['nivel'] = $row['nivel'];
     
 
     
     
-    header('Location: logado.php');
+    header('Location: index2.php');
   } else {
     echo "Usuário ou senha incorretos.";
   }
