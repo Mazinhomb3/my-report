@@ -79,15 +79,7 @@ $result1 = mysqli_query($conexao, $corQuery);
                         <input name="dtini" type="date" id="dtini" class="respostas">
                     </td>
                 </tr>
-                <tr>
-                    <td class="inputs">
-                        Data final:
-                    </td>
-                    <td>
-                        <input name="dtout" type="date" id="dtout" class="respostas">
-                    </td>
-                </tr>
-
+               
             </table>
 
             <tr>

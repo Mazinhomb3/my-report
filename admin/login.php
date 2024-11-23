@@ -10,7 +10,7 @@ $senhamd5 = md5("$senha");
 $cor_rede = $_POST["cor_rede"];
 $funcao = $_POST["funcao"];
 $dtini = $_POST["dtini"];
-$dtout = $_POST["dtout"];
+
 
 
 $sql = "SELECT * FROM tbl_login_sup where nome_login = '$usuariomd5' && senha = '$senhamd5' and funcao = '$funcao' limit 1";
@@ -28,11 +28,10 @@ if ($result->num_rows > 0) {
     $_SESSION['funcao'] = $row['funcao'];
     $_SESSION['nivel'] = $row['nivel'];
     $_SESSION['dtini'] = $dtini;
-    $_SESSION['dtout'] = $dtout;
 
    
     
-    header('Location: index2.php');
+    header('Location: nivel.php');
 
   } else {
     echo "Usuário ou senha incorretos.";

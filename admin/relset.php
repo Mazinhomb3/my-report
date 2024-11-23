@@ -17,17 +17,14 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
 
 require('../conexao.php');
 
+$nome = $_SESSION['nome'];
 $rede = $_SESSION['rede'];
 $funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
-$dtout = $_SESSION['dtout'];
 
-
-$corQuery = "SELECT DISTINCT * FROM tbl_dados where cor_rede_lider like '$rede' and data_lider > 'dtini'";
+$corQuery = "SELECT DISTINCT * FROM tbl_dados where cor_rede_lider like '$rede' and area_lider like '$nome' and data_lider > '$dtini' ";
 
 $result = mysqli_query($conexao, $corQuery);
-
-
 
 ?>
 
@@ -45,32 +42,25 @@ $result = mysqli_query($conexao, $corQuery);
 
 <body>
     <div class="sessao">
-        <?php echo "Bem-vindo, " . $_SESSION['nome'] . $_SESSION['funcao']; ?>
-        <?php echo "$rede"; ?>
-        <?php echo "$funcao"; ?>
+        <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
+
     </div>
 
-    <table border="1" align="center">
-        <tr>
-            <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+    <div>
+
+        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+
+            <table border="1" align="center">
+
                 <tr>
-                <td>Data: </td>
-                <td><?php echo $row['data_lider']; ?></td>
-                </tr>
-                <tr>
-                <td>Nome Lider: </td>
-                <td><?php echo $row['nome_lider']; ?></td>
-                </tr>
-                <tr>
-                <td>Rede: </td>
-                <td><?php echo $row['cor_rede_lider']; ?></td>
+                    <td class="inputs">Nome Lider:</td>
+                    <td class="respostas"><?php echo $row['nome_lider']; ?></td>
                 </tr>
 
+            <?php } ?>
+            </table>
 
-                <td><?php echo $datafil; ?></td>
-        </tr>
-    <?php } ?>
-    </table>
+    </div>
 </body>
 
 </html>

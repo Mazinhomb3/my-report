@@ -5,14 +5,14 @@
         align-content: center;
         color: white;
         text-align: center;
-    
-    }   
 
-    .divi-img {
-        text-align: center;     
     }
 
-    .img{
+    .divi-img {
+        text-align: center;
+    }
+
+    .img {
         width: 100px;
         height: 100px;
     }
@@ -22,13 +22,12 @@
         font-size: 18px;
     }
 
-    .form{
+    .form {
         align-content: cover;
-
     }
 
     .inputs {
-        width: 50px;
+        width: 100px;
         font-size: 18px;
         text-align: right;
     }
@@ -36,7 +35,9 @@
     .respostas {
         width: 180px;
         font-size: 18px;
-        text-align: left;
+        text-align: center;
+        background-color: rgb(174, 173, 173);
+        color: rgb(0, 0, 0);
     }
 
     .botaoadmin {
@@ -50,7 +51,8 @@
         text-decoration: none;
         cursor: pointer;
         border-radius: 15px;
-        width: 150px;/* largura do botão */
+        width: 150px;
+        /* largura do botão */
         margin-top: 3px;
         margin-right: 20px;
         margin-bottom: 3px;
@@ -62,6 +64,4 @@
         margin-top: 10px;
     }
 
-  }
-  
-  
+}
