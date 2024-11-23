@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 require('../conexao.php');
 
@@ -34,6 +34,7 @@ $result1 = mysqli_query($conexao, $corQuery);
     <div class="titulo">
         <h4>Bem vindo!</h4>
         <h4>Aqui você terá acesso as dados de sua Rede.</h4>
+        <h4>Informe data inicial e final da pesquisa!</h4>
     </div>
     <div class="form">
         <form id="form" name="cadastrar" method="POST" action="login.php">
@@ -43,7 +44,13 @@ $result1 = mysqli_query($conexao, $corQuery);
                     <td class="inputs">Nome: </td>
                     <td><input name="usuario" id="usuario" type="text" class="respostas" required></td>
                 </tr>
-
+                </tr>
+                <tr>
+                    <td class="inputs">Senha: </td>
+                    <td>
+                        <input name="senha" id="senha" type="password" class="respostas">
+                </tr>
+                </tr>
                 <tr>
                     <td class="inputs">Rede: </td>
                     <td>
@@ -54,14 +61,6 @@ $result1 = mysqli_query($conexao, $corQuery);
                     </td>
                     </select>
                 </tr>
-                </tr>
-                <tr>
-                    <td class="inputs">Senha: </td>
-                    <td>
-                        <input name="senha" id="senha" type="password" class="respostas">
-                </tr>
-                </tr>
-
                 <tr>
                     <td class="inputs">Função: </td>
                     <td>
@@ -71,6 +70,22 @@ $result1 = mysqli_query($conexao, $corQuery);
                             <?php } ?>
                     </td>
                     </select>
+                </tr>
+                <tr>
+                    <td class="inputs">
+                        Data Inicial:
+                    </td>
+                    <td>
+                        <input name="dtini" type="date" id="dtini" class="respostas">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="inputs">
+                        Data final:
+                    </td>
+                    <td>
+                        <input name="dtout" type="date" id="dtout" class="respostas">
+                    </td>
                 </tr>
 
             </table>
