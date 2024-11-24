@@ -32,6 +32,11 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     <img src="./img/logosup.png" class="logopaz"  alt="">
     </div>
 
+    ß<div class="sessao">
+        <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
+
+    </div>
+
 <div class="div-botao1">
  <ul class="link">
 <a href="index2.php" class="botao"><img src="./img/logo_paz.png" class="imgbt" alt="Descrição da imagem">Sup. de Rede</a><br>

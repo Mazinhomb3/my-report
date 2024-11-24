@@ -22,7 +22,7 @@ $rede = $_SESSION['rede'];
 $funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
 
-$corQuery = "SELECT DISTINCT funcao FROM tbl_login_sup where rede like '$rede' and funcao like 'setor'";
+$corQuery = "SELECT DISTINCT id, nome FROM tbl_login_sup where rede like '$rede' and funcao like 'setor'";
 
 $result = mysqli_query($conexao, $corQuery);
 
@@ -50,11 +50,11 @@ $result = mysqli_query($conexao, $corQuery);
     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
         <tr>
             <td class="inputs">Nome Setor:</td>
-            <td class="respostas"><?php echo $row['setor_lider']; ?></td>
+            <td class="respostas"><?php echo $row['nome']; ?><br></td>
         </tr>
-
+        <?php } ?>
     </table>
-    <?php } ?>
+    
 </body>
 
 </html>
