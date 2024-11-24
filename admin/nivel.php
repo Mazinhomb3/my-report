@@ -41,10 +41,10 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
 
     <div class="div-botao1">
         <ul class="link">
-            <a href="index2.php" class="botao">Sup. de Rede</a><br>
+            <a href="" class="botao">Sup. de Rede</a><br>
             <a href="" class="botao">Rede</a><br>
             <a href="" class="botao">Distrito</a><br>
-            <a href="setores.php" class="botao">Área</a><br>
+            <a href="" class="botao">Área</a><br>
             <a href="lider.php" class="botao">Setor</a><br>
         </ul>
     </div>

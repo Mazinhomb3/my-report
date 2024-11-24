@@ -29,9 +29,13 @@ if ($result->num_rows > 0) {
     $_SESSION['nivel'] = $row['nivel'];
     $_SESSION['dtini'] = $dtini;
 
-   
-    
+   $nivel = $_SESSION['nivel'];
+   if('$nivel' == 1)
+   {
     header('Location: nivel.php');
+   }
+    
+    
 
   } else {
     echo "Usuário ou senha incorretos.";
