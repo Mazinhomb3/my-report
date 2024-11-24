@@ -20,6 +20,7 @@
     .titulo {
         text-align: center;
         font-size: 18px;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .form {
@@ -36,14 +37,16 @@
         width: 180px;
         font-size: 18px;
         text-align: center;
-        background-color: rgb(174, 173, 173);
+        background-color: rgb(255, 255, 255);
         color: rgb(0, 0, 0);
+        border-radius: 5px;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .botaoadmin {
         display: inline-block;
         background-color: darkcyan;
-        color: #fff;
+        color: #ffffff;
         border: none;
         padding: 10px 20px;
         font-size: 15px;
@@ -62,6 +65,7 @@
         align-content: center;
         text-align: center;
         margin-top: 10px;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .botao {
@@ -75,7 +79,7 @@
         text-decoration: none;
         cursor: pointer;
         border-radius: 15px;
-        width: 180px; /* largura do botão */
+        width: 130px; /* largura do botão */
         margin-top: 0;
         margin-right: 20px;
         margin-bottom: 4px;

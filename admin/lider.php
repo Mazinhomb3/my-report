@@ -1,6 +1,4 @@
 <?php
-
-
 if (!isset($_SESSION))
     session_start();
 
@@ -22,16 +20,14 @@ $rede = $_SESSION['rede'];
 $funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
 
-$corQuery = "SELECT DISTINCT `nome` FROM tbl_login_sup where `rede` like '$rede' and `funcao` like 'setor'";
+$corQuery = "SELECT DISTINCT `nome_lider` FROM tbl_dados where `cor_rede_lider` like '$rede' and setor_lider like '$nome'";
 
 $result = mysqli_query($conexao, $corQuery);
 
 ?>
 
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -42,21 +38,26 @@ $result = mysqli_query($conexao, $corQuery);
 </head>
 
 <body>
-
     <div class="sessao">
-        <?php echo "Bem-vindo, " . $_SESSION['nome'] . $_SESSION['rede'] ?>
+        <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!"?><br>
+        <?php echo "Rede, " . $_SESSION['rede'] . "!"?><br>
 
     </div>
 
-    <table border="0" align="center">
-    <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-        <tr>
-            
-            <td> <a href="lider.php"   class="botao"> <?php  echo $row['nome']; ?></a><br></td>
-        </tr>
-        <?php } ?>
-    </table>
-    
+
+    <div class="titulo">
+
+        <h4>Líderes de Célula</h4>
+    </div>
+    <div>
+        <table border="0" align="center">
+            <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                <tr>
+                    <td class="respostas"><?php echo $row['nome_lider']; ?><br></td>
+                </tr>
+            <?php } ?>
+        </table>
+    </div>
 </body>
 
 </html>
