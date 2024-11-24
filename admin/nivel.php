@@ -23,7 +23,7 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./css/medias.css">
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
     <link rel="shortcut icon" href="/img/logo_paz.ico" type="image/x-icon">
     <title>Document</title>
 </head>
@@ -32,18 +32,18 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     <img src="./img/logosup.png" class="logopaz"  alt="">
     </div>
 
-    ß<div class="sessao">
+    <div class="sessao">
         <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
 
     </div>
 
 <div class="div-botao1">
  <ul class="link">
-<a href="index2.php" class="botao"><img src="./img/logo_paz.png" class="imgbt" alt="Descrição da imagem">Sup. de Rede</a><br>
-<a href="" class="botao"><img src="./img/whats.png" class="imgbt" alt="Descrição da imagem">Rede</a><br>
-<a href="" class="botao"><img src="./img/youtube.png" class="imgbt" alt="Descrição da imagem">Distrito</a><br>
-<a href="" class="botao"><img src="./img/instagram.png" class="imgbt" alt="Descrição da imagem">Área</a><br>
-<a href="setores.php" class="botao"><img src="./img/face.png" class="imgbt" alt="Descrição da imagem">Setor</a><br>
+<a href="index2.php" class="botao">Sup. de Rede</a><br>
+<a href="" class="botao">Rede</a><br>
+<a href="" class="botao">Distrito</a><br>
+<a href="" class="botao">Área</a><br>
+<a href="setores.php" class="botao">Setor</a><br>
 </ul>
     </div>
 </body>
