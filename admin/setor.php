@@ -22,7 +22,7 @@ $rede = $_SESSION['rede'];
 $funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
 
-$corQuery = "SELECT DISTINCT `nome` FROM tbl_login_sup where `rede` like '$rede' and `funcao` like 'setor'";
+$corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE `cor_rede_lider` like '$rede'  and `area_lider` like '$nome'";
 
 $result = mysqli_query($conexao, $corQuery);
 
@@ -37,7 +37,7 @@ $result = mysqli_query($conexao, $corQuery);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/admin.css">
-    <link rel="shortcut icon" href="/img/logo_paz.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/logo_paz.ico" type="image/x-icon">
     <title>Paz Santarém</title>
 </head>
 
@@ -47,16 +47,15 @@ $result = mysqli_query($conexao, $corQuery);
         <?php echo "Bem-vindo, " . $_SESSION['nome'] . $_SESSION['rede'] ?>
 
     </div>
-
+    <form action="">
     <table border="0" align="center">
     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
         <tr>
-            
-            <td> <a href="lider.php"   class="botao"> <?php  echo $row['nome']; ?></a><br></td>
+            <td> <a href="lider.php"   class="botao"> <?php  echo $row['setor_lider']; ?></a><br></td>
         </tr>
         <?php } ?>
     </table>
-    
+    </form>
 </body>
 
 </html>

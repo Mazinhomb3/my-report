@@ -86,4 +86,22 @@
         
         }
 
+        .botaoverm {
+            display: inline-block;
+            background-color:rgb(253, 0, 4);
+            color: #fff;
+            border: none;
+            padding: 15px 25px;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 15px;
+            width: 130px; /* largura do botão */
+            margin-top: 0;
+            margin-right: 20px;
+            margin-bottom: 4px;
+            
+            }
+
 }

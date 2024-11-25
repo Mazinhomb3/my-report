@@ -7,9 +7,15 @@ $corQuery = "SELECT DISTINCT rede FROM tbl_login_sup ORDER BY rede ASC";
 
 $result = mysqli_query($conexao, $corQuery);
 
+
+
 $corQuery = "SELECT DISTINCT funcao FROM tbl_login_sup ORDER BY funcao ASC";
 
 $result1 = mysqli_query($conexao, $corQuery);
+
+$corQuery2 = "SELECT DISTINCT distrito_lider FROM tbl_dados ORDER BY distrito_lider ASC";
+
+$result2 = mysqli_query($conexao, $corQuery2);
 
 
 
@@ -61,6 +67,7 @@ $result1 = mysqli_query($conexao, $corQuery);
                     </td>
                     </select>
                 </tr>
+            
                 <tr>
                     <td class="inputs">Função: </td>
                     <td>
@@ -79,7 +86,7 @@ $result1 = mysqli_query($conexao, $corQuery);
                         <input name="dtini" type="date" id="dtini" class="respostas">
                     </td>
                 </tr>
-               
+
             </table>
 
             <tr>
