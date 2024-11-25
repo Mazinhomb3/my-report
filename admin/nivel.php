@@ -14,8 +14,7 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     header("Location: index.php");
     exit;
 }
-
-
+$nivel = $_SESSION["nivel"];
 ?>
 
 <!DOCTYPE html>
@@ -44,8 +43,18 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
             <a href="" class="botao">Sup. de Rede</a><br>
             <a href="" class="botao">Rede</a><br>
             <a href="" class="botao">Distrito</a><br>
-            <a href="" class="botao">Área</a><br>
-            <a href="lider.php" class="botao">Setor</a><br>
+            <?php if ($nivel >= 2) {
+                echo '<button class= "botao" href="">Área</button><br>';
+            } else {
+                echo '<button class="botao" disabled>Área</button><br>';
+            } ?>
+
+<?php if ($nivel >= 1) {
+                echo '<a href="lider.php " class = "botao">Área</a><br>';
+            } else {
+                echo '<button class="botao" disabled>Área</button><br>';
+            } ?>
+           
         </ul>
     </div>
 </body>
