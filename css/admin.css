@@ -3,41 +3,53 @@
         background-color: rgb(0, 0, 180);
         background-image: url(../img/gradient_2.jpg);
         background-size: cover;
-        align-content: center;
+        min-height:100vh;
         color: white;
         text-align: center;
+        margin: 0;
 
     }
 
     .div-img {
         text-align: center;
+        margin-top: 5%;
+    }
+
+    .divi-img {
+        margin-top: 0;
     }
 
     .img {
         width: 30%;
         height: 30%;
+        margin-top: 10%;
     }
 
     .titulo {
         text-align: center;
-        font-size: 5px;
+        font-size: 15px;
+        font-family: sans-serif;
     }
 
     .form {
         align-content: cover;
+        margin: 0;
     }
 
     .inputs {
-        width: 5px;
-        font-size: 5px;
+        width: 90px;
+        font-size: 15px;
         text-align: right;
+        font-family: sans-serif;
     }
 
     .respostas {
-        width: 30px;
-        font-size: 8px;
+        width: 160px;
+        font-size: 17px;
         text-align: center;
         margin-bottom: 3px;
+        font-family: sans-serif;
+        font-weight: bolder;
         background-color: rgb(255, 255, 255);
         color: rgb(0, 0, 0);
         border-radius: 5px;
@@ -55,9 +67,9 @@
         text-decoration: none;
         cursor: pointer;
         border-radius: 15px;
-        width: 50px;
+        width: 110px;
         /* largura do botão */
-        margin-top: 3px;
+        margin-top: 10px;
         margin-right: 0px;
         margin-bottom: 3px;
     }
