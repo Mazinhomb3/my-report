@@ -22,10 +22,10 @@ require('../conexao.php');
 $nome = $_SESSION['nome'];
 $rede = $_SESSION['rede'];
 $dtini = $_SESSION['dtini'];
-$distlider = $_POST['distlider'];
-$_SESSION['distlider'] = $distlider;
+//$distlider = $_POST['distlider'];
+//$_SESSION['distlider'] = $distlider;
 
-$corQuery = "SELECT DISTINCT `area_lider` FROM `tbl_dados` WHERE `cor_rede_lider` like '$rede'  and `distrito_lider` like '$distlider'";
+$corQuery = "SELECT DISTINCT `area_lider` FROM `tbl_dados` WHERE `cor_rede_lider` like '$rede'  and `distrito_lider` like '$nome'";
 
 $result = mysqli_query($conexao, $corQuery);
 

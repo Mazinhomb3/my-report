@@ -13,7 +13,7 @@ $dtini = $_POST["dtini"];
 
 
 
-$sql = "SELECT * FROM tbl_login_sup where nome_login = '$usuariomd5' && senha = '$senhamd5' && funcao = '$funcao' limit 1";
+$sql = "SELECT * FROM tbl_login_sup where nome_login = '$usuariomd5' && senha = '$senhamd5'";
 
 $result = $conexao->query($sql);
 
@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
   $_SESSION['id'] = $row['id'];
   $_SESSION['nome'] = $row['nome'];
   $_SESSION['rede'] = $row['rede'];
-  $_SESSION['funcao'] = $row['funcao'];
+  $_SESSION['funcao'] =$funcao;
   $_SESSION['nivel'] = $row['nivel'];
   $_SESSION['dtini'] = $dtini;
   $nivel = $_SESSION['nivel'];
@@ -35,7 +35,9 @@ if ($result->num_rows > 0) {
   }elseif ($nivel == 2) {
     header('Location: setor.php');
   }elseif ($nivel == 3) {
-    header('Location: area.php');
+    header('Location: area2.php');
+  }elseif ($nivel == 4) {
+    header('location: distrito.php');
   }
   
 } else {

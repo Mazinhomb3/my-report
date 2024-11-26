@@ -4,7 +4,7 @@
 if (!isset($_SESSION))
     session_start();
 
-$nivel_necessario = 1;
+$nivel_necessario = 4;
 
 // Verifica se não há a variável da sessão que identifica o usuário
 if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
@@ -17,15 +17,12 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
 
 require('../conexao.php');
 
-
-
 $nome = $_SESSION['nome'];
 $rede = $_SESSION['rede'];
+$funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
-$distlider = $_POST['distlider'];
-$_SESSION['distlider'] = $distlider;
 
-$corQuery = "SELECT DISTINCT `area_lider` FROM `tbl_dados` WHERE `cor_rede_lider` like '$rede'  and `distrito_lider` like '$distlider'";
+$corQuery = "SELECT DISTINCT `distrito_lider` FROM `tbl_dados` WHERE `cor_rede_lider` like '$rede'  and `rede_lider` like '$nome'";
 
 $result = mysqli_query($conexao, $corQuery);
 
@@ -47,16 +44,16 @@ $result = mysqli_query($conexao, $corQuery);
 <body>
 
     <div class="sessao">
-        <?php echo "Bem-vindo, " . $_SESSION['nome'] . $_SESSION['funcao']; ?>
-        <h3>Sup. de área</h3>
+        <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
+        <h3>Pr. de Distrito</h3>
     </div>
-    <form method="POST" name="pesquisar" id="form" action="setlid.php">
+    <form method="POST" name="pesquisar" id="form" action="area.php">
         <table border="0" align="center">
             <tr>
                 <td>
-                    <select name="arealider" id="arealider" align="center" class="respostas">
+                    <select name="distlider" id="distlider" align="center" class="respostas">
                         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                            <option value="<?php echo $row['area_lider']; ?>"><?php echo $row['area_lider']; ?></option>
+                            <option value="<?php echo $row['distrito_lider']; ?>"><?php echo $row['distrito_lider']; ?></option>
                         <?php } ?>
                 </td>
                 </select>
