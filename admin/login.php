@@ -34,6 +34,8 @@ if ($result->num_rows > 0) {
     header('Location: lider.php');
   }elseif ($nivel == 2) {
     header('Location: setor.php');
+  }elseif ($nivel == 3) {
+    header('Location: area.php');
   }
   
 } else {

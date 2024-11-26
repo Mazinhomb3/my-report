@@ -3,19 +3,17 @@
 
 require('../conexao.php');
 
-$corQuery = "SELECT DISTINCT rede FROM tbl_login_sup ORDER BY rede ASC";
+
+$corQuery = "SELECT DISTINCT rede FROM tbl_login_sup ";
 
 $result = mysqli_query($conexao, $corQuery);
 
 
+$funcaoQuery = "SELECT DISTINCT funcao FROM tbl_login_sup ";
 
-$corQuery = "SELECT DISTINCT funcao FROM tbl_login_sup ORDER BY funcao ASC";
+$resultfuncao = mysqli_query($conexao, $funcaoQuery);
 
-$result1 = mysqli_query($conexao, $corQuery);
 
-$corQuery2 = "SELECT DISTINCT distrito_lider FROM tbl_dados ORDER BY distrito_lider ASC";
-
-$result2 = mysqli_query($conexao, $corQuery2);
 
 
 
@@ -40,7 +38,7 @@ $result2 = mysqli_query($conexao, $corQuery2);
     <div class="titulo">
         <h4>Bem vindo!</h4>
         <h4>Aqui você terá acesso as dados de sua Rede.</h4>
-        <h4>Informe data inicial e final da pesquisa!</h4>
+        <h4>Informe data inicial!</h4>
     </div>
     <div class="form">
         <form id="form" name="cadastrar" method="POST" action="login.php">
@@ -72,7 +70,7 @@ $result2 = mysqli_query($conexao, $corQuery2);
                     <td class="inputs">Função: </td>
                     <td>
                         <select name="funcao" id="funcao" align="center" class="respostas">
-                            <?php while ($row = mysqli_fetch_assoc($result1)) { ?>
+                            <?php while ($row = mysqli_fetch_assoc($resultfuncao)) { ?>
                                 <option value="<?php echo $row['funcao']; ?>"><?php echo $row['funcao']; ?></option>
                             <?php } ?>
                     </td>

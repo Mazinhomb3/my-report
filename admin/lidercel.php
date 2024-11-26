@@ -2,7 +2,7 @@
 if (!isset($_SESSION))
     session_start();
 
-$nivel_necessario = 1;
+$nivel_necessario = 3;
 
 // Verifica se não há a variável da sessão que identifica o usuário
 if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
@@ -15,14 +15,21 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
 
 require('../conexao.php');
 
-$nomesetor = $_SESSION['nome'];
-$rede = $_SESSION['rede'];
-$funcao = $_SESSION['funcao'];
-$dtini = $_SESSION['dtini'];
 
-$corQuery = "SELECT DISTINCT `nome_lider` FROM tbl_dados where `cor_rede_lider` like '$rede' and setor_lider like '$nome'";
+
+$nome = $_SESSION['nome'];
+$rede = $_SESSION['rede'];
+$arealider = $_SESSION['arealider'];
+$setorlider = $_POST["setorlider"];
+
+
+
+$corQuery = "SELECT DISTINCT `nome_lider` FROM `tbl_dados` WHERE `cor_rede_lider` like '$rede'  and `area_lider` like '$arealider' and setor_lider like '$setorlider'";
 
 $result = mysqli_query($conexao, $corQuery);
+
+
+
 
 ?>
 
@@ -39,25 +46,16 @@ $result = mysqli_query($conexao, $corQuery);
 
 <body>
     <div class="sessao">
-        <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!"?><br>
-        <?php echo "Rede, " . $_SESSION['rede'] . "!"?><br>
-
+        <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
+        <h3>Líderes de células</h3>
     </div>
-
-
-    <div class="titulo">
-
-        <h4>Líderes de Célula</h4>
-    </div>
-    <div>
-        <table border="0" align="center">
+    <table border="1" align="center">
+        <tr>
             <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                <tr>
-                    <td class="respostas"><?php echo $row['nome_lider']; ?><br></td>
-                </tr>
-            <?php } ?>
-        </table>
-    </div>
+                <td class="respostas"><?php echo $row['nome_lider']; ?></td>
+        </tr>
+    <?php } ?>
+    </table>
 </body>
 
 </html>

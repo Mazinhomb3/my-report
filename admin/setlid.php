@@ -21,17 +21,20 @@ $nome = $_SESSION['nome'];
 $rede = $_SESSION['rede'];
 $funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
+$arealider = $_POST['arealider'];
+$_SESSION['arealider'] = $arealider;
 
-$corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE `cor_rede_lider` like '$rede'  and `area_lider` like '$nome'";
+$corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE `cor_rede_lider` like '$rede'  and `area_lider` like '$arealider'";
 
 $result = mysqli_query($conexao, $corQuery);
+
 
 ?>
 
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -44,28 +47,26 @@ $result = mysqli_query($conexao, $corQuery);
 <body>
 
     <div class="sessao">
-        <?php echo "Bem-vindo, " . $_SESSION['nome']?>
-
+        <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
+        <h3>Sup. de setor</h3>
     </div>
-    <form method="POST" name="pesquisar"  id="form" action="liderset.php" >
+    <form method="POST" name="pesquisar" id="form" action="lidercel.php">
         <table border="0" align="center">
             <tr>
-                <tr>
-                <td align="center">Líd. setor:</td>
-                </tr>
+
                 <td>
                     <select name="setorlider" id="setorlider" align="center" class="respostas">
                         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                             <option value="<?php echo $row['setor_lider']; ?>"><?php echo $row['setor_lider']; ?></option>
-                            <?php } ?>
+                        <?php } ?>
                 </td>
                 </select>
-                
+
             </tr>
         </table>
         <tr>
-                <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td>
-            </tr>
+            <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td>
+        </tr>
     </form>
 </body>
 
