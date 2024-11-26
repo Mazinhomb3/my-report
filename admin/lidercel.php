@@ -49,13 +49,16 @@ $result = mysqli_query($conexao, $corQuery);
         <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
         <h3>Líderes de células</h3>
     </div>
-    <table border="1" align="center">
+    <table border="0" align="center">
         <tr>
             <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                 <td class="respostas"><?php echo $row['nome_lider']; ?></td>
         </tr>
     <?php } ?>
     </table>
+    <div class="divbotao">
+        <a href="index.php" align="center" class="botao" id="voltar">Voltar</a>
+    </div>
 </body>
 
 </html>

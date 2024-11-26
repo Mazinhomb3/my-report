@@ -39,6 +39,7 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 18px;
         text-align: center;
+        margin-bottom: 3px;
         background-color: rgb(255, 255, 255);
         color: rgb(0, 0, 0);
         border-radius: 5px;
@@ -56,10 +57,10 @@
         text-decoration: none;
         cursor: pointer;
         border-radius: 15px;
-        width: 150px;
+        width: 130px;
         /* largura do botão */
         margin-top: 3px;
-        margin-right: 20px;
+        margin-right: 0px;
         margin-bottom: 3px;
     }
 
@@ -76,16 +77,16 @@
         background-color: darkcyan;
         color: #fff;
         border: none;
-        padding: 15px 25px;
+        padding: 10px 15px;
         font-size: 17px;
         font-weight: bold;
         text-decoration: none;
         cursor: pointer;
         border-radius: 15px;
-        width: 130px;
+        width: 100px;
         /* largura do botão */
         margin-top: 0;
-        margin-right: 20px;
+        margin-right: 0%;
         margin-bottom: 4px;
 
     }
@@ -107,6 +108,10 @@
         margin-right: 20px;
         margin-bottom: 4px;
 
+    }
+
+    .divbotao {
+        margin-top: 10px;
     }
 
 }

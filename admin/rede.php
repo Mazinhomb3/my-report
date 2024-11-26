@@ -4,7 +4,7 @@
 if (!isset($_SESSION))
     session_start();
 
-$nivel_necessario = 2;
+$nivel_necessario = 4;
 
 // Verifica se não há a variável da sessão que identifica o usuário
 if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
@@ -21,8 +21,9 @@ $nome = $_SESSION['nome'];
 $rede = $_SESSION['rede'];
 $funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
+$redelider = $_POST['redelider'];
 
-$corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE `cor_rede_lider` like '$rede'  and `area_lider` like '$nome'";
+$corQuery = "SELECT DISTINCT `distrito_lider` FROM `tbl_dados` WHERE  `rede_lider` like '$redelider'";
 
 $result = mysqli_query($conexao, $corQuery);
 
@@ -31,7 +32,7 @@ $result = mysqli_query($conexao, $corQuery);
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -45,28 +46,25 @@ $result = mysqli_query($conexao, $corQuery);
 
     <div class="sessao">
         <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
-        <h3>Sup. de setor</h3>
-
+        <h3>Pr. de Distrito</h3>
     </div>
-    <div>
-        <form method="POST" name="pesquisar" id="form" action="liderset.php">
-            <table border="0" align="center">
-                <tr>
-                    <td>
-                        <select name="setorlider" id="setorlider" align="center" class="respostas">
-                            <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                                <option value="<?php echo $row['setor_lider']; ?>"><?php echo $row['setor_lider']; ?></option>
-                            <?php } ?>
-                    </td>
-                    </select>
-
-                </tr>
-            </table>
+    <form method="POST" name="pesquisar" id="form" action="area.php">
+        <table border="0" align="center">
             <tr>
-                <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td>
+                <td>
+                    <select name="distlider" id="distlider" align="center" class="respostas">
+                        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                            <option value="<?php echo $row['distrito_lider']; ?>"><?php echo $row['distrito_lider']; ?></option>
+                        <?php } ?>
+                </td>
+                </select>
+
             </tr>
-        </form>
-    </div>
+        </table>
+        <tr>
+            <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td>
+        </tr>
+    </form>
 </body>
 
 </html>

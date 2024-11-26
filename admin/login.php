@@ -25,21 +25,22 @@ if ($result->num_rows > 0) {
   $_SESSION['id'] = $row['id'];
   $_SESSION['nome'] = $row['nome'];
   $_SESSION['rede'] = $row['rede'];
-  $_SESSION['funcao'] =$funcao;
+  $_SESSION['funcao'] = $funcao;
   $_SESSION['nivel'] = $row['nivel'];
   $_SESSION['dtini'] = $dtini;
   $nivel = $_SESSION['nivel'];
 
   if ($nivel == 1) {
     header('Location: lider.php');
-  }elseif ($nivel == 2) {
+  } elseif ($nivel == 2) {
     header('Location: setor.php');
-  }elseif ($nivel == 3) {
+  } elseif ($nivel == 3) {
     header('Location: area2.php');
-  }elseif ($nivel == 4) {
+  } elseif ($nivel == 4) {
     header('location: distrito.php');
+  } elseif ($nivel == 5) {
+    header('location: suprede.php');
   }
-  
 } else {
   echo "Usuário ou senha incorretos.";
 }

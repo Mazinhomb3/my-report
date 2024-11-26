@@ -24,6 +24,7 @@ $dtini = $_SESSION['dtini'];
 $arealider = $_POST['arealider'];
 $_SESSION['arealider'] = $arealider;
 
+
 $corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE `cor_rede_lider` like '$rede'  and `area_lider` like '$arealider'";
 
 $result = mysqli_query($conexao, $corQuery);
@@ -68,6 +69,9 @@ $result = mysqli_query($conexao, $corQuery);
             <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td>
         </tr>
     </form>
+    <div class="divbotao">
+        <a href="area2.php" align="center" class="botao" id="voltar">Voltar</a>
+    </div>
 </body>
 
 </html>

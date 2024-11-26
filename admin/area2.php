@@ -67,6 +67,9 @@ $result = mysqli_query($conexao, $corQuery);
             <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td>
         </tr>
     </form>
+    <div class="divbotao">
+        <a href="index.php" align="center" class="botao" id="voltar">Voltar</a>
+    </div>
 </body>
 
 </html>

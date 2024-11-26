@@ -44,14 +44,19 @@ $result = mysqli_query($conexao, $corQuery);
 <body>
 <div class="sessao">
         <?php echo "Bem-vindo, " . $_SESSION['nome']?>
+        <h3>Lideres de célula</h3>
 
     </div>
-    <table border="1" align="center">
+    <table border="0" align="center">
         <tr>
      <?php   while ($row = mysqli_fetch_assoc($result)) { ?>
             <td class="respostas"><?php echo $row['nome_lider']; ?></td>
         </tr>
     <?php } ?>
-    </table>
+    
+</table>
+<div class="divbotao">
+<a href="setor.php" align="center" class="botao" id="voltar" >Voltar</a>
+</div>
 </body>
 </html>

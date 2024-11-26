@@ -25,7 +25,7 @@ $dtini = $_SESSION['dtini'];
 $distlider = $_POST['distlider'];
 $_SESSION['distlider'] = $distlider;
 
-$corQuery = "SELECT DISTINCT `area_lider` FROM `tbl_dados` WHERE `cor_rede_lider` like '$rede'  and `distrito_lider` like '$distlider'";
+$corQuery = "SELECT DISTINCT `area_lider` FROM `tbl_dados` WHERE  `distrito_lider` like '$distlider'";
 
 $result = mysqli_query($conexao, $corQuery);
 
