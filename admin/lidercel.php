@@ -24,7 +24,7 @@ $setorlider = $_POST["setorlider"];
 
 
 
-$corQuery = "SELECT DISTINCT `nome_lider` FROM `tbl_dados` WHERE `cor_rede_lider` like '$rede'  and `area_lider` like '$arealider' and setor_lider like '$setorlider'";
+$corQuery = "SELECT DISTINCT `nome_lider` FROM `tbl_dados` WHERE  `area_lider` like '$arealider' and setor_lider like '$setorlider'";
 
 $result = mysqli_query($conexao, $corQuery);
 

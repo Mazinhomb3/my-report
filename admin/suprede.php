@@ -44,7 +44,7 @@ $result = mysqli_query($conexao, $corQuery);
 <body>
 
     <div class="sessao">
-        <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
+    <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
         <h3>Pr. de Rede</h3>
     </div>
     <form method="POST" name="pesquisar" id="form" action="rede.php">

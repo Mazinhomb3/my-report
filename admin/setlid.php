@@ -25,7 +25,7 @@ $arealider = $_POST['arealider'];
 $_SESSION['arealider'] = $arealider;
 
 
-$corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE `cor_rede_lider` like '$rede'  and `area_lider` like '$arealider'";
+$corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE `area_lider` like '$arealider'";
 
 $result = mysqli_query($conexao, $corQuery);
 
@@ -48,7 +48,7 @@ $result = mysqli_query($conexao, $corQuery);
 <body>
 
     <div class="sessao">
-        <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
+        <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
         <h3>Sup. de setor</h3>
     </div>
     <form method="POST" name="pesquisar" id="form" action="lidercel.php">
