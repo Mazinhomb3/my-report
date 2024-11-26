@@ -1,3 +1,235 @@
+@media only screen and (min-width: 300px) {
+    body {
+        background-color: rgb(0, 0, 180);
+        background-image: url(../img/gradient_2.jpg);
+        background-size: cover;
+        align-content: center;
+        color: white;
+        text-align: center;
+
+    }
+
+    .div-img {
+        text-align: center;
+    }
+
+    .img {
+        width: 30%;
+        height: 30%;
+    }
+
+    .titulo {
+        text-align: center;
+        font-size: 5px;
+    }
+
+    .form {
+        align-content: cover;
+    }
+
+    .inputs {
+        width: 5px;
+        font-size: 5px;
+        text-align: right;
+    }
+
+    .respostas {
+        width: 30px;
+        font-size: 8px;
+        text-align: center;
+        margin-bottom: 3px;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        border-radius: 5px;
+
+    }
+
+    .botaoadmin {
+        display: inline-block;
+        background-color: darkcyan;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 15px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 15px;
+        width: 50px;
+        /* largura do botão */
+        margin-top: 3px;
+        margin-right: 0px;
+        margin-bottom: 3px;
+    }
+
+    .sessao {
+        align-content: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .botao {
+        display: inline-block;
+        background-color: darkcyan;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        font-size: 17px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 15px;
+        width: 100px;
+        /* largura do botão */
+        margin-top: 0;
+        margin-right: 0%;
+        margin-bottom: 4px;
+
+    }
+
+    .botaoverm {
+        display: inline-block;
+        background-color: rgb(253, 0, 4);
+        color: #fff;
+        border: none;
+        padding: 15px 25px;
+        font-size: 17px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 15px;
+        width: 130px;
+        /* largura do botão */
+        margin-top: 0;
+        margin-right: 20px;
+        margin-bottom: 4px;
+
+    }
+
+    .divbotao {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        background-color: rgb(0, 0, 180);
+        background-image: url(../img/gradient_2.jpg);
+        align-content: center;
+        color: white;
+        text-align: center;
+
+    }
+
+    .divi-img {
+        text-align: center;
+    }
+
+    .img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .titulo {
+        text-align: center;
+        font-size: 18px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .form {
+        align-content: cover;
+    }
+
+    .inputs {
+        width: 100px;
+        font-size: 18px;
+        text-align: right;
+    }
+
+    .respostas {
+
+        width: 180px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 3px;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        border-radius: 5px;
+
+    }
+
+    .botaoadmin {
+        display: inline-block;
+        background-color: darkcyan;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 15px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 15px;
+        width: 130px;
+        /* largura do botão */
+        margin-top: 3px;
+        margin-right: 0px;
+        margin-bottom: 3px;
+    }
+
+    .sessao {
+        align-content: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .botao {
+        display: inline-block;
+        background-color: darkcyan;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        font-size: 17px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 15px;
+        width: 100px;
+        /* largura do botão */
+        margin-top: 0;
+        margin-right: 0%;
+        margin-bottom: 4px;
+
+    }
+
+    .botaoverm {
+        display: inline-block;
+        background-color: rgb(253, 0, 4);
+        color: #fff;
+        border: none;
+        padding: 15px 25px;
+        font-size: 17px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 15px;
+        width: 130px;
+        /* largura do botão */
+        margin-top: 0;
+        margin-right: 20px;
+        margin-bottom: 4px;
+
+    }
+
+    .divbotao {
+        margin-top: 10px;
+    }
+}
+
 @media only screen and (min-width: 1200px) {
     body {
         background-color: rgb(0, 0, 180);
@@ -65,7 +297,7 @@
     }
 
     .sessao {
-        align-content: center;        
+        align-content: center;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         text-align: center;
         margin-top: 10px;

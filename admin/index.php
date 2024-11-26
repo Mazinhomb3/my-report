@@ -32,7 +32,7 @@ $resultfuncao = mysqli_query($conexao, $funcaoQuery);
 
 <body>
 
-    <div class="div-img">
+    <div class="divi-img">
         <img src="../img/logo_paz.png" alt="" class="img">
     </div>
     <div class="titulo">
@@ -43,7 +43,7 @@ $resultfuncao = mysqli_query($conexao, $funcaoQuery);
     <div class="form">
         <form id="form" name="cadastrar" method="POST" action="login.php">
 
-            <table align="center" border="0" class="table">
+            <table align="center" border="1" class="table">
                 <tr>
                     <td class="inputs">Nome: </td>
                     <td><input name="usuario" id="usuario" type="text" class="respostas" required></td>
