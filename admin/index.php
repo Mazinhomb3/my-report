@@ -65,7 +65,7 @@ $resultfuncao = mysqli_query($conexao, $funcaoQuery);
                     </td>
                     </select>
                 </tr>
-            
+
                 <tr>
                     <td class="inputs">Função: </td>
                     <td>
@@ -95,7 +95,7 @@ $resultfuncao = mysqli_query($conexao, $funcaoQuery);
     </div>
 
 
-<div class=""></div>
+    <div class=""></div>
 
 </body>
 
