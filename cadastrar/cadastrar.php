@@ -10,20 +10,19 @@ if (!isset($_SESSION['nome']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
     session_unset();     //Variável para o tempo de execução 
     session_destroy();   //Destruir os dados da sessão no armazenamento
 
-     header('Location: index.php');
-     
-   }
-   $_SESSION['LAST_ACTIVITY'] = time();
+    header('Location: index.php');
+}
+$_SESSION['LAST_ACTIVITY'] = time();
 
 
 
 require('../conexao.php');
 
-$corQuery="SELECT DISTINCT rede FROM tbl_login_sup ORDER BY rede ASC";
+$corQuery = "SELECT DISTINCT rede FROM tbl_login_sup ORDER BY rede ASC";
 
 $result = mysqli_query($conexao, $corQuery);
 
-$corQuery="SELECT DISTINCT funcao FROM tbl_login_sup ORDER BY funcao ASC";
+$corQuery = "SELECT DISTINCT funcao FROM tbl_login_sup ORDER BY funcao ASC";
 
 $result1 = mysqli_query($conexao, $corQuery);
 
@@ -40,19 +39,19 @@ $result1 = mysqli_query($conexao, $corQuery);
 </head>
 
 <body>
-<div class="login"><?php echo "Bem vindo, " . $_SESSION['nome'] . "!";?></div>
-<div class="logo">           
-    <img src="../img/logosup.png" class="logopaz"  alt="">
+    <div class="login"><?php echo "Bem vindo, " . $_SESSION['nome'] . "!"; ?></div>
+    <div class="logo">
+        <img src="../img/logosup.png" class="logopaz" alt="">
     </div>
-     
-<div class="titulo">
-    <h2>Cadastrar Usuário</h2>
+
+    <div class="titulo">
+        <h2>Cadastrar Usuário</h2>
     </div>
 
     <?php
 
     // Importa a classe Connection que estabelece a conexão com o banco de dados.
-    require ('./Connection.php');
+    require('./Connection.php');
 
     // Importa a classe Users que realiza a consulta aos usuários.
     require './Users.php';
@@ -65,10 +64,10 @@ $result1 = mysqli_query($conexao, $corQuery);
 
         // Cria uma nova instância da classe Users.
         $createUser = new Users();
-        
+
         // Define os dados do formulário na instância da classe Users.
         $createUser->setFormData($formData);
-        
+
         // Tenta criar um novo usuário no banco de dados.
         $value = $createUser->create();
 
@@ -83,72 +82,74 @@ $result1 = mysqli_query($conexao, $corQuery);
         }
     }
     ?>
-<div class="form">
-    <table align="center" border="0" >
-    <!-- Formulário para cadastro de um novo usuário -->
-    <form method="POST" action="">
-    <tr>
-        <td class="inputs">
-        <label>Nome: </label>
-    </td>
-    <td>
-        <input type="text" name="nome" placeholder="Primeiro nome" class="respostas" required>
-        </td>
-    </tr>
-    <tr>
-        <td  class="inputs">
-        <label>Rede: </label>
-        </td>
-        <td>
-        <select name="rede" id="rede" align="center" class="respostas" >
-        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-        <option value="<?php echo $row['rede']; ?>"><?php echo $row['rede']; ?></option>
-        <?php } ?>
-        </select>
-        </td>
-   
-    </tr>
-    <tr>
-        <td class="inputs">
-        <label>Senha: </label>
-        </td>
-        <td>
-        <input type="text" name="senha" placeholder="Senha" class="respostas" required>
-        </td>
-    </tr>
-    <tr>
-        <td class="inputs">
-        <label>Função: </label>
-        </td>
-        <td>
-        <select name="funcao" id="funcao" align="center"  class="respostas">
-        <?php while ($row = mysqli_fetch_assoc($result1)) { ?>
-        <option value="<?php echo $row['funcao']; ?>"><?php echo $row['funcao']; ?></option>
-        <?php } ?>
-        </select>
-        </td>
-    </tr>
-    
-    </table>
+    <div class="form">
+        <table align="center" border="0">
+            <!-- Formulário para cadastro de um novo usuário -->
+            <form method="POST" action="">
+                <tr>
+                    <td class="inputs">
+                        <label>Nome: </label>
+                    </td>
+                    <td>
+                        <input type="text" name="nome" placeholder="Primeiro nome" class="respostas" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="inputs">
+                        <label>Senha: </label>
+                    </td>
+                    <td>
+                        <input type="text" name="senha" placeholder="Senha" class="respostas" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="inputs">
+                        <label>Rede: </label>
+                    </td>
+                    <td>
+                        <select name="rede" id="rede" align="center" class="respostas">
+                            <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                                <option value="<?php echo $row['rede']; ?>"><?php echo $row['rede']; ?></option>
+                            <?php } ?>
+                        </select>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td class="inputs">
+                        <label>Função: </label>
+                    </td>
+                    <td>
+                        <select name="funcao" id="funcao" align="center" class="respostas">
+                            <?php while ($row = mysqli_fetch_assoc($result1)) { ?>
+                                <option value="<?php echo $row['funcao']; ?>"><?php echo $row['funcao']; ?></option>
+                            <?php } ?>
+                        </select>
+                    </td>
+                </tr>
+
+        </table>
+        <div class="botaocentro">
+            <tr>
+
+                <td>
+                    <input type="submit" name="AddUser" class="botao2" value="Cadastrar"><br>
+                </td>
+            </tr>
+        </div>
+
+        </form>
+
+    </div>
+
     <div class="botaocentro">
-    <tr>
-       
-    <td>
-       <input type="submit" name="AddUser" class="botao2" value="Cadastrar"><br>
-    </td>
-    </tr>
+        <ul class="link">
+            <tr>
+                <td><a href="listar.php" class="botao2">Listar</a><br>
+
+        </ul>
     </div>
-
-    </form>
-    
-    </div>
-
-<div class="botaocentro">
-<ul class="link">
-<tr><td><a href="listar.php" class="botao2">Listar</a><br>
-
-</ul>
-</div>
 
 </body>
 

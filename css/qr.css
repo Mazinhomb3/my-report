@@ -1,0 +1,49 @@
+
+@media only screen and (min-width: 300px) {
+    body{
+        background-color:white;
+    }
+    
+        .qr-img{
+        text-align: center;
+       width: 300px;
+       margin-top: 5%;
+        
+       }
+       .div-qr{
+         text-align: center;
+       }
+}
+
+@media only screen and (min-width: 768px) {
+
+    body{
+        background-color:white;
+    }
+    
+        .qr-img{
+        text-align: center;
+       width: 500px;
+       margin-top: 5%;
+        
+       }
+       .div-qr{
+         text-align: center;
+       }
+}
+
+
+@media only screen and (min-width: 1200px) {
+body{
+    background-color:white;
+}
+
+    .qr-img{
+    text-align: center;
+   width: 300px;
+    
+   }
+   .div-qr{
+     text-align: center;
+   }
+}
