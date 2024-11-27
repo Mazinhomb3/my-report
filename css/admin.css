@@ -1,4 +1,4 @@
-@media only screen and (min-width: 300px) {
+@media only screen and (min-width: 300px) and (max-device-width: 768px) {
     body {
         background-color: rgb(0, 0, 180);
         background-image: url(../img/gradient_2.jpg);
@@ -125,14 +125,15 @@
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-device-width: 1200px) {
     body {
         background-color: rgb(0, 0, 180);
         background-image: url(../img/gradient_2.jpg);
+        background-size: cover;
+        min-height:96vh;
         align-content: center;
         color: white;
         text-align: center;
-
     }
 
     .divi-img {
@@ -140,14 +141,14 @@
     }
 
     .img {
-        width: 100px;
-        height: 100px;
+        width: 50px;
+        height: 50px;
     }
 
     .titulo {
         text-align: center;
         font-size: 18px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family:  sans-serif;
     }
 
     .form {
