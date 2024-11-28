@@ -1,7 +1,7 @@
 <?php
 if (!isset($_SESSION))
     session_start();
-
+// Estabelece o nivel da sessao
 $nivel_necessario = 1;
 
 
@@ -22,7 +22,7 @@ $rede = $_SESSION['rede'];
 $funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
 
-$corQuery = "SELECT DISTINCT `nome_lider` FROM tbl_dados where `cor_rede_lider` like '$rede' and setor_lider like '$nome'";
+$corQuery = "SELECT DISTINCT `nome_lider` FROM tbl_dados where `cor_rede_lider` like '$rede' and setor_lider like '$nome' and data_lider >= '$dtini' ";
 
 $result = mysqli_query($conexao, $corQuery);
 
@@ -41,8 +41,8 @@ $result = mysqli_query($conexao, $corQuery);
 
 <body>
     <div class="sessao">
-        <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!"?><br>
-        <?php echo "Rede, " . $_SESSION['rede'] . "!"?><br>
+        <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?><br>
+        <?php echo "Rede, " . $_SESSION['rede'] . "!" ?><br>
 
     </div>
 

@@ -21,10 +21,11 @@ $nome = $_SESSION['nome'];
 $rede = $_SESSION['rede'];
 $arealider = $_SESSION['arealider'];
 $setorlider = $_POST["setorlider"];
+$dtini = $_SESSION['dtini'];
 
 
 
-$corQuery = "SELECT DISTINCT `nome_lider` FROM `tbl_dados` WHERE  `area_lider` like '$arealider' and setor_lider like '$setorlider'";
+$corQuery = "SELECT DISTINCT `nome_lider` FROM `tbl_dados` WHERE  `area_lider` like '$arealider' and setor_lider like '$setorlider' and data_lider >= '$dtini' ";
 
 $result = mysqli_query($conexao, $corQuery);
 
@@ -57,7 +58,7 @@ $result = mysqli_query($conexao, $corQuery);
     <?php } ?>
     </table>
     <div class="divbotao">
-        <a href="index.php" align="center" class="botao" id="voltar">Voltar</a>
+        <a href="distrito.php" align="center" class="botao" id="voltar">Voltar</a>
     </div>
 </body>
 

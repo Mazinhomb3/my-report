@@ -13,7 +13,7 @@ $dtini = $_POST["dtini"];
 
 
 
-$sql = "SELECT * FROM tbl_login_sup where nome_login = '$usuariomd5' && senha = '$senhamd5'";
+$sql = "SELECT * FROM tbl_login_sup where nome_login = '$usuariomd5' && senha = '$senhamd5' ";
 
 $result = $conexao->query($sql);
 
@@ -24,7 +24,7 @@ if ($result->num_rows > 0) {
 
   $_SESSION['id'] = $row['id'];
   $_SESSION['nome'] = $row['nome'];
-  $_SESSION['rede'] = $row['rede'];
+  $_SESSION['rede'] = $cor_rede;
   $_SESSION['funcao'] = $funcao;
   $_SESSION['nivel'] = $row['nivel'];
   $_SESSION['dtini'] = $dtini;
@@ -42,5 +42,28 @@ if ($result->num_rows > 0) {
     header('location: suprede.php');
   }
 } else {
-  echo "Usuário ou senha incorretos.";
-}
+
+
+
+?>
+
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
+    <link rel="shortcut icon" href="../img/logo_paz.ico" type="image/x-icon">
+    <title>Paz Santarém</title>
+  </head>
+
+  <body>
+    <div class="erro">
+      <?php echo "Usuário ou senha incorretos."; ?>
+
+    <?php } ?>
+    </div>
+  </body>
+
+  </html>
