@@ -4,6 +4,7 @@ if (!isset($_SESSION))
 
 $nivel_necessario = 1;
 
+
 // Verifica se não há a variável da sessão que identifica o usuário
 if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     // Destrói a sessão por segurança
@@ -13,6 +14,7 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     exit;
 }
 
+// Conector
 require('../conexao.php');
 
 $nome = $_SESSION['nome'];
