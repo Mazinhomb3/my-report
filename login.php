@@ -16,7 +16,7 @@ $valor = $_POST ['valor'];
 
 
 
-$sql = "SELECT * FROM tbl_dados where nome_lider = '$usuario' && cod_lider_rede = '$senha' order by data_lider desc limit 100";
+$sql = "SELECT * FROM tbl_dados where  cod_lider_rede = '$senha' order by data_lider ";
 
 $result = $conexao->query($sql);
 
