@@ -42,7 +42,7 @@ abstract class Connection
 
         } catch (Exception $e) {
             // Em caso de erro, encerra o script e exibe uma mensagem de erro.
-            die('Erro: Por favor tente novamente. Caso o problema persista, entre em contato o administrador adm@empresa.com');
+            die('Erro: Por favor tente novamente. Caso o problema persista, entre em contato o administrador mazinhobc3@hotmail.com');
         }
     }
 }
