@@ -49,7 +49,7 @@ $resultUsers = $listUsers->list();
             
             <thead>
 					<tr>
-						<th colspan="2">ID</th>
+						<th>ID</th>
 						<th>Nome</th>
                         <th>Rede</th>
                         <th>Função</th>
