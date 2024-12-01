@@ -24,7 +24,7 @@ $_SESSION['LAST_ACTIVITY'] = time();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="./css/estilo.css">
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/logo_paz.ico" type="image/x-icon">
   <title>Documento Enviado</title>
   <script type="text/javascript"> // Tipo do Script
 function redirectTime(){ // Função que define o tempo
@@ -48,7 +48,7 @@ div {
   <td><?php echo "Olá, " . $_SESSION['nome_lider'] . ". ";?></td>
 </tr>
 <tr>
-  <td><?php echo "mas seus dados ja foram enviados! ";?></td>
+  <td><?php echo "Seus dados ja foram enviados! ";?></td>
 </tr>
 
 

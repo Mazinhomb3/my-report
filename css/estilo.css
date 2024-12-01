@@ -1,7 +1,7 @@
 
 
 
-@media only screen and (min-width: 300px) and (max-device-width: 768px){
+@media only screen and (min-width: 300px){
 
     body {
         background-color: rgb(4, 4, 150);
@@ -90,9 +90,15 @@
     
     }
 
+    .erro{
+        text-align: center;
+        margin-top: 30%;
+        color: red;
+    }
+
 }
 
-@media only screen and (min-width: 768px) and (max-device-width: 1200px) { 
+@media only screen and (min-width: 768px) { 
     body {
         background-color: rgb(4, 4, 150);
         background-image: url(../img/gradient_2.jpg);
@@ -192,6 +198,12 @@
     
     }
 
+    .erro{
+        text-align: center;
+        margin-top: 20%;
+        color: red;
+    }
+
 }
 
 @media only screen and (min-width: 1200px){
@@ -279,6 +291,11 @@
         
         }
          
+        .erro{
+            text-align: center;
+            margin-top: 20%;
+            color: red;
+        }
 
 }
     
