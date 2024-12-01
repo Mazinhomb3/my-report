@@ -21,7 +21,7 @@ $sql = "SELECT * FROM tbl_dados where  cod_lider_rede = '$senha' order by data_l
 
 $result = $conexao->query($sql);
 
-if ($result->num_rows > 0) {
+if ($result->num_rows > 0) {  
 
     $row = $result->fetch_assoc();
 
