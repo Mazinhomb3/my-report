@@ -144,15 +144,18 @@ else
     </TR>
     <tr>
     <td  align="center">
-        <INPUT TYPE="RADIO" NAME="tipo" id="tipo" VALUE="ADULTO"> ADULTO
-        <INPUT TYPE="RADIO" NAME="tipo" id="tipo" VALUE="CRIANÇA"> CRIANÇA
+        <select name="tipo" id="tipo">
+            <option value="Adulto">Adulto</option>
+            <option value="Adolecentes">Adolecentes</option>
+            <option value="Crianças">Crianças</option>
+        </select>
     </td>
     </tr>  
     <tr>
         <td class="inputs">Valor da Oferta de Célula</td>
     </tr>
     <tr>
-        <td align="center">R$ <input  class="valor" type="float"  maxlength="10" id="oferta" placeholder="Oferta"></td>
+        <td align="center">R$ <input  class="valor" type="float"  maxlength="10" id="valor" placeholder="Oferta"></td>
     </tr>
    
     <tr>

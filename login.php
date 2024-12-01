@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -12,11 +13,11 @@ $mcp = $_POST ['mcp'];
 $cp = $_POST ['cp'];
 $cria = $_POST ['cria'];
 $tipo = $_POST ['tipo'];
-$valor = $_POST ['valor'];
+$valor = $_POST ["valor"];
 
 
 
-$sql = "SELECT * FROM tbl_dados where  cod_lider_rede = '$senha' order by data_lider ";
+$sql = "SELECT * FROM tbl_dados where  cod_lider_rede = '$senha' order by data_lider desc limit 100";
 
 $result = $conexao->query($sql);
 
@@ -47,7 +48,24 @@ if ($result->num_rows > 0) {
     
     header('Location: cadastro.php');
   } else {
-    echo "Usuário ou senha incorretos.";
-  }
+   
+  
 
 ?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./css/estilo.css">
+    <link rel="shortcut icon" href="./img/logo_paz.ico" type="image/x-icon">
+  <title>Paz Santarém</title>
+</head>
+<body>
+  <div class="erro" >
+<?php  echo "ID de célula incorreto."; ?>
+<?php } ?>
+  </div>
+</body>
+</html>
