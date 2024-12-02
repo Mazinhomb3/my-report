@@ -1,15 +1,18 @@
 <?php
+if (!isset($_SESSION))
 session_start();
+// Estabelece o nivel da sessao
+$nivel_necessario = 5;
 
 
-if (!isset($_SESSION['nome']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
-    //A última solicitação foi há mais de 30 minutos
-    session_unset();     //Variável para o tempo de execução 
-    session_destroy();   //Destruir os dados da sessão no armazenamento
-
-    header('Location: index.php');
+// Verifica se não há a variável da sessão que identifica o usuário
+if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
+// Destrói a sessão por segurança
+session_destroy();
+// Redireciona o visitante de volta pro login
+header("Location: index.php");
+exit;
 }
-$_SESSION['LAST_ACTIVITY'] = time();
 
 // Importa a classe Connection que estabelece a conexão com o banco de dados.
 require './Connection.php';
@@ -43,8 +46,8 @@ $resultUsers = $listUsers->list();
 
 <body>
     <div class="login"><?php echo "Bem vindo, " . $_SESSION['nome'] . "!"; ?></div>
-    <div>
-        <table border="1" align="center">
+    <div class="divtabelalistar">
+        <table class="tabelalistar" align="center">
             <caption>Cadastros</caption>
             
             <thead>
@@ -53,6 +56,7 @@ $resultUsers = $listUsers->list();
 						<th>Nome</th>
                         <th>Rede</th>
                         <th>Função</th>
+                        <th>Editar</th>
 					</tr>
 				</thead>
             <?php
@@ -66,6 +70,7 @@ $resultUsers = $listUsers->list();
                     <td><?php echo "$nome"; ?></td>
                     <td><?php echo "$rede"; ?></td>
                     <td><?php echo "$funcao"; ?></td>
+                    <td class="botaolistar"><a href='<?php echo "view.php?id=$id" ?>'>Edite</a></td>
                 </tr>
             </tbody>
             <?php } ?>

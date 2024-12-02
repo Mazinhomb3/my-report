@@ -1,15 +1,18 @@
 <?php
+if (!isset($_SESSION))
 session_start();
+// Estabelece o nivel da sessao
+$nivel_necessario = 5;
 
-if (!isset($_SESSION['nome']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
-    //A última solicitação foi há mais de 30 minutos
-    session_unset();     //Variável para o tempo de execução 
-    session_destroy();   //Destruir os dados da sessão no armazenamento
 
-     header('Location: index.php');
-     
-   }
-   $_SESSION['LAST_ACTIVITY'] = time();
+// Verifica se não há a variável da sessão que identifica o usuário
+if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
+// Destrói a sessão por segurança
+session_destroy();
+// Redireciona o visitante de volta pro login
+header("Location: index.php");
+exit;
+}
 ?>
 
 
@@ -41,7 +44,7 @@ if (!isset($_SESSION['nome']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
 <a href="cadastrar.php" class="botao">Cadastrar</a><br>
 <a href="listar.php" class="botao">Listar</a><br>
 <a href="edit.php" class="botao">Auterar</a><br>
-<a href="listar.php" class="botao">Deletar</a><br>
+<a href="deletar.php" class="botao">Deletar</a><br>
 </ul>
     </div>
     

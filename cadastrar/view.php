@@ -64,13 +64,6 @@ $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
             // Extrai as chaves do array associativo para variáveis individuais.
             extract($valueUser);
 
-            // Exibe o ID, nome e e-mail do usuário.
-            /*
-            echo "Id do usuário: $id <br>";
-            echo "Nome do usuário: $nome <br>";
-            echo "Nome do usuário: $rede <br>";
-            echo "Função do usuário: $funcao <br>";
-            */
         } else {
 
             // Armazena uma mensagem de erro na sessão se o usuário não for encontrado.
@@ -106,8 +99,11 @@ $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
             <td align="center">
                 <a class="botaoedit" href="edit.php?id=<?php echo $id ?? ''; ?>">Editar</a>
             </td>
-
-
+            <tr>
+            <td align="center">
+                <a class="botaoedit" href="delete.php?id=<?php echo $id ?? ''; ?>">Delete</a>
+            </td>
+            </tr>
 
         </table>
 

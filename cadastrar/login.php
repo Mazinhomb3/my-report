@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
+    <link rel="shortcut icon" href="../img/logo_paz.ico" type="image/x-icon">
+    <title>Paz Santarém</title>
+</head>
+<body>
+  
+</body>
+</html>
+
 <?php
 session_start();
 
@@ -10,7 +24,7 @@ $senhamd5 = md5("$senha");
 $funcao = "editor";
 
 
-$sql = "SELECT * FROM tbl_login_sup where nome_login = '$usuariomd5' && senha = '$senhamd5' && funcao = '$funcao' ";
+$sql = "SELECT * FROM tbl_login_sup where nome_login = '$usuariomd5' && senha = '$senhamd5' ";
 
 $result = $conexao->query($sql);
 
@@ -22,9 +36,21 @@ if ($result->num_rows > 0) {
   $_SESSION['nome'] = $row['nome'];
   $_SESSION['senha'] = $row['senha'];
   $_SESSION['funcao'] = $row['funcao'];
+  $_SESSION['nivel'] = $row['nivel'];
 
+  $nivel = $_SESSION['nivel'];
 
-  header('Location: index2.php');
+  if ($nivel == 6) {
+    header('Location: index2.php');
+  }else{
+   
+    echo "<body><div align=center> Seu nivel não e suficiente para essa auteração, entre em contato com administrador! </div></body>";
+    
+      
+    
+  }
+
+  
 } else {
 
 
