@@ -60,8 +60,7 @@ if ($result->num_rows > 0) {
 
   <body>
     <div class="erro">
-      <?php echo "Usuário ou senha incorretos."; ?>
-
+      <?php echo "Usuário ou senha incorretos.<br> Mande uma msg para o admin@my-report.site"; ?>
     <?php } ?>
     </div>
   </body>

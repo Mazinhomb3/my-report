@@ -60,7 +60,7 @@ $_SESSION['totalpres_celula'] = $soma_total;
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" type="text/css" href="./css/estilo.css">
-   <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+   <link rel="shortcut icon" href="/img/logo_paz.ico" type="image/x-icon">
    <script>
       document.getElementById("backBtn").addEventListener("click", function () {
          history.back();

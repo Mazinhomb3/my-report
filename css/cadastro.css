@@ -209,3 +209,16 @@ body {
     width: 0;
     text-decoration: none;
 }
+
+.tblsenha{
+     
+    .pergunta{
+        text-align: right;
+    }
+
+    .respostas{
+        text-align: center;
+        width: 70px;
+    }
+
+}

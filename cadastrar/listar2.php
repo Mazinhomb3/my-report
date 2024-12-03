@@ -15,7 +15,7 @@ exit;
 }
 
 // Importa a classe Connection que estabelece a conexão com o banco de dados.
-require './Connection.php';
+require './cadastrar/Connection.php';
 
 // Importa a classe ListUsers que realiza a consulta aos usuários.
 require './ListUsers.php';
@@ -59,10 +59,13 @@ $resultUsers = $listUsers->list();
                         <th>Editar</th>
 					</tr>
 				</thead>
+
             <?php
+
             foreach ($resultUsers as $rowUser) {
 
             ?>
+
             <tbody>
                 <tr>
                     <?php extract($rowUser); ?>

@@ -1,12 +1,9 @@
 <?php
-if (!isset($_SESSION))
-session_start();
-// Estabelece o nivel da sessao
-$nivel_necessario = 5;
 
+session_start();
 
 // Verifica se não há a variável da sessão que identifica o usuário
-if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
+if (!isset($_SESSION["nome"])) {
 // Destrói a sessão por segurança
 session_destroy();
 // Redireciona o visitante de volta pro login
@@ -14,9 +11,6 @@ header("Location: index.php");
 exit;
 }
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -42,7 +36,7 @@ exit;
 <div class="div-botao1">
  <ul class="link">
 <a href="cadastrar.php" class="botao">Cadastrar</a><br>
-<a href="listar.php" class="botao">Listar</a><br>
+<a href="listar2.php" class="botao">Listar</a><br>
 <a href="edit.php" class="botao">Auterar</a><br>
 <a href="deletar.php" class="botao">Deletar</a><br>
 </ul>

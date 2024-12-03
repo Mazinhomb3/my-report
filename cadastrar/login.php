@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
-    <link rel="shortcut icon" href="../img/logo_paz.ico" type="image/x-icon">
-    <title>Paz Santarém</title>
-</head>
-<body>
-  
-</body>
-</html>
-
 <?php
 session_start();
 
@@ -34,48 +20,19 @@ if ($result->num_rows > 0) {
 
   $_SESSION['id'] = $row['id'];
   $_SESSION['nome'] = $row['nome'];
-  $_SESSION['senha'] = $row['senha'];
+  $_SESSION['rede'] = $row['rede'];
   $_SESSION['funcao'] = $row['funcao'];
   $_SESSION['nivel'] = $row['nivel'];
-
-  $nivel = $_SESSION['nivel'];
-
-  if ($nivel == 6) {
-    header('Location: index2.php');
-  }else{
-   
-    echo "<body><div align=center> Seu nivel não e suficiente para essa auteração, entre em contato com administrador! </div></body>";
-    
-      
-    
-  }
-
   
+
+  header('location: index2.php');
+
 } else {
 
+  echo "Usuário ou senha incorretos.";
 
-
-
-
+}
 
 ?>
 
-  <!DOCTYPE html>
-  <html lang="pt-BR">
-
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
-    <link rel="shortcut icon" href="../img/logo_paz.ico" type="image/x-icon">
-    <title>Erro</title>
-  </head>
-
-  <body>
-    <div class="titulo1">
-      <?php echo "Usuário ou senha incorretos."; ?>
-    </div>
-  <?php } ?>
-  </body>
-
-  </html>
+  
