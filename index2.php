@@ -82,7 +82,7 @@ else
     </div>
 
     <div class="form">
-    <form id="cadastrar" name="cadastrar" method="POST" action="login2.php"  onsubmit="return validaCampo(); return false;">
+    <form id="cadastrar" name="cadastrar" method="POST" action="login.php"  onsubmit="return validaCampo(); return false;">
     
 <table class="tabela" border="0" align="center">
 
