@@ -15,7 +15,7 @@ exit;
 }
 
 // Importa a classe Connection que estabelece a conexão com o banco de dados.
-require './cadastrar/Connection.php';
+require './Connection.php';
 
 // Importa a classe ListUsers que realiza a consulta aos usuários.
 require './ListUsers.php';
@@ -73,7 +73,9 @@ $resultUsers = $listUsers->list();
                     <td><?php echo "$nome"; ?></td>
                     <td><?php echo "$rede"; ?></td>
                     <td><?php echo "$funcao"; ?></td>
-                    <td class="botaolistar"><a href='<?php echo "view.php?id=$id" ?>'>Edite</a></td>
+                    <td>
+                        <a class="botaolistar" href="view.php?id=<?php echo "$id" ?>">Edite</a>
+                    </td>
                 </tr>
             </tbody>
             <?php } ?>

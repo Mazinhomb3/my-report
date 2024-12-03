@@ -186,6 +186,7 @@ body {
         color: black;
         text-align: center;
         width: 200px;
+        height: 25px;
     }
 
 }
@@ -200,7 +201,7 @@ body {
     background-color: darkcyan;
     color: aliceblue;
     border: none;
-    padding: 4px 3px;
+    padding: 3px 20px;
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;

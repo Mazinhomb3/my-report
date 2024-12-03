@@ -23,7 +23,7 @@ class ListUsers extends Connection
         $this->conn = $this->connect();
 
         // Consulta SQL para selecionar os dados dos usuários.
-        $sql = "SELECT * FROM  tbl_login_sup ORDER BY nome DESC LIMIT 40";
+        $sql = "SELECT * FROM  tbl_login_sup ORDER BY nome DESC";
 
         // Prepara a consulta SQL.
         $stmt = $this->conn->prepare($sql);
