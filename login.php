@@ -5,14 +5,14 @@ session_start();
 require("conexao.php");
 
 
-$usuario = $_POST['usuario'];
+
 $senha = $_POST['idcelula'];
 $mtp = $_POST['mtp'];
 $mcp = $_POST['mcp'];
 $cp = $_POST['cp'];
 $cria = $_POST['cria'];
 $tipo = $_POST['tipo'];
-$valor = $_POST["valor"];
+$valor = $_POST["oferta"];
 
 $sql = "SELECT * FROM tbl_redes where cod_lider_rede = '$senha' limit 1 ";
 
@@ -36,6 +36,8 @@ if ($result->num_rows > 0) {
   $_SESSION['cria'] = $cria;
   $_SESSION['tipo'] = $tipo;
   $_SESSION['valor'] = $valor;
+
+  
 
   $sqldata = "SELECT data_lider from tbl_dados where cod_lider_rede = '$senha' order by data_lider desc";
 
