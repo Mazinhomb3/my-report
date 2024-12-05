@@ -73,7 +73,7 @@ else
     </div>
     <div class="sub">
 
-<p>Preencha seu Relatório</p>
+
 
     </div>
 
@@ -140,12 +140,10 @@ else
     </td>
     </tr>  
     <tr>
-<<<<<<< HEAD
+
         <td class="inputs">Oferta da Célula</td>
-=======
-        <td class="inputs">Valor da Oferta da Célula</td>
->>>>>>> 7034bee2af1926846f940385a97fbad7fa9e6800
-    </tr>
+
+        </tr>
     <tr>
         <td align="center">R$ 
             <input name="oferta" class="valor" type="float"  maxlength="10" id="oferta" placeholder="Oferta">

@@ -1,22 +1,12 @@
 <?php
-// Inicia a sessão para armazenar e acessar variáveis de sessão.
-session_start();
-
-require('../conexao.php');
-
-if (!isset($_SESSION['nome']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
-    //A última solicitação foi há mais de 30 minutos
-    session_unset();     //Variável para o tempo de execução 
-    session_destroy();   //Destruir os dados da sessão no armazenamento
-
-    header('Location: index.php');
-}
-$_SESSION['LAST_ACTIVITY'] = time();
 
 
 
+require './comparaDados.php';
 
+$listardatas = new comparaDados ();
 
+$listardatas->listarDatas();
 
 ?>
 
