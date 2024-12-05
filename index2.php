@@ -152,7 +152,7 @@ else
     </td>
     </tr>  
     <tr>
-        <td class="inputs">Valor da Oferta de Célula</td>
+        <td class="inputs">Oferta da Célula</td>
     </tr>
     <tr>
         <td align="center">R$ <input  class="valor" type="float"  maxlength="10" id="valor" placeholder="Oferta"></td>

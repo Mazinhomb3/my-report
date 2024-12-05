@@ -1,0 +1,80 @@
+body {
+    background-color: rgb(4, 4, 150);
+    background-image: url(../img/gradient_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    padding: 2px;
+    min-height: 100vh;
+    margin: 0;
+    color: aliceblue;
+}
+
+.divlogo {
+   margin: 0;
+    text-align: center;
+}
+
+.logopaz {
+    color: aliceblue;
+    margin-top: 5%;
+    padding-left: 15px;
+    padding-bottom: 0;
+    height: 10%;
+    width: 10%;
+    align-content: center;
+}
+
+.divdata{
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    padding: 15px;
+}
+
+.tabelaenviar, tr ,td {
+   
+    text-align: center;
+    height: 20px;
+    padding: 5px;
+
+    }
+
+    .pergunta {
+        text-align: right;
+    }
+    
+
+   .cadastro {
+    text-align: left;
+    width: 70px;
+   }
+   
+   .select{
+    text-align: left;
+    width: 100px;
+   }
+   .valor{
+    text-align: left;
+    width: 70px;
+   }
+    
+   .botao {
+    text-align: center;
+    background-color: darkcyan;
+    color: aliceblue;
+    border: none;
+    padding: 10px 40px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-top: 3%;
+    width: 10px;
+
+}
+.botao {
+text-align: center;
+
+}
+
