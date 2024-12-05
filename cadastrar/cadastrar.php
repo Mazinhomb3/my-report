@@ -1,18 +1,19 @@
 <?php
 
-// Inicia a sessão para armazenar e acessar variáveis de sessão.
+if (!isset($_SESSION))
+
 session_start();
+// Estabelece o nivel da sessao
+$nivel_necessario = 5;
 
-require('../conexao.php');
-
-if (!isset($_SESSION['nome']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
-    //A última solicitação foi há mais de 30 minutos
-    session_unset();     //Variável para o tempo de execução 
-    session_destroy();   //Destruir os dados da sessão no armazenamento
-
-    header('Location: index.php');
+// Verifica se não há a variável da sessão que identifica o usuário
+if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
+// Destrói a sessão por segurança
+session_destroy();
+// Redireciona o visitante de volta pro login
+header("Location: index.php");
+exit;
 }
-$_SESSION['LAST_ACTIVITY'] = time();
 
 
 
@@ -83,7 +84,7 @@ $result1 = mysqli_query($conexao, $corQuery);
     }
     ?>
     <div class="form">
-        <table align="center" border="0">
+        <table align="center">
             <!-- Formulário para cadastro de um novo usuário -->
             <form method="POST" action="">
                 <tr>

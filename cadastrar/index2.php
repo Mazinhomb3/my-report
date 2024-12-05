@@ -1,19 +1,16 @@
 <?php
+
 session_start();
 
-if (!isset($_SESSION['nome']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
-    //A última solicitação foi há mais de 30 minutos
-    session_unset();     //Variável para o tempo de execução 
-    session_destroy();   //Destruir os dados da sessão no armazenamento
-
-     header('Location: index.php');
-     
-   }
-   $_SESSION['LAST_ACTIVITY'] = time();
+// Verifica se não há a variável da sessão que identifica o usuário
+if (!isset($_SESSION["nome"])) {
+// Destrói a sessão por segurança
+session_destroy();
+// Redireciona o visitante de volta pro login
+header("Location: index.php");
+exit;
+}
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -39,9 +36,9 @@ if (!isset($_SESSION['nome']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
 <div class="div-botao1">
  <ul class="link">
 <a href="cadastrar.php" class="botao">Cadastrar</a><br>
-<a href="listar.php" class="botao">Listar</a><br>
+<a href="listar2.php" class="botao">Listar</a><br>
 <a href="edit.php" class="botao">Auterar</a><br>
-<a href="listar.php" class="botao">Deletar</a><br>
+<a href="deletar.php" class="botao">Deletar</a><br>
 </ul>
     </div>
     

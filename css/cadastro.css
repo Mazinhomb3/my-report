@@ -5,7 +5,7 @@ body {
     background-size: cover;
     justify-content: center;
     padding: 2px;
-    min-height: 90vh;
+    min-height: 100vh;
     margin: 0;
     color: aliceblue;
 }
@@ -23,7 +23,7 @@ body {
     padding-bottom: 0;
 }
 
-.titulo1{
+.titulo1 {
     margin-top: 10%;
     text-align: center;
 }
@@ -167,4 +167,59 @@ body {
 
 .label {
     text-align: left;
+}
+
+.tabelalistar {
+
+    border: 1px solid;
+    text-align: left;
+    border: 1px solid rgb(160 160 160);
+
+    th {
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
+
+    td {
+        background-color: white;
+        color: black;
+        text-align: center;
+        width: 200px;
+        height: 25px;
+    }
+
+}
+
+.divtabelalistar {
+    margin-top: 30px;
+}
+
+.botaolistar {
+
+    text-align: center;
+    background-color: darkcyan;
+    color: aliceblue;
+    border: none;
+    padding: 3px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-top: 0;
+    width: 0;
+    text-decoration: none;
+}
+
+.tblsenha{
+     
+    .pergunta{
+        text-align: right;
+    }
+
+    .respostas{
+        text-align: center;
+        width: 70px;
+    }
+
 }

@@ -58,7 +58,7 @@ class Users extends Connection
         $this->conn = $this->connect();
 
         // Consulta SQL para selecionar os dados dos usuários.
-        $sql = "SELECT * FROM tbl_login_sup ORDER BY nome ASC LIMIT 100";
+        $sql = "SELECT * FROM tbl_login_sup ORDER BY nome ASC ";
 
         // Prepara a consulta SQL.
         $stmt = $this->conn->prepare($sql);
@@ -173,6 +173,23 @@ class Users extends Connection
         }
     }
 
+    public function delete(): bool
+    {
+        // Estabelece a conexão com o banco de dados.
+        $this->conn = $this->connect();
+
+        // Consulta SQL para excluir um usuário específico baseado no seu ID.
+        $sql = "DELETE FROM tbl_login_sup WHERE id = :id LIMIT 1";
+
+        // Prepara a consulta SQL.
+        $deleteUser = $this->conn->prepare($sql);
+
+        // Associa o valor do ID ao parâmetro na consulta SQL.
+        $deleteUser->bindParam(':id', $this->id);
+
+        // Executa a consulta SQL.
+        return $deleteUser->execute();
+    }
 
 
 }

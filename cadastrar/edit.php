@@ -1,8 +1,18 @@
 <?php
-
-// Inicia a sessão para armazenar e acessar variáveis de sessão.
+if (!isset($_SESSION))
 session_start();
+// Estabelece o nivel da sessao
+$nivel_necessario = 5;
 
+
+// Verifica se não há a variável da sessão que identifica o usuário
+if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
+// Destrói a sessão por segurança
+session_destroy();
+// Redireciona o visitante de volta pro login
+header("Location: index.php");
+exit;
+}
 /**
  * Ativa o buffer de saída para permitir redirecionamentos após o envio de cabeçalhos.
  */

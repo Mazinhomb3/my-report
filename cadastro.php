@@ -8,7 +8,6 @@ if (!isset($_SESSION['nome_lider']) && (time() - $_SESSION['LAST_ACTIVITY'] > 18
    session_destroy();   //Destruir os dados da sessão no armazenamento
 
    header('Location: index.php');
-
 }
 $_SESSION['LAST_ACTIVITY'] = time();
 
@@ -33,8 +32,6 @@ $datahoje = date('Y-m-d');
 if ($data == $datahoje) {
 
    header('Location: erro.php');
-
-
 }
 
 //Soma os dados
@@ -60,9 +57,9 @@ $_SESSION['totalpres_celula'] = $soma_total;
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" type="text/css" href="./css/estilo.css">
-   <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+   <link rel="shortcut icon" href="/img/logo_paz.ico" type="image/x-icon">
    <script>
-      document.getElementById("backBtn").addEventListener("click", function () {
+      document.getElementById("backBtn").addEventListener("click", function() {
          history.back();
       });
    </script>
@@ -73,7 +70,7 @@ $_SESSION['totalpres_celula'] = $soma_total;
    <br>
    <div class="sub">
       <?php echo "Bem-vindo, " . $_SESSION['nome_lider']; ?>
-      <h4> Confirme se os dados enviados estão corretos!</h4>
+      <h4> Confirme se os dados enviados estão corretos.</h4>
 
    </div>
 
@@ -104,7 +101,7 @@ $_SESSION['totalpres_celula'] = $soma_total;
                </th>
             <tr>
                <th>
-                  Membros Total Presentes
+                   Total de Membros
                </th>
             <tr>
                <th class="resposta">
@@ -112,7 +109,7 @@ $_SESSION['totalpres_celula'] = $soma_total;
                </th>
             <tr>
                <th>
-                  Membros Compromissados Presentes
+                  Membros Presentes
                </th>
             <tr>
                <th class="resposta">
@@ -143,6 +140,16 @@ $_SESSION['totalpres_celula'] = $soma_total;
                <th class="resposta">
                   <?= $dados['tipo'] ?>
                </th>
+            </tr>
+            <tr>
+               <th>
+                  Oferta
+               </th>
+            <tr>
+               <th class="resposta">
+                  R$ <?= $dados['valor'] ?>
+               </th>
+            </tr>
             <tr>
                <th height="50">
                   <input type="submit" name="enviar" id="enviar" value="Concluir Envio">

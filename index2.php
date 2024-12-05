@@ -11,13 +11,9 @@
 
     function validaCampo()
 {
-if(document.cadastrar.usuario.value=="")
-{
-	alert("O campo Nome é obrigatório")
-	return false;
-}
-else
-	if(document.cadastrar.idcelula.value=="")
+
+if
+	(document.cadastrar.idcelula.value=="")
 	{
 	alert("O Campo Id de Célula é obrigatório!");
 	return false;
@@ -73,7 +69,7 @@ else
   <div class="divsub">
     <img class="logo" src="./img/logo_paz.png" alt="">
     <p>Paz Santarém</p>
-    <p>Sejam bem vindos, aqui você pode enviar seu relatorio!</p>
+    <p>Sejam bem vindos, aqui você pode enviar seu relatório.</p>
     </div>
     <div class="sub">
 
@@ -82,43 +78,35 @@ else
     </div>
 
     <div class="form">
-    <form id="cadastrar" name="cadastrar" method="POST" action="login2.php"  onsubmit="return validaCampo(); return false;">
+    <form id="cadastrar" name="cadastrar" method="POST" action="login.php"  onsubmit="return validaCampo(); return false;">
     
 <table class="tabela" border="0" align="center">
 
+
     <tr>
-        <td class="inputs">Nome </td>
+        <td class="inputs">ID-Célula </td>
     </tr>
     <tr>
         <td>
-                <input id="usuario" class="inputs" name="usuario" type="text"  placeholder="Nome">
+                <input  name="idcelula" class="inputs" type="number" id="idcelula" placeholder="ID-Célula">
         </td>
     </tr>
 
     <tr>
-        <td class="inputs">Id-Célula </td>
+        <td class="inputs">Total de Membros</td>
     </tr>
     <tr>
         <td>
-                <input  name="idcelula" class="inputs" type="number" id="idcelula" placeholder="Id-Célula">
+                <input  name="mtp" class="inputs" type="number" id="mtp" placeholder="TM">
         </td>
     </tr>
 
     <tr>
-        <td class="inputs">Total de Membros da Célula</td>
+        <td class="inputs">Membros Presentes</td>
     </tr>
     <tr>
         <td>
-                <input  name="mtp" class="inputs" type="number" id="mtp" placeholder="TMC">
-        </td>
-    </tr>
-
-    <tr>
-        <td class="inputs">Membros Presentes na Célula</td>
-    </tr>
-    <tr>
-        <td>
-                <input  name="mcp" class="inputs" type="number" id="mcp" placeholder="MPC">
+                <input  name="mcp" class="inputs" type="number" id="mcp" placeholder="MP">
         </td>
     </tr>
 
@@ -152,10 +140,16 @@ else
     </td>
     </tr>  
     <tr>
+<<<<<<< HEAD
         <td class="inputs">Oferta da Célula</td>
+=======
+        <td class="inputs">Valor da Oferta da Célula</td>
+>>>>>>> 7034bee2af1926846f940385a97fbad7fa9e6800
     </tr>
     <tr>
-        <td align="center">R$ <input  class="valor" type="float"  maxlength="10" id="valor" placeholder="Oferta"></td>
+        <td align="center">R$ 
+            <input name="oferta" class="valor" type="float"  maxlength="10" id="oferta" placeholder="Oferta">
+        </td>
     </tr>
    
     <tr>

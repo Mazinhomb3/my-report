@@ -26,7 +26,7 @@
 <a href="https://www.instagram.com/pazsantarempa/" class="botao"><img src="./img/instagram.png" class="imgbt" alt="Descrição da imagem">Instagram</a><br>
 <a href="https://www.facebook.com/PazSantaremPA" class="botao"><img src="./img/face.png" class="imgbt" alt="Descrição da imagem">Facebook</a><br>
 <a href="https://paz.church/santarem" class="botao"><img src="./img/logo_paz.png" class="imgbt" alt="Descrição da imagem">Paz Santarém</a><br>
-<a href="qr.php" class="botao"><img src="./img/qr.png" class="imgbt" alt="Descrição da imagem">Paz Santarém</a><br>
+<a href="qr.php" class="botao"><img src="./img/qr.png" class="imgbt" alt="Descrição da imagem">Contas Igreja</a><br>
 </ul>
     </div>
     
