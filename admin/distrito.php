@@ -4,7 +4,7 @@
 if (!isset($_SESSION))
     session_start();
 
-$nivel_necessario = 4;
+$nivel_necessario = 3;
 
 // Verifica se não há a variável da sessão que identifica o usuário
 if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
@@ -27,8 +27,6 @@ $corQuery = "SELECT DISTINCT `distrito_lider` FROM `tbl_dados` WHERE `cor_rede_l
 $result = mysqli_query($conexao, $corQuery);
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="pt-BR">

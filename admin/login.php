@@ -24,8 +24,10 @@ if ($result->num_rows > 0) {
 
   $_SESSION['id'] = $row['id'];
   $_SESSION['nome'] = $row['nome'];
-  $_SESSION['rede'] = $cor_rede;
-  $_SESSION['funcao'] = $funcao;
+  $_SESSION['rede'] = $row['rede'];
+  //$cor_rede;
+  $_SESSION['funcao'] = $row['funcao']; 
+  //$funcao;
   $_SESSION['nivel'] = $row['nivel'];
   $_SESSION['dtini'] = $dtini;
   $nivel = $_SESSION['nivel'];

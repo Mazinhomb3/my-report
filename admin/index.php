@@ -3,20 +3,6 @@
 
 require('../conexao.php');
 
-
-$corQuery = "SELECT DISTINCT rede FROM tbl_login_sup ";
-
-$result = mysqli_query($conexao, $corQuery);
-
-
-$funcaoQuery = "SELECT DISTINCT funcao FROM tbl_login_sup ";
-
-$resultfuncao = mysqli_query($conexao, $funcaoQuery);
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -55,27 +41,7 @@ $resultfuncao = mysqli_query($conexao, $funcaoQuery);
                         <input name="senha" id="senha" type="password" class="respostas">
                 </tr>
                 </tr>
-                <tr>
-                    <td class="inputs">Rede: </td>
-                    <td>
-                        <select name="cor_rede" id="cor_rede" align="center" class="respostas">
-                            <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                                <option value="<?php echo $row['rede']; ?>"><?php echo $row['rede']; ?></option>
-                            <?php } ?>
-                    </td>
-                    </select>
-                </tr>
-
-                <tr>
-                    <td class="inputs">Função: </td>
-                    <td>
-                        <select name="funcao" id="funcao" align="center" class="respostas">
-                            <?php while ($row = mysqli_fetch_assoc($resultfuncao)) { ?>
-                                <option value="<?php echo $row['funcao']; ?>"><?php echo $row['funcao']; ?></option>
-                            <?php } ?>
-                    </td>
-                    </select>
-                </tr>
+                
                 <tr>
                     <td class="inputs">
                         Data Inicial:

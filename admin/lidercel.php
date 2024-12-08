@@ -2,10 +2,10 @@
 if (!isset($_SESSION))
     session_start();
 
-$nivel_necessario = 3;
+$nivel_necessario = 1;
 
 // Verifica se não há a variável da sessão que identifica o usuário
-if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
+if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] <= $nivel_necessario)) {
     // Destrói a sessão por segurança
     session_destroy();
     // Redireciona o visitante de volta pro login
@@ -53,7 +53,7 @@ $result = mysqli_query($conexao, $corQuery);
     <table border="0" align="center">
         <tr>
             <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                <td class="respostas"><?php echo $row['nome_lider']; ?></td>
+               
         </tr>
     <?php } ?>
     </table>

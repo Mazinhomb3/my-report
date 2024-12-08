@@ -4,7 +4,7 @@
 if (!isset($_SESSION))
     session_start();
 
-$nivel_necessario = 2;
+$nivel_necessario = 1;
 
 // Verifica se não há a variável da sessão que identifica o usuário
 if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
@@ -21,8 +21,10 @@ $nome = $_SESSION['nome'];
 $rede = $_SESSION['rede'];
 $funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
+$arealider = $_POST['arealider'];
+$_SESSION['arealider'] = $arealider;
 
-$corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE `cor_rede_lider` like '$rede'  and `area_lider` like '$nome'";
+$corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE `cor_rede_lider` like '$rede'  and `area_lider` like '$arealider'";
 
 $result = mysqli_query($conexao, $corQuery);
 

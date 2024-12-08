@@ -2,7 +2,7 @@
 if (!isset($_SESSION))
 session_start();
 
-$nivel_necessario = 2;
+$nivel_necessario = 1;
 
 // Verifica se não há a variável da sessão que identifica o usuário
 if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
@@ -15,15 +15,16 @@ exit;
 
 require('../conexao.php');
 
-
-
 $nome = $_SESSION['nome'];
 $rede = $_SESSION['rede'];
 $setorlider = $_POST["setorlider"];
+$arealider = $_POST['arealider'];
+$_SESSION['arealider'] = $arealider;
 
 
 
-$corQuery = "SELECT DISTINCT `nome_lider` FROM `tbl_dados` WHERE `cor_rede_lider` like '$rede'  and `area_lider` like '$nome' and setor_lider like '$setorlider'";
+$corQuery = "SELECT DISTINCT `nome_lider` FROM `tbl_dados` WHERE `cor_rede_lider` like '$rede'  
+and `area_lider` like '$nome' and setor_lider like '$setorlider'";
 
 $result = mysqli_query($conexao, $corQuery);
 
@@ -50,7 +51,7 @@ $result = mysqli_query($conexao, $corQuery);
     <table border="0" align="center">
         <tr>
      <?php   while ($row = mysqli_fetch_assoc($result)) { ?>
-            <td class="respostas"><?php echo $row['nome_lider']; ?></td>
+            
         </tr>
     <?php } ?>
     
