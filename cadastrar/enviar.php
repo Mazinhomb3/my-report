@@ -1,6 +1,6 @@
 <?php
 
-require './Connection.php';
+
 
 require './comparaDados.php';
 
@@ -22,9 +22,39 @@ $listardatas->listarDatas();
 </head>
 
 <body>
-    <div class="divlogo">
-        <img class="logopaz" src="../img/logo_paz.png" alt="">
-    </div>
+    <?php
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (isset($_POST['pesquisar'])) {
+
+            require './Connection.php';
+            require './ComparaData.php';
+
+            $comparaData = new ComparaData();
+
+            $resultdata = $comparaData->datas();
+
+            foreach ($resultdata as $rowsData) {
+
+                extract($rowsData);
+            }
+        }
+    }
+    ?>
+    <br>
+     <div class="login"><?php echo "Bem vindo, " . $_SESSION['nome'] . "!";?></div>
+
+    <?php if ($data_lider <= $_POST['dtpesq'] && $cod_lider_rede == $_POST['idcelula']) { ?>
+
+        <div align="center">
+            <img class="logopaz" src="../img/logo_paz_vermelho.png" alt="">
+        </div>
+
+    <?php } elseif ($data_lider >= $_POST['dtpesq'] && $cod_lider_rede == $_POST['idcelula']) { ?>
+        <div align="center">
+            <img class="logopaz" src="../img/logo_paz_verde.png" alt="">
+        </div>
+    <?php } ?>
     <div>
         <form action="" method="POST" id="form">
             <div class="divdata">
@@ -45,6 +75,8 @@ $listardatas->listarDatas();
                     </tr>
                 </thead>
             </div>
+
+
             <table class="tabelaenviar" align="center">
                 <tbody align="center">
                     <tr>
@@ -52,7 +84,7 @@ $listardatas->listarDatas();
                             ID Célula:
                         </td>
                         <td class="cadastro">
-                            <input type="number" class="cadastro" name="idcelula" id="idcelula">
+                            <input type="number" class="cadastro" name="idcelula" id="idcelula" require>
                         </td>
                     </tr>
                     <tr>
@@ -60,7 +92,7 @@ $listardatas->listarDatas();
                             Total de Membros:
                         </td>
                         <td class="cadastro">
-                            <input type="number" name="mtp" id="mtp" class="cadastro">
+                            <input type="number" name="mtp" id="mtp" class="cadastro" require>
                         </td>
                     </tr>
                     <tr>
@@ -68,7 +100,7 @@ $listardatas->listarDatas();
                             Membros Presentes:
                         </td>
                         <td class="cadastro">
-                            <input type="number" name="mcp" id="mcp" class="cadastro">
+                            <input type="number" name="mcp" id="mcp" class="cadastro" require>
                         </td>
                     </tr>
                     <tr>
@@ -76,7 +108,7 @@ $listardatas->listarDatas();
                             Convidados Presentes:
                         </td>
                         <td class="cadastro">
-                            <input type="number" name="cp" id="cp" class="cadastro">
+                            <input type="number" name="cp" id="cp" class="cadastro" require>
                         </td>
                     </tr>
                     <tr>
@@ -84,7 +116,7 @@ $listardatas->listarDatas();
                             Crianças Presentes:
                         </td>
                         <td class="cadastro">
-                            <input type="number" name="cria" id="cria" class="cadastro">
+                            <input type="number" name="cria" id="cria" class="cadastro" require>
                         </td>
                     </tr>
                     <tr>
@@ -104,19 +136,23 @@ $listardatas->listarDatas();
                             Oferta Célula:
                         </td>
                         <td class="valor">
-                            <input class="valor" type="float" maxlength="10" id="valor">
+                            <input class="valor" type="float" maxlength="10" id="valor" require>
                         </td>
                     </tr>
                 </tbody>
             </table>
             <div align="center">
-                <br>
-                <br>
-                <td>
-                    <a href="#" class="botao">Pesquisar</a>
+        
+                <td class="botao">
+                    <button type="submit" name="pesquisar" class="botao">Pesquisar</button>
                 </td>
-                <td>
-                    <a href="#" class="botao">Cadastrar</a>
+                <td class="botao">
+                    <?php 
+                    
+                   
+                    
+                    ?>
+                    <button type="submit" name="cadastrar" class="botao">Cadastrar</button>
                 </td>
 
             </div>

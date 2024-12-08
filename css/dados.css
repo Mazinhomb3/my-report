@@ -17,7 +17,7 @@ body {
 
 .logopaz {
     color: aliceblue;
-    margin-top: 5%;
+    margin-top: 2%;
     padding-left: 15px;
     padding-bottom: 0;
     height: 10%;
@@ -70,7 +70,7 @@ body {
     cursor: pointer;
     border-radius: 15px;
     margin-top: 3%;
-    width: 10px;
+  
 
 }
 .botao {
@@ -78,3 +78,6 @@ text-align: center;
 
 }
 
+.login {
+    text-align: center;
+}
