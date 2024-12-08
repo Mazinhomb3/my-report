@@ -1,4 +1,9 @@
-
+@font-face {
+  font-family: 'Peace' ;
+  src: url('Peace and love.ttf') format(truetype);
+  font-weight: normal;
+  font-style: normal;
+}
 
 
 
@@ -141,6 +146,8 @@ vertical-align: middle; /* alinhamento vertical da imagem */
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+
+  
   body {
     background-color: rgb(4, 4, 150);
     background-image: url(../img/gradient_2.jpg);
@@ -152,6 +159,7 @@ vertical-align: middle; /* alinhamento vertical da imagem */
     margin-top: 10px;
     color: aliceblue;    
 }
+
 
 .logo {
   margin-top: 0;

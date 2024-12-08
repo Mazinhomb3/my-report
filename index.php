@@ -17,6 +17,7 @@
     <div class="logo">           
     <img src="./img/logosup.png" class="logopaz"  alt="">
     </div>
+    <h1>texte</h1>
 
 <div class="div-botao1">
  <ul class="link">

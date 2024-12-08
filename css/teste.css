@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Peace' ;
+    src: url('../Peace\ and\ love.ttf') format(truetype);
+    font-weight: normal;
+    font-style: normal;
+  }
+h1{
+    
+}
+  p{
+    font-family: 'Peace';
+  }
