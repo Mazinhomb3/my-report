@@ -1,5 +1,12 @@
 
+
 @media (max-width: 768px){
+    @font-face {
+        font-family: 'Peace';
+        src: url('../Peace and love.ttf') format(truetype);
+        font-weight: normal;
+        font-style: normal;
+    }
     .img {
         height: 80%;
         object-fit:cover;
@@ -17,7 +24,7 @@ body {
 background-color: black;
 background-image: url(../img/3.png);
 border: 0;
-
+font-family: 'Peace';
 }
 
 .topo {

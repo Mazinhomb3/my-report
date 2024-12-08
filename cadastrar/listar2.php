@@ -56,7 +56,7 @@ $resultUsers = $listUsers->list();
 						<th>Nome</th>
                         <th>Rede</th>
                         <th>Função</th>
-                        <th>Editar</th>
+                        <th class="editar" >Editar</th>
 					</tr>
 				</thead>
 
@@ -69,10 +69,10 @@ $resultUsers = $listUsers->list();
             <tbody>
                 <tr>
                     <?php extract($rowUser); ?>
-                    <td><?php echo "$id"; ?></td>
-                    <td><?php echo "$nome"; ?></td>
-                    <td><?php echo "$rede"; ?></td>
-                    <td><?php echo "$funcao"; ?></td>
+                    <td class="id"><?php echo "$id"; ?></td>
+                    <td class="nome"><?php echo "$nome"; ?></td>
+                    <td class="rede"><?php echo "$rede"; ?></td>
+                    <td class="funcao"><?php echo "$funcao"; ?></td>
                     <td>
                         <a class="botaolistar" href="view.php?id=<?php echo "$id" ?>">Edite</a>
                     </td>

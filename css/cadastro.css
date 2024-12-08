@@ -1,3 +1,11 @@
+
+@font-face {
+    font-family: 'Peace' ;
+    src: url('../Peace and love.ttf') format(truetype);
+    font-weight: normal;
+    font-style: normal;
+  }
+
 body {
     background-color: rgb(4, 4, 150);
     background-image: url(../img/gradient_2.jpg);
@@ -8,6 +16,7 @@ body {
     min-height: 100vh;
     margin: 0;
     color: aliceblue;
+    font-family: 'Peace';   
 }
 
 .login {
@@ -170,10 +179,9 @@ body {
 }
 
 .tabelalistar {
-
-    border: 1px solid;
     text-align: left;
     border: 1px solid rgb(160 160 160);
+    
 
     th {
         background-color: black;
@@ -181,13 +189,49 @@ body {
         text-align: center;
     }
 
-    td {
-        background-color: white;
-        color: black;
+  
+    .editar{
+        width: 50px;
+        background-color: darkcyan;
+        color: white;
         text-align: center;
-        width: 200px;
-        height: 25px;
+        border: 1px solid white;
+       
     }
+
+.id{
+    width: 50px;
+    height: 25px;
+    background-color: white;
+    color:black;
+    text-align: center;
+    border: 1px solid white;
+}
+
+.nome{
+    width: 200px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border: 1px solid white;
+}
+
+.rede{
+    width: 200px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border: 1px solid white;
+}
+
+.funcao{
+    width: 100px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border: 1px solid white;
+}
+   
 
 }
 

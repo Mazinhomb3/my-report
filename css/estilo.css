@@ -1,7 +1,10 @@
-
-
-
-@media only screen and (min-width: 300px){
+@media only screen and (min-width: 300px) {
+    @font-face {
+        font-family: 'Peace';
+        src: url('../Peace and love.ttf') format(truetype);
+        font-weight: normal;
+        font-style: normal;
+    }
 
     body {
         background-color: rgb(4, 4, 150);
@@ -13,6 +16,7 @@
         min-height: 99vh;
         margin: 0;
         color: aliceblue;
+        font-family: 'Peace';
     }
 
 
@@ -22,13 +26,13 @@
         height: 30%;
         align-content: center;
         padding: 3%;
-       }
+    }
 
     .divsub {
         text-align: center;
         align-content: center;
 
-    }   
+    }
 
     .sub {
         text-align: center;
@@ -57,26 +61,26 @@
     }
 
     .resposta {
-    
-        color:chartreuse;
-            
-     }
 
-     #button {
+        color: chartreuse;
+
+    }
+
+    #button {
         height: 30px;
         color: red;
-                
-     }       
-    
+
+    }
+
     img {
         margin-top: 2%;
         margin-bottom: 0;
         width: 50px;
         height: 50px;
     }
-    
-               
-    
+
+
+
     #enviar {
         background-color: green;
         color: white;
@@ -85,14 +89,14 @@
         border-radius: 15px;
         margin-top: 5%;
     }
-    
-    .valor{
-    text-align: center;
-    width: 50px;
-    
+
+    .valor {
+        text-align: center;
+        width: 50px;
+
     }
 
-    .erro{
+    .erro {
         text-align: center;
         margin-top: 30%;
         color: red;
@@ -100,7 +104,14 @@
 
 }
 
-@media only screen and (min-width: 768px) { 
+@media only screen and (min-width: 768px) {
+    @font-face {
+        font-family: 'Peace';
+        src: url('../Peace and love.ttf') format(truetype);
+        font-weight: normal;
+        font-style: normal;
+    }
+
     body {
         background-color: rgb(4, 4, 150);
         background-image: url(../img/gradient_2.jpg);
@@ -111,6 +122,7 @@
         min-height: 100vh;
         margin: 0;
         color: aliceblue;
+        font-family: 'Peace';
     }
 
     .logo {
@@ -120,14 +132,14 @@
         height: 10%;
         align-content: center;
         padding: 3%;
-       }
+    }
 
     .divsub {
         text-align: center;
         align-content: center;
         margin: 0;
         padding: 0;
-    }  
+    }
 
     .sub {
         text-align: center;
@@ -138,23 +150,23 @@
         padding-bottom: 0;
     }
 
-    
+
     p {
         text-align: center;
         font-size: 14px;
         margin-top: 2px;
         margin-bottom: 2px;
     }
-    
+
     .form {
         text-align: center;
     }
-    
+
     .tabela {
         text-align: center;
         align-content: center;
     }
-    
+
     .inputs {
         border-radius: 3%;
         width: 200px;
@@ -162,31 +174,31 @@
         font-size: 14px;
         padding-top: 5px;
         padding-bottom: 0;
-       
-       
-        }
-    
+
+
+    }
+
     .resposta {
-    
-        color:chartreuse;
-            
-     }
-    
+
+        color: chartreuse;
+
+    }
+
     #button {
         height: 30px;
         color: red;
-                
-     }       
-    
+
+    }
+
     img {
         margin-top: 2%;
         margin-bottom: 0;
         width: 50px;
         height: 50px;
     }
-    
-               
-    
+
+
+
     #enviar {
         background-color: green;
         color: white;
@@ -195,14 +207,14 @@
         border-radius: 15px;
         margin-top: 5%;
     }
-    
-    .valor{
-    
-    width: 50px;
-    
+
+    .valor {
+
+        width: 50px;
+
     }
 
-    .erro{
+    .erro {
         text-align: center;
         margin-top: 20%;
         color: red;
@@ -210,7 +222,16 @@
 
 }
 
-@media only screen and (min-width: 1200px){
+@media only screen and (min-width: 1200px) {
+
+
+    @font-face {
+        font-family: 'Peace';
+        src: url('../Peace and love.ttf') format(truetype);
+        font-weight: normal;
+        font-style: normal;
+    }
+
     body {
         background-color: rgb(4, 4, 150);
         background-image: url(../img/gradient_2.jpg);
@@ -221,6 +242,7 @@
         min-height: 100vh;
         margin: 0;
         color: aliceblue;
+        font-family: 'Peace';
     }
 
     .logo {
@@ -230,13 +252,13 @@
         height: 10%;
         align-content: center;
         padding: 10px;
-       }
+    }
 
-       .divsub {
+    .divsub {
         text-align: center;
         align-content: center;
         margin: 0;
-    } 
+    }
 
     .sub {
         text-align: center;
@@ -255,51 +277,51 @@
         padding-top: 0;
         padding-bottom: 3px;
         align-content: center;
-        vertical-align:bottom;
-       
-       
-        }
+        vertical-align: bottom;
 
-        .resposta {
-    
-            color:chartreuse;
-                
-         }
-         #button {
-            height: 30px;
-            color: red;
-                    
-         }       
-        
-        img {
-            margin-top: 2%;
-            margin-bottom: 0;
-            width: 50px;
-            height: 50px;
-        }
-        
-                   
-        
-        #enviar {
-            background-color: green;
-            color: white;
-            font-weight: bolder;
-            height: 30px;
-            border-radius: 15px;
-            margin-top: 5%;
-        }
-        
-        .valor{
-        
+
+    }
+
+    .resposta {
+
+        color: chartreuse;
+
+    }
+
+    #button {
+        height: 30px;
+        color: red;
+
+    }
+
+    img {
+        margin-top: 2%;
+        margin-bottom: 0;
         width: 50px;
-        
-        }
-         
-        .erro{
-            text-align: center;
-            margin-top: 20%;
-            color: red;
-        }
+        height: 50px;
+    }
+
+
+
+    #enviar {
+        background-color: green;
+        color: white;
+        font-weight: bolder;
+        height: 30px;
+        border-radius: 15px;
+        margin-top: 5%;
+    }
+
+    .valor {
+
+        width: 50px;
+
+    }
+
+    .erro {
+        text-align: center;
+        margin-top: 20%;
+        color: red;
+    }
 
 }
-    

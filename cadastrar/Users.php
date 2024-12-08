@@ -58,7 +58,7 @@ class Users extends Connection
         $this->conn = $this->connect();
 
         // Consulta SQL para selecionar os dados dos usuários.
-        $sql = "SELECT * FROM tbl_login_sup ORDER BY nome ASC ";
+        $sql = "SELECT * FROM tbl_login_sup ORDER BY id DESC ";
 
         // Prepara a consulta SQL.
         $stmt = $this->conn->prepare($sql);
