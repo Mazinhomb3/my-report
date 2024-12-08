@@ -48,7 +48,7 @@ $result = mysqli_query($conexao, $corQuery);
     <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
         <h3>Pr. de Distrito</h3>
     </div>
-    <form method="POST" name="pesquisar" id="form" action="area.php">
+    <form method="POST" name="pesquisar" id="form" action="distrito.php">
         <table border="0" align="center">
             <tr>
                 <td>

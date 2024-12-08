@@ -22,10 +22,10 @@ require('../conexao.php');
 $nome = $_SESSION['nome'];
 $rede = $_SESSION['rede'];
 $dtini = $_SESSION['dtini'];
-$distlider = $_POST['distlider'];
-$_SESSION['distlider'] = $distlider;
+$arealider = $_POST['arealider'];
+$_SESSION['arealider'] = $arealider;
 
-$corQuery = "SELECT DISTINCT `area_lider` FROM `tbl_dados` WHERE  `distrito_lider` like '$distlider'";
+$corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE  `area_lider` like '$arealider'";
 
 $result = mysqli_query($conexao, $corQuery);
 
@@ -48,15 +48,15 @@ $result = mysqli_query($conexao, $corQuery);
 
     <div class="sessao">
         <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
-        <h3>Sup. de área</h3>
+        <h3>Sup. de Setor</h3>
     </div>
-    <form method="POST" name="pesquisar" id="form" action="setlid.php">
+    <form method="POST" name="pesquisar" id="form" action="setor.php">
         <table border="0" align="center">
             <tr>
                 <td>
-                    <select name="arealider" id="arealider" align="center" class="respostas">
+                    <select name="setorlider" id="setorlider" align="center" class="respostas">
                         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                            <option value="<?php echo $row['area_lider']; ?>"><?php echo $row['area_lider']; ?></option>
+                            <option value="<?php echo $row['setor_lider']; ?>"><?php echo $row['setor_lider']; ?></option>
                         <?php } ?>
                 </td>
                 </select>

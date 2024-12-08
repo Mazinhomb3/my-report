@@ -21,11 +21,11 @@ $nome = $_SESSION['nome'];
 $rede = $_SESSION['rede'];
 $funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
-$arealider = $_POST['arealider'];
-$_SESSION['arealider'] = $arealider;
+$setorlider = $_POST['setorlider'];
+$_SESSION['setorlider'] = $setorlider;
 
 
-$corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE `area_lider` like '$arealider'";
+$corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE `area_lider` like '$setorlider'";
 
 $result = mysqli_query($conexao, $corQuery);
 

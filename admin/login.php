@@ -7,8 +7,8 @@ $usuario = $_POST["usuario"];
 $usuariomd5 = md5($usuario);
 $senha = $_POST["senha"];
 $senhamd5 = md5("$senha");
-$cor_rede = $_POST["cor_rede"];
-$funcao = $_POST["funcao"];
+//$cor_rede = $_POST["cor_rede"];
+//$funcao = $_POST["funcao"];
 $dtini = $_POST["dtini"];
 
 

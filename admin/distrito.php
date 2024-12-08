@@ -21,8 +21,9 @@ $nome = $_SESSION['nome'];
 $rede = $_SESSION['rede'];
 $funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
+$distlider = $_POST['distlider'];
 
-$corQuery = "SELECT DISTINCT `distrito_lider` FROM `tbl_dados` WHERE `cor_rede_lider` like '$rede'  and `rede_lider` like '$nome'";
+$corQuery = "SELECT DISTINCT `area_lider` FROM `tbl_dados` WHERE `distrito_lider` like '$distlider'";
 
 $result = mysqli_query($conexao, $corQuery);
 
@@ -43,15 +44,15 @@ $result = mysqli_query($conexao, $corQuery);
 
     <div class="sessao">
         <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
-        <h3>Pr. de Distrito</h3>
+        <h3>Sup. de área</h3>
     </div>
     <form method="POST" name="pesquisar" id="form" action="area.php">
         <table border="0" align="center">
             <tr>
                 <td>
-                    <select name="distlider" id="distlider" align="center" class="respostas">
+                    <select name="arealider" id="arealider" align="center" class="respostas">
                         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                            <option value="<?php echo $row['distrito_lider']; ?>"><?php echo $row['distrito_lider']; ?></option>
+                            <option value="<?php echo $row['area_lider']; ?>"><?php echo $row['area_lider']; ?></option>
                         <?php } ?>
                 </td>
                 </select>

@@ -21,8 +21,10 @@ $nome = $_SESSION['nome'];
 $rede = $_SESSION['rede'];
 $funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
+$arealider = $_SESSION['arealider'];
+$setorlider = $_SESSION['setorlider'];
 
-$corQuery = "SELECT DISTINCT `nome_lider` FROM tbl_dados where `cor_rede_lider` like '$rede' and setor_lider like '$nome' and data_lider >= '$dtini' ";
+$corQuery = "SELECT DISTINCT `nome_lider` FROM tbl_dados where area_lider like '$arealider' and setor_lider like '$setorlider' and data_lider >= '$dtini' ";
 
 $result = mysqli_query($conexao, $corQuery);
 
