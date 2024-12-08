@@ -39,6 +39,7 @@ exit;
 <a href="listar2.php" class="botao">Listar</a><br>
 <a href="edit.php" class="botao">Auterar</a><br>
 <a href="deletar.php" class="botao">Deletar</a><br>
+<a href="Enviar.php" class="botao">Cadastrar Dados</a><br>
 </ul>
     </div>
     
