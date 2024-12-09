@@ -18,7 +18,7 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
 }
 
 
-
+ 
 require('../conexao.php');
 
 $nome = $_SESSION['nome'];
