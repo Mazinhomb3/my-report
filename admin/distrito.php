@@ -27,8 +27,7 @@ $funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
 $correde = $_SESSION['cor_rede_lider'];
 $distlider = $_SESSION['distlider'] = $_POST['distlider'];
-
-echo $correde;
+ 
 
 $sql = "SELECT DISTINCT `area_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `distrito_lider` like '$distlider'";
 
