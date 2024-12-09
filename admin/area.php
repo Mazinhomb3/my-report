@@ -6,6 +6,7 @@ if (!isset($_SESSION))
 
 $nivel_necessario = 2;
 
+
 // Verifica se não há a variável da sessão que identifica o usuário
 if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     // Destrói a sessão por segurança
@@ -23,15 +24,17 @@ $nome = $_SESSION['nome'];
 $rede = $_SESSION['rede'];
 $dtini = $_SESSION['dtini'];
 $arealider = $_POST['arealider'];
+$correde = $_SESSION['cor_rede_lider'];
 $_SESSION['arealider'] = $arealider;
 
-$corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE  `area_lider` like '$arealider'";
+
+$corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE  cor_rede_lider like '$correde' and `area_lider` like '$arealider'";
 
 $result = mysqli_query($conexao, $corQuery);
 
 ?>
 
-
+ 
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -66,7 +69,10 @@ $result = mysqli_query($conexao, $corQuery);
         <tr>
             <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td>
         </tr>
+       
     </form>
+  
 </body>
 
 </html>
+

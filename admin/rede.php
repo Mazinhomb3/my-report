@@ -1,6 +1,5 @@
 <?php
 
-
 if (!isset($_SESSION))
     session_start();
 
@@ -21,9 +20,9 @@ $nome = $_SESSION['nome'];
 $rede = $_SESSION['rede'];
 $funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
-$redelider = $_POST['redelider'];
+$redelider = $_SESSION['redelider'] = $_POST['redelider'];
 
-$corQuery = "SELECT DISTINCT `distrito_lider` FROM `tbl_dados` WHERE  `rede_lider` like '$redelider'";
+$corQuery = "SELECT DISTINCT cor_rede_lider, `distrito_lider` FROM `tbl_dados` WHERE  `rede_lider` like '$redelider'";
 
 $result = mysqli_query($conexao, $corQuery);
 
@@ -43,7 +42,7 @@ $result = mysqli_query($conexao, $corQuery);
 </head>
 
 <body>
-
+ 
     <div class="sessao">
     <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
         <h3>Pr. de Distrito</h3>
@@ -53,7 +52,8 @@ $result = mysqli_query($conexao, $corQuery);
             <tr>
                 <td>
                     <select name="distlider" id="distlider" align="center" class="respostas">
-                        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                        <?php while ($row = mysqli_fetch_assoc($result)) { 
+                            $_SESSION ['cor_rede_lider'] = $row['cor_rede_lider']; ?>
                             <option value="<?php echo $row['distrito_lider']; ?>"><?php echo $row['distrito_lider']; ?></option>
                         <?php } ?>
                 </td>

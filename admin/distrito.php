@@ -13,7 +13,11 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     // Redireciona o visitante de volta pro login
     header("Location: index.php");
     exit;
+
+    
 }
+
+
 
 require('../conexao.php');
 
@@ -21,11 +25,14 @@ $nome = $_SESSION['nome'];
 $rede = $_SESSION['rede'];
 $funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
-$distlider = $_POST['distlider'];
+$correde = $_SESSION['cor_rede_lider'];
+$distlider = $_SESSION['distlider'] = $_POST['distlider'];
 
-$corQuery = "SELECT DISTINCT `area_lider` FROM `tbl_dados` WHERE `distrito_lider` like '$distlider'";
+echo $correde;
 
-$result = mysqli_query($conexao, $corQuery);
+$sql = "SELECT DISTINCT `area_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `distrito_lider` like '$distlider'";
+
+$result = mysqli_query($conexao, $sql);
 
 ?>
 

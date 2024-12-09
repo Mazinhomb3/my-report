@@ -22,10 +22,12 @@ $rede = $_SESSION['rede'];
 $funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
 $arealider = $_SESSION['arealider'];
+$correde = $_SESSION['cor_rede_lider'];
 $setorlider = $_POST['setorlider'];
 $_SESSION['setorlider'] = $setorlider;
 
-$corQuery = "SELECT DISTINCT `nome_lider` FROM `tbl_dados` WHERE `area_lider` like '$arealider' and setor_lider like '$setorlider' and data_lider >= '$dtini'";
+$corQuery = "SELECT DISTINCT `nome_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `area_lider` like '$arealider' 
+and setor_lider like '$setorlider' and data_lider >= '$dtini'";
 
 $result = mysqli_query($conexao, $corQuery);
 
@@ -34,7 +36,7 @@ $result = mysqli_query($conexao, $corQuery);
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -52,24 +54,20 @@ $result = mysqli_query($conexao, $corQuery);
 
     </div>
     <div>
-        <form method="POST" name="pesquisar" id="form" action="">
+       
             <table border="0" align="center">
                 <tr>
-                <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                    <td>
-                      
-                            
-                                <td class="respostas"><?php echo $row['nome_lider']; ?><br></td>
-                            
-                    </td>
-                    <?php } ?>
-
+                    <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                        <td>
+                        <td class="respostas"><?php echo $row['nome_lider']; ?><br></td>
+                        </td>
                 </tr>
+            <?php } ?>
             </table>
             <tr>
-                <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td>
+                <td><input type="button" value="Voltar" onClick="JavaScript: location.replace('distrito.php');"></td>
             </tr>
-        </form>
+      
     </div>
 </body>
 

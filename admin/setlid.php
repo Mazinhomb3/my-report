@@ -14,18 +14,19 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     header("Location: index.php");
     exit;
 }
-
+ 
 require('../conexao.php');
 
 $nome = $_SESSION['nome'];
 $rede = $_SESSION['rede'];
 $funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
+$correde = $_SESSION['cor_rede_lider'];
 $setorlider = $_POST['setorlider'];
 $_SESSION['setorlider'] = $setorlider;
 
 
-$corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE `area_lider` like '$setorlider'";
+$corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `area_lider` like '$setorlider'";
 
 $result = mysqli_query($conexao, $corQuery);
 

@@ -22,12 +22,12 @@ $rede = $_SESSION['rede'];
 $funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
 
-$corQuery = "SELECT DISTINCT rede_lider FROM `tbl_dados` WHERE `supervisor_rede_lider` like '$nome' ";
+$sql = "SELECT DISTINCT  rede_lider FROM `tbl_dados` WHERE `supervisor_rede_lider` like '$nome' ";
 
-$result = mysqli_query($conexao, $corQuery);
+$result = mysqli_query($conexao, $sql);
 
 ?>
-
+ 
 
 
 <!DOCTYPE html>
