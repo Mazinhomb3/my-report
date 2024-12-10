@@ -18,9 +18,10 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
 require('../conexao.php');
 
 $nome = $_SESSION['nome'];
+$correde = $_SESSION['correde'];
+echo $correde;
 
-
-$sql = "SELECT DISTINCT rede_lider FROM `tbl_dados` WHERE `supervisor_rede_lider` like '$nome' ";
+$sql = "SELECT DISTINCT rede_lider FROM `tbl_dados` WHERE `supervisor_rede_lider` like '$nome' and cor_rede_lider like '$correde' ";
 
 $result = mysqli_query($conexao, $sql);
 

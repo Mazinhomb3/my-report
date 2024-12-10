@@ -20,7 +20,9 @@ $redelider = $_SESSION['redelider'] = $_POST['redelider'];
 $correde = $_SESSION['correde'];
 
 
-$corQuery = "SELECT DISTINCT  `distrito_lider` FROM `tbl_dados` WHERE  `rede_lider` like '$redelider'";
+echo $correde;
+
+$corQuery = "SELECT DISTINCT  `distrito_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `rede_lider` like '$redelider'";
 
 $result = mysqli_query($conexao, $corQuery);
  

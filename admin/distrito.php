@@ -22,12 +22,10 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
 require('../conexao.php');
 
 $nome = $_SESSION['nome'];
-$rede = $_SESSION['rede'];
-$funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
-$correde = $_SESSION['cor_rede_lider'];
+$correde = $_SESSION['correde'];
 $distlider = $_SESSION['distlider'] = $_POST['distlider'];
-echo $distlider; 
+
 echo $correde;
 $sql = "SELECT DISTINCT `area_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `distrito_lider` like '$distlider'";
 

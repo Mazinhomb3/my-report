@@ -7,8 +7,7 @@ $usuario = $_POST["usuario"];
 $usuariomd5 = md5($usuario);
 $senha = $_POST["senha"];
 $senhamd5 = md5("$senha");
-$correde = $_POST["cor_rede"];
-//$funcao = $_POST["funcao"];
+$cor_rede = $_POST["cor_rede"];
 $dtini = $_POST["dtini"];
 
 
@@ -25,7 +24,7 @@ if ($result->num_rows > 0) {
   $_SESSION['id'] = $row['id'];
   $_SESSION['nome'] = $row['nome'];
   $_SESSION['rede'] = $row['rede'];
-  $_SESSION['correde'] = $correde;
+  $_SESSION['correde'] = $cor_rede;
   $_SESSION['funcao'] = $row['funcao'];
   $_SESSION['nivel'] = $row['nivel'];
   $_SESSION['dtini'] = $dtini;

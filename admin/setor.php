@@ -18,16 +18,14 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
 require('../conexao.php');
 
 $nome = $_SESSION['nome'];
-$rede = $_SESSION['rede'];
-$funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
 $arealider = $_SESSION['arealider'];
-$correde = $_SESSION['cor_rede_lider'];
+$correde = $_SESSION['correde'];
 $setorlider = $_POST['setorlider'];
 $_SESSION['setorlider'] = $setorlider;
 
 $corQuery = "SELECT DISTINCT `nome_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `area_lider` like '$arealider' 
-and setor_lider like '$setorlider' and data_lider >= '$dtini'";
+and setor_lider like '$setorlider'";
 
 $result = mysqli_query($conexao, $corQuery);
 
@@ -49,7 +47,8 @@ $result = mysqli_query($conexao, $corQuery);
 <body>
 
     <div class="sessao">
-        <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
+        <?php echo "Bem-vindo, " . $_SESSION['nome'] ?><br>
+        <?php echo $correde; ?><br>
         <h3>Lider de Célula</h3>
 
     </div>
@@ -65,7 +64,7 @@ $result = mysqli_query($conexao, $corQuery);
             <?php } ?>
             </table>
             <tr>
-                <td><input type="button" value="Voltar" onClick="JavaScript: location.replace('distrito.php');"></td>
+                <td><input type="button" value="Voltar" onClick="JavaScript: location.replace('index.php');"></td>
             </tr>
       
     </div>

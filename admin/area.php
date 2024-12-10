@@ -21,10 +21,9 @@ require('../conexao.php');
 
 
 $nome = $_SESSION['nome'];
-$rede = $_SESSION['rede'];
 $dtini = $_SESSION['dtini'];
 $arealider = $_POST['arealider'];
-$correde = $_SESSION['cor_rede_lider'];
+$correde = $_SESSION['correde'];
 $_SESSION['arealider'] = $arealider;
 
 
