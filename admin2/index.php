@@ -42,7 +42,7 @@ $resultcor = mysqli_query($conexao, $sql);
                 <tr>
                     <td class="inputs">Senha: </td>
                     <td>
-                        <input name="senha" id="senha" type="number" class="respostas">
+                        <input name="senha" id="senha" type="password" class="respostas">
                     </td>
                 </tr>
                 <tr>

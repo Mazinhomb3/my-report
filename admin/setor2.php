@@ -1,9 +1,10 @@
 <?php
+
+
 if (!isset($_SESSION))
     session_start();
-// Estabelece o nivel da sessao
-$nivel_necessario = 1;
 
+$nivel_necessario = 1;
 
 // Verifica se não há a variável da sessão que identifica o usuário
 if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
@@ -14,20 +15,23 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     exit;
 }
 
-// Conector
 require('../conexao.php');
 
 $nome = $_SESSION['nome'];
-$rede = $_SESSION['rede'];
 $dtini = $_SESSION['dtini'];
 $arealider = $_SESSION['arealider'];
-$setorlider = $_SESSION['nome'];
+$correde = $_SESSION['correde'];
+$setorlider = $_POST['setorlider'];
+$_SESSION['setorlider'] = $setorlider;
 
-$corQuery = "SELECT DISTINCT `nome_lider` FROM tbl_dados where cor_rede_lider like '$rede' and setor_lider like '$setorlider' and data_lider >= '$dtini' ";
+$corQuery = "SELECT DISTINCT `nome_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `area_lider` like '$arealider' 
+and setor_lider like '$setorlider'";
 
 $result = mysqli_query($conexao, $corQuery);
 
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -39,30 +43,30 @@ $result = mysqli_query($conexao, $corQuery);
     <link rel="shortcut icon" href="../img/logo_paz.ico" type="image/x-icon">
     <title>Paz Santarém</title>
 </head>
-
+ 
 <body>
+
     <div class="sessao">
-        <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?><br>
-        <?php echo "Rede, " . $_SESSION['rede'] . "!" ?><br>
+        <?php echo "Bem-vindo, " . $_SESSION['nome'] ?><br>
+        <?php echo $correde; ?><br>
+        <h3>Lider de Célula</h3>
 
-    </div>
-
-
-    <div class="titulo">
-
-        <h4>Líderes de Célula</h4>
     </div>
     <div>
-        <table border="0" align="center">
-            <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+       
+            <table border="0" align="center">
                 <tr>
-                    <td class="respostas"><?php echo $row['nome_lider']; ?><br></td>
+                    <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                        <td>
+                        <td class="respostas"><?php echo $row['nome_lider']; ?><br></td>
+                        </td>
                 </tr>
             <?php } ?>
-        </table>
-        <tr>
-                <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('index.php');"></td>
+            </table>
+            <tr>
+                <td><input type="button" value="Voltar" onClick="JavaScript: location.replace('index.php');"></td>
             </tr>
+      
     </div>
 </body>
 

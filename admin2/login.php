@@ -31,15 +31,15 @@ if ($result->num_rows > 0) {
   $nivel = $_SESSION['nivel'];
 
   if ($nivel == 1) {
-    header('Location: lider.php');
+    header('Location: lider2.php');
   } elseif ($nivel == 2) {
-    header('Location: area2.php');
+    header('Location: setor2.php');
   } elseif ($nivel == 3) {
-    header('Location: distrito2.php');
+    header('Location: area2.php');
   } elseif ($nivel == 4) {
-    header('location: rede2.php');
+    header('location: distrito2.php');
   } elseif ($nivel == 5) {
-    header('location: suprede.php');
+    header('location: suprede2.php');
   }
 } else {
 

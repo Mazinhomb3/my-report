@@ -48,7 +48,6 @@ $result = mysqli_query($conexao, $corQuery);
 
     <div class="sessao">
         <?php echo "Bem-vindo, " . $_SESSION['nome'] ?><br>
-        <?php echo $correde; ?><br>
         <h3>Lider de Célula</h3>
 
     </div>
@@ -64,7 +63,7 @@ $result = mysqli_query($conexao, $corQuery);
             <?php } ?>
             </table>
             <tr>
-                <td><input type="button" value="Voltar" onClick="JavaScript: location.replace('index.php');"></td>
+                <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('index.php');"></td>
             </tr>
       
     </div>
