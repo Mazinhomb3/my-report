@@ -39,23 +39,22 @@ $result = mysqli_query($conexao, $sql);
     <link rel="shortcut icon" href="../img/logo_paz.ico" type="image/x-icon">
     <title>Paz Santarém</title>
 </head>
-
+ 
 <body> 
 
     <div class="sessao">
     <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
         <h3>Pr. de Rede</h3>
     </div>
-    <form  name="pesquisar" id="form" action="rede.php">
+    <form method="POST" name="pesquisar" id="form" action="rede.php">
         <table border="0" align="center">
             <tr>
                 <td>
                     <select  class="select" name="redelider" id="redelider" align="center" class="respostas">
-                        <?php while ($row = mysqli_fetch_assoc($result)) { 
-
-                            $_SESSION['redelider'] = $row['rede_lider']; ?>
+                        <?php while ($row = mysqli_fetch_assoc($result)) {  ?>
 
                             <option class="respostas" value="<?php echo $row['rede_lider']; ?>"><?php echo $row['rede_lider']; ?></option>
+                            
                         <?php } ?>
                 </td>
                 </select>
@@ -70,4 +69,4 @@ $result = mysqli_query($conexao, $sql);
 
 </html>
 
-<?php header("Refresh: 10"); ?>
+<?php header("Refresh: 20"); ?>

@@ -16,14 +16,27 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     exit;
 }
 
+
+
+if (!empty($_POST["arealider"])) {
+
+    $nome = $_SESSION['nome'];
+    $dtini = $_SESSION['dtini'];
+    $_SESSION['arealider'] = $arealider = $_POST['arealider'];
+    $correde = $_SESSION['correde'];
+    echo $correde;
+} else {
+    $nome = $_SESSION['nome'];
+    $dtini = $_SESSION['dtini'];
+    $arealider = $_SESSION['arealider'];
+    $correde = $_SESSION['correde'];
+    echo $correde;
+}
+
 require('../conexao.php');
 
 
 
-$nome = $_SESSION['nome'];
-$dtini = $_SESSION['dtini'];
-$arealider = $_SESSION['arealider'];
-$correde = $_SESSION['correde'];
 
 
 $corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE  cor_rede_lider like '$correde' and `area_lider` like '$arealider'";
@@ -32,7 +45,7 @@ $result = mysqli_query($conexao, $corQuery);
 
 ?>
 
- 
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -44,7 +57,7 @@ $result = mysqli_query($conexao, $corQuery);
     <link rel="shortcut icon" href="../img/logo_paz.ico" type="image/x-icon">
     <title>Paz Santarém</title>
 </head>
-  
+
 <body>
 
     <div class="sessao">
@@ -55,12 +68,10 @@ $result = mysqli_query($conexao, $corQuery);
         <table border="0" align="center">
             <tr>
                 <td>
-                    <select class="select" name="setorlider" id="setorlider" align="center" >
-                        <?php while ($row = mysqli_fetch_assoc($result)) {
+                    <select class="select" name="setorlider" id="setorlider" align="center">
+                        <?php while ($row = mysqli_fetch_assoc($result)) {  ?>
 
-                           $_SESSION['setorlider'] = $row['setor_lider']; ?>
-                           
-                            <option  value="<?php echo $row['setor_lider']; ?>"><?php echo $row['setor_lider']; ?></option>
+                            <option value="<?php echo $row['setor_lider']; ?>"><?php echo $row['setor_lider']; ?></option>
                         <?php } ?>
                 </td>
                 </select>
@@ -71,12 +82,12 @@ $result = mysqli_query($conexao, $corQuery);
             <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td>
         </tr>
         <tr>
-                <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('distrito.php');"></td>
-            </tr>
+            <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('distrito.php');"></td>
+        </tr>
     </form>
-  
+
 </body>
 
 </html>
 
-<?php header("Refresh: 10"); ?>
+<?php header("Refresh: 20"); ?>

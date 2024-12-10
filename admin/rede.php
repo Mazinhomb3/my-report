@@ -14,16 +14,25 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     exit;
 }
 
+if (!empty($_POST["redelider"])) {
+    $_SESSION['redelider'] = $redelider = $_POST['redelider'];
+    $correde = $_SESSION['correde'];
+    echo $correde;
+} else {
+    $redelider = $_SESSION['redelider'];
+    $correde = $_SESSION['correde'];
+    // unset($_SESSION['distlider']);
+    echo $correde;
+}
+
 require('../conexao.php');
 
-$redelider = $_SESSION['redelider'];
-$correde = $_SESSION['correde'];
-echo $correde;
+
 
 $corQuery = "SELECT DISTINCT  `distrito_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `rede_lider` like '$redelider'";
 
 $result = mysqli_query($conexao, $corQuery);
- 
+
 ?>
 
 
@@ -40,19 +49,17 @@ $result = mysqli_query($conexao, $corQuery);
 </head>
 
 <body>
-  
+
     <div class="sessao">
-    <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
+        <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
         <h3>Pr. de Distrito</h3>
     </div>
-    <form  name="pesquisar" id="form" action="distrito.php">
+    <form method="POST" name="pesquisar" id="form" action="distrito.php">
         <table border="0" align="center">
             <tr>
                 <td>
-                    <select  class="select" name="distlider" id="distlider" align="center" class="respostas">
-                        <?php while ($row = mysqli_fetch_assoc($result)) { 
-
-                            $_SESSION['distlider'] = $row['distrito_lider'];  ?>
+                    <select class="select" name="distlider" id="distlider" align="center" class="respostas">
+                        <?php while ($row = mysqli_fetch_assoc($result)) {  ?>
 
                             <option class="respostas" value="<?php echo $row['distrito_lider']; ?>"><?php echo $row['distrito_lider']; ?></option>
                         <?php } ?>
@@ -69,4 +76,4 @@ $result = mysqli_query($conexao, $corQuery);
 
 </html>
 
-<?php header("Refresh: 10"); ?>
+<?php header("Refresh: 20"); ?>
