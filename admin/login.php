@@ -11,7 +11,6 @@ $cor_rede = $_POST["cor_rede"];
 $dtini = $_POST["dtini"];
 
 
-
 $sql = "SELECT * FROM tbl_login_sup where nome_login = '$usuariomd5' && senha = '$senhamd5' ";
 
 $result = $conexao->query($sql);

@@ -1,6 +1,5 @@
 <?php
 
-
 if (!isset($_SESSION))
     session_start();
 
@@ -21,8 +20,8 @@ $nome = $_SESSION['nome'];
 $dtini = $_SESSION['dtini'];
 $arealider = $_SESSION['arealider'];
 $correde = $_SESSION['correde'];
-$setorlider = $_POST['setorlider'];
-$_SESSION['setorlider'] = $setorlider;
+$setorlider = $_SESSION['setorlider'];
+
 
 $corQuery = "SELECT DISTINCT `nome_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `area_lider` like '$arealider' 
 and setor_lider like '$setorlider'";
@@ -57,13 +56,13 @@ $result = mysqli_query($conexao, $corQuery);
                 <tr>
                     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                         <td>
-                        <td class="respostas"><?php echo $row['nome_lider']; ?><br></td>
+                        <td class="respostas"><?php echo $row['nome_lider']; ?><br>
                         </td>
                 </tr>
             <?php } ?>
             </table>
             <tr>
-                <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('index.php');"></td>
+                <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('area.php');"></td>
             </tr>
       
     </div>

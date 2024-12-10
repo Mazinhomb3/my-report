@@ -22,9 +22,8 @@ require('../conexao.php');
 
 $nome = $_SESSION['nome'];
 $dtini = $_SESSION['dtini'];
-$arealider = $_POST['arealider'];
+$arealider = $_SESSION['arealider'];
 $correde = $_SESSION['correde'];
-$_SESSION['arealider'] = $arealider;
 
 
 $corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE  cor_rede_lider like '$correde' and `area_lider` like '$arealider'";
@@ -56,9 +55,12 @@ $result = mysqli_query($conexao, $corQuery);
         <table border="0" align="center">
             <tr>
                 <td>
-                    <select name="setorlider" id="setorlider" align="center" class="respostas">
-                        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                            <option value="<?php echo $row['setor_lider']; ?>"><?php echo $row['setor_lider']; ?></option>
+                    <select class="select" name="setorlider" id="setorlider" align="center" >
+                        <?php while ($row = mysqli_fetch_assoc($result)) {
+
+                           $_SESSION['setorlider'] = $row['setor_lider']; ?>
+                           
+                            <option  value="<?php echo $row['setor_lider']; ?>"><?php echo $row['setor_lider']; ?></option>
                         <?php } ?>
                 </td>
                 </select>
@@ -68,10 +70,13 @@ $result = mysqli_query($conexao, $corQuery);
         <tr>
             <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td>
         </tr>
-       
+        <tr>
+                <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('distrito.php');"></td>
+            </tr>
     </form>
   
 </body>
 
 </html>
 
+<?php header("Refresh: 10"); ?>

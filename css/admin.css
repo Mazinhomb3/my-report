@@ -1,4 +1,11 @@
 @media only screen and (min-width: 300px) and (max-device-width: 768px) {
+    @font-face {
+        font-family: 'Peace';
+        src: url('../Peace and love.ttf') format(truetype);
+        font-weight: normal;
+        font-style: normal;
+    }
+
     body {
         background-color: rgb(0, 0, 180);
         background-image: url(../img/gradient_2.jpg);
@@ -7,12 +14,13 @@
         color: white;
         text-align: center;
         margin: 0;
+        font-family: 'Peace';
 
     }
 
     .div-img {
         text-align: center;
-        margin-top: 5%;
+        margin-top: 10px;
     }
 
     .divi-img {
@@ -43,9 +51,17 @@
         font-family: sans-serif;
     }
 
+    .select {
+        width: 160px;
+        text-align: center;
+        font-family: 'Peace';
+        border-radius: 10px;
+    }
+
     .respostas {
         width: 160px;
-        font-size: 17px;
+        height: 18px;
+        font-size: 12px;
         text-align: center;
         margin-bottom: 3px;
         font-family: sans-serif;
@@ -123,7 +139,8 @@
     .divbotao {
         margin-top: 10px;
     }
-    .erro{
+
+    .erro {
         text-align: center;
         margin-top: 10%;
         font-size: 20px;
@@ -131,6 +148,13 @@
 }
 
 @media only screen and (min-width: 769px) {
+    @font-face {
+        font-family: 'Peace';
+        src: url('../Peace and love.ttf') format(truetype);
+        font-weight: normal;
+        font-style: normal;
+    }
+
     body {
         background-color: rgb(0, 0, 180);
         background-image: url(../img/gradient_2.jpg);
@@ -139,12 +163,13 @@
         color: white;
         text-align: center;
         margin: 0;
+        font-family: 'Peace';
 
     }
 
     .divi-img {
         text-align: center;
-        margin-top: 10%;
+        margin-top: 5px;
     }
 
     .div-img {
@@ -175,6 +200,13 @@
         text-align: right;
         font-family: sans-serif;
         align-content: center;
+    }
+
+    .select {
+        width: 200px;
+        text-align: center;
+        font-family: 'Peace';
+        border-radius: 10px;
     }
 
     .respostas {
@@ -262,7 +294,8 @@
     .divbotao {
         margin-top: 10px;
     }
-    .erro{
+
+    .erro {
         text-align: center;
         margin-top: 10%;
         font-size: 20px;
@@ -270,6 +303,13 @@
 }
 
 @media only screen and (min-width: 1200px) {
+    @font-face {
+        font-family: 'Peace';
+        src: url('../Peace and love.ttf') format(truetype);
+        font-weight: normal;
+        font-style: normal;
+    }
+
     body {
         background-color: rgb(0, 0, 180);
         background-image: url(../img/gradient_2.jpg);
@@ -278,12 +318,13 @@
         color: white;
         text-align: center;
         margin: 0;
+        font-family: 'Peace';
 
     }
 
     .divi-img {
         text-align: center;
-        margin-top: 10%;
+        margin-top: 10px;
     }
 
     .img {
@@ -319,6 +360,13 @@
         border-radius: 5px;
     }
 
+    .select {
+        width: 200px;
+        text-align: center;
+        font-family: 'Peace';
+        border-radius: 10px;
+    }
+
     .botaoadmin {
         display: inline-block;
         background-color: darkcyan;
@@ -339,7 +387,6 @@
 
     .sessao {
         align-content: center;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         text-align: center;
         margin-top: 10px;
         margin-bottom: 10px;
@@ -387,7 +434,7 @@
         margin-top: 10px;
     }
 
-    .erro{
+    .erro {
         text-align: center;
         margin-top: 10%;
         font-size: 20px;

@@ -16,10 +16,8 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
 
 require('../conexao.php');
 
-$redelider = $_SESSION['redelider'] = $_POST['redelider'];
+$redelider = $_SESSION['redelider'];
 $correde = $_SESSION['correde'];
-
-
 echo $correde;
 
 $corQuery = "SELECT DISTINCT  `distrito_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `rede_lider` like '$redelider'";
@@ -47,13 +45,16 @@ $result = mysqli_query($conexao, $corQuery);
     <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
         <h3>Pr. de Distrito</h3>
     </div>
-    <form method="POST" name="pesquisar" id="form" action="distrito.php">
+    <form  name="pesquisar" id="form" action="distrito.php">
         <table border="0" align="center">
             <tr>
                 <td>
-                    <select name="distlider" id="distlider" align="center" class="respostas">
-                        <?php while ($row = mysqli_fetch_assoc($result)) {  ?>
-                            <option value="<?php echo $row['distrito_lider']; ?>"><?php echo $row['distrito_lider']; ?></option>
+                    <select  class="select" name="distlider" id="distlider" align="center" class="respostas">
+                        <?php while ($row = mysqli_fetch_assoc($result)) { 
+
+                            $_SESSION['distlider'] = $row['distrito_lider'];  ?>
+
+                            <option class="respostas" value="<?php echo $row['distrito_lider']; ?>"><?php echo $row['distrito_lider']; ?></option>
                         <?php } ?>
                 </td>
                 </select>
@@ -67,3 +68,5 @@ $result = mysqli_query($conexao, $corQuery);
 </body>
 
 </html>
+
+<?php header("Refresh: 10"); ?>

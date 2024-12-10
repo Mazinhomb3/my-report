@@ -46,13 +46,16 @@ $result = mysqli_query($conexao, $sql);
     <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
         <h3>Pr. de Rede</h3>
     </div>
-    <form method="POST" name="pesquisar" id="form" action="rede.php">
+    <form  name="pesquisar" id="form" action="rede.php">
         <table border="0" align="center">
             <tr>
                 <td>
-                    <select name="redelider" id="redelider" align="center" class="respostas">
-                        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                            <option value="<?php echo $row['rede_lider']; ?>"><?php echo $row['rede_lider']; ?></option>
+                    <select  class="select" name="redelider" id="redelider" align="center" class="respostas">
+                        <?php while ($row = mysqli_fetch_assoc($result)) { 
+
+                            $_SESSION['redelider'] = $row['rede_lider']; ?>
+
+                            <option class="respostas" value="<?php echo $row['rede_lider']; ?>"><?php echo $row['rede_lider']; ?></option>
                         <?php } ?>
                 </td>
                 </select>
@@ -66,3 +69,5 @@ $result = mysqli_query($conexao, $sql);
 </body>
 
 </html>
+
+<?php header("Refresh: 10"); ?>

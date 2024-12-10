@@ -24,7 +24,7 @@ require('../conexao.php');
 $nome = $_SESSION['nome'];
 $dtini = $_SESSION['dtini'];
 $correde = $_SESSION['correde'];
-$distlider = $_SESSION['distlider'] = $_POST['distlider'];
+$distlider = $_SESSION['distlider'];
 
 echo $correde;
 $sql = "SELECT DISTINCT `area_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `distrito_lider` like '$distlider'";
@@ -50,13 +50,16 @@ $result = mysqli_query($conexao, $sql);
         <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
         <h3>Sup. de área</h3>
     </div>
-    <form method="POST" name="pesquisar" id="form" action="area.php">
+    <form  name="pesquisar" id="form" action="area.php">
         <table border="0" align="center">
             <tr>
                 <td>
-                    <select name="arealider" id="arealider" align="center" class="respostas">
-                        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                            <option value="<?php echo $row['area_lider']; ?>"><?php echo $row['area_lider']; ?></option>
+                    <select class="select" name="arealider" id="arealider" align="center" class="respostas">
+                        <?php while ($row = mysqli_fetch_assoc($result)) {
+
+                            $_SESSION['arealider'] = $row['area_lider']; ?>
+
+                            <option class="respostas" value="<?php echo $row['area_lider']; ?>"><?php echo $row['area_lider']; ?></option>
                         <?php } ?>
                 </td>
                 </select>
@@ -66,7 +69,12 @@ $result = mysqli_query($conexao, $sql);
         <tr>
             <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td>
         </tr>
+        <tr>
+                <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('rede.php');"></td>
+            </tr>
     </form>
 </body>
 
 </html>
+
+<?php header("Refresh: 10"); ?>
