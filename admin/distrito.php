@@ -18,7 +18,7 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
 }
 
 
- 
+
 require('../conexao.php');
 
 $nome = $_SESSION['nome'];
@@ -27,8 +27,8 @@ $funcao = $_SESSION['funcao'];
 $dtini = $_SESSION['dtini'];
 $correde = $_SESSION['cor_rede_lider'];
 $distlider = $_SESSION['distlider'] = $_POST['distlider'];
- 
-
+echo $distlider; 
+echo $correde;
 $sql = "SELECT DISTINCT `area_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `distrito_lider` like '$distlider'";
 
 $result = mysqli_query($conexao, $sql);
@@ -38,7 +38,7 @@ $result = mysqli_query($conexao, $sql);
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/admin.css">

@@ -1,7 +1,10 @@
 <?php
-
-
 require('../conexao.php');
+
+$sql = "SELECT DISTINCT cor_rede FROM tbl_redes ";
+$resultcor = mysqli_query($conexao, $sql);
+
+
 
 ?>
 
@@ -32,16 +35,28 @@ require('../conexao.php');
             <table align="center" border="0" class="table">
                 <tr>
                     <td class="inputs">Nome: </td>
-                    <td><input name="usuario" id="usuario" type="text" class="respostas" required></td>
+                    <td><input name="usuario" id="usuario" type="text" class="respostas" required>
+                </td>
                 </tr>
-                </tr>
+
                 <tr>
                     <td class="inputs">Senha: </td>
                     <td>
                         <input name="senha" id="senha" type="password" class="respostas">
+                    </td>
                 </tr>
-                </tr>
-                
+                <tr>
+                <td class="inputs">Rede: </td>
+                <td>
+                    <select name="redelider" id="redelider" align="center" class="respostas">
+                        <?php while ($row = mysqli_fetch_assoc($resultcor)) { ?>
+                            <option value="<?php echo $row['cor_rede']; ?>"><?php echo $row['cor_rede']; ?></option>
+                        <?php } ?>
+                </td>
+                </select>
+
+            </tr>
+
                 <tr>
                     <td class="inputs">
                         Data Inicial:

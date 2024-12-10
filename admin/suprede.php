@@ -18,11 +18,9 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
 require('../conexao.php');
 
 $nome = $_SESSION['nome'];
-$rede = $_SESSION['rede'];
-$funcao = $_SESSION['funcao'];
-$dtini = $_SESSION['dtini'];
 
-$sql = "SELECT DISTINCT  rede_lider FROM `tbl_dados` WHERE `supervisor_rede_lider` like '$nome' ";
+
+$sql = "SELECT DISTINCT rede_lider FROM `tbl_dados` WHERE `supervisor_rede_lider` like '$nome' ";
 
 $result = mysqli_query($conexao, $sql);
 
@@ -41,7 +39,7 @@ $result = mysqli_query($conexao, $sql);
     <title>Paz Santarém</title>
 </head>
 
-<body>
+<body> 
 
     <div class="sessao">
     <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
