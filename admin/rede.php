@@ -17,12 +17,12 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
 if (!empty($_POST["redelider"])) {
     $_SESSION['redelider'] = $redelider = $_POST['redelider'];
     $correde = $_SESSION['correde'];
-    echo $correde;
+    
 } else {
     $redelider = $_SESSION['redelider'];
     $correde = $_SESSION['correde'];
     // unset($_SESSION['distlider']);
-    echo $correde;
+  
 }
 
 require('../conexao.php');
@@ -52,7 +52,7 @@ $result = mysqli_query($conexao, $corQuery);
 
     <div class="sessao">
         <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
-        <h3>Pr. de Distrito</h3>
+        <h3>Pr. de Distrito Rede da <?php echo $correde; ?></h3>
     </div>
     <form method="POST" name="pesquisar" id="form" action="distrito.php">
         <table border="0" align="center">
@@ -75,5 +75,3 @@ $result = mysqli_query($conexao, $corQuery);
 </body>
 
 </html>
-
-<?php header("Refresh: 20"); ?>

@@ -21,14 +21,14 @@ if (!empty($_POST["distlider"])) {
     $dtini = $_SESSION['dtini'];
     $correde = $_SESSION['correde'];
     $_SESSION['distlider'] = $distlider = $_POST['distlider'];
-    echo $correde;
+    
 } else {
 
     $nome = $_SESSION['nome'];
     $dtini = $_SESSION['dtini'];
     $correde = $_SESSION['correde'];
     $distlider = $_SESSION['distlider'];
-    echo $correde;
+    
 }
 
 
@@ -56,7 +56,7 @@ $result = mysqli_query($conexao, $sql);
 
     <div class="sessao">
         <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
-        <h3>Sup. de área</h3>
+        <h3>Sup. de área da rede <?php echo $correde; ?>.</h3>
     </div>
     <form method="POST" name="pesquisar" id="form" action="area.php">
         <table border="0" align="center">
@@ -82,5 +82,3 @@ $result = mysqli_query($conexao, $sql);
 </body>
 
 </html>
-
-<?php header("Refresh: 20"); ?>

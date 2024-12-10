@@ -203,7 +203,7 @@
     }
 
     .select {
-        width: 200px;
+        width: 180px;
         text-align: center;
         font-family: 'Peace';
         border-radius: 10px;
@@ -211,7 +211,7 @@
 
     .respostas {
 
-        width: 200px;
+        width: 180px;
         height: 22px;
         font-family: sans-serif;
         font-size: 18px;
@@ -361,7 +361,7 @@
     }
 
     .select {
-        width: 200px;
+        width: 180px;
         text-align: center;
         font-family: 'Peace';
         border-radius: 10px;

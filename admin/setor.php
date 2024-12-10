@@ -23,14 +23,14 @@ if (isset($_SESSION['POST'])) {
     $correde = $_SESSION['correde'];
     $setorlider = $_SESSION['setorlider'];
     unset($_SESSION['setorlider']);
-    echo $correde;
+    
 } else {
     $nome = $_SESSION['nome'];
     $dtini = $_SESSION['dtini'];
     $arealider = $_SESSION['arealider'];
     $correde = $_SESSION['correde'];
     $setorlider = $_POST['setorlider'];
-    echo $correde;
+    
 }
 
 require('../conexao.php');
@@ -63,7 +63,7 @@ $result = mysqli_query($conexao, $corQuery);
 
     <div class="sessao">
         <?php echo "Bem-vindo, " . $_SESSION['nome'] ?><br>
-        <h3>Lider de Célula</h3>
+        <h3>Lider de Célula da Rede <?php echo $correde; ?>.</h3>
 
     </div>
     <div>

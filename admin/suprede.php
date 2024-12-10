@@ -19,7 +19,7 @@ require('../conexao.php');
 
 $nome = $_SESSION['nome'];
 $correde = $_SESSION['correde'];
-echo $correde;
+
 
 $sql = "SELECT DISTINCT rede_lider FROM `tbl_dados` WHERE `supervisor_rede_lider` like '$nome' and cor_rede_lider like '$correde' ";
 
@@ -44,7 +44,7 @@ $result = mysqli_query($conexao, $sql);
 
     <div class="sessao">
     <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
-        <h3>Pr. de Rede</h3>
+        <h3>Pr. de Rede da Rede <?php echo $correde; ?>.</h3>
     </div>
     <form method="POST" name="pesquisar" id="form" action="rede.php">
         <table border="0" align="center">
@@ -54,7 +54,7 @@ $result = mysqli_query($conexao, $sql);
                         <?php while ($row = mysqli_fetch_assoc($result)) {  ?>
 
                             <option class="respostas" value="<?php echo $row['rede_lider']; ?>"><?php echo $row['rede_lider']; ?></option>
-                            
+
                         <?php } ?>
                 </td>
                 </select>
@@ -68,5 +68,3 @@ $result = mysqli_query($conexao, $sql);
 </body>
 
 </html>
-
-<?php header("Refresh: 20"); ?>

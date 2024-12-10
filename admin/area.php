@@ -24,13 +24,13 @@ if (!empty($_POST["arealider"])) {
     $dtini = $_SESSION['dtini'];
     $_SESSION['arealider'] = $arealider = $_POST['arealider'];
     $correde = $_SESSION['correde'];
-    echo $correde;
+    
 } else {
     $nome = $_SESSION['nome'];
     $dtini = $_SESSION['dtini'];
     $arealider = $_SESSION['arealider'];
     $correde = $_SESSION['correde'];
-    echo $correde;
+    
 }
 
 require('../conexao.php');
@@ -62,7 +62,7 @@ $result = mysqli_query($conexao, $corQuery);
 
     <div class="sessao">
         <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
-        <h3>Sup. de Setor</h3>
+        <h3>Sup. de Setor da Rede <?php echo $correde; ?>.</h3>
     </div>
     <form method="POST" name="pesquisar" id="form" action="setor.php">
         <table border="0" align="center">
@@ -90,4 +90,3 @@ $result = mysqli_query($conexao, $corQuery);
 
 </html>
 
-<?php header("Refresh: 20"); ?>
