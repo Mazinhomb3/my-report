@@ -1,5 +1,5 @@
 <?php
-/*
+
 if (!isset($_SESSION))
     session_start();
 
@@ -13,7 +13,10 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] <= $nivel_necessario)) {
     header("Location: index.php");
     exit;
 }
-*/
+
+
+
+
 require('../conexao.php');
 
 
@@ -21,12 +24,12 @@ require('../conexao.php');
 $nome = $_SESSION['nome'];
 $rede = $_SESSION['rede'];
 $arealider = $_SESSION['arealider'];
-$setorlider = $_POST["setorlider"];
+$setorlider = $_SESSION["setorlider"];
 $dtini = $_SESSION['dtini'];
 
 
 
-$corQuery = "SELECT DISTINCT `nome_lider` FROM `tbl_dados` WHERE  `area_lider` like '$arealider' and setor_lider like '$setorlider' and data_lider >= '$dtini' ";
+$corQuery = "SELECT DISTINCT data_lider, nome_lider , membros_celula, membroscomp_celula, convidadospres_celula, criancas_celula, totalpres_celula, oferta_celula, 	tipo_cel_dados FROM `tbl_dados` WHERE  `area_lider` like '$arealider' and setor_lider like '$setorlider' and data_lider >= '$dtini' ";
 
 $result = mysqli_query($conexao, $corQuery);
 
@@ -49,24 +52,34 @@ $result = mysqli_query($conexao, $corQuery);
 <body>
     <div class="sessao">
         <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
-        <h3>Líderes de células</h3>
+        <h3>Líderes de células do setor de <?php echo $_SESSION["setorlider"] ?></h3>
     </div>
-    <table border="1" align="center">
-    <thead>
-        <th>Total de Membros</th>
-        <th>Membros Presentes</th>
-        <th>Conv. Presentes</th>
-        <th>Crianças Presentes</th>
-        <th>Tipo de Célula</th>
+    <table class="tb_detalhes" border="1" align="center">
+        <thead>
+            <th>Lider</th>
+            <th>Total Membros</th>
+            <th>Membros Presentes</th>
+            <th>Convidados Presentes</th>
+            <th>Crianças</th>
+            <th>Tipo de Célula</th>
+            <th>Data</th>
         </thead>
-        <tbody>
-            
-        </tbody>
-
+        <?php while ($row = mysqli_fetch_assoc($result)) {?>
+            <tbody>
+                <td class="nome"><?php echo $row['nome_lider']; ?></td>
+                <td class="num"><?php echo $row['membros_celula']; ?></td>
+                <td class="num"><?php echo $row['membroscomp_celula']; ?></td>
+                <td class="num"><?php echo $row['convidadospres_celula']; ?></td>
+                <td class="num"><?php echo $row['criancas_celula']; ?></td>
+                <td class="nome"><?php echo $row['tipo_cel_dados']; ?></td>
+                <td class="nome"><?php echo $row['data_lider']; ?></td>
+                
+            </tbody>
+        <?php } ?>
 
     </table>
     <div class="divbotao">
-        <a href="distrito.php" align="center" class="botao" id="voltar">Voltar</a>
+        <a href="setor.php" align="center" class="botao" id="voltar">Voltar</a>
     </div>
 </body>
 

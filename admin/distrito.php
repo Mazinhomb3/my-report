@@ -12,7 +12,7 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     session_destroy();
     // Redireciona o visitante de volta pro login
     header("Location: index.php");
-    exit;
+    exit; 
 }
 
 if (!empty($_POST["distlider"])) {
@@ -29,13 +29,14 @@ if (!empty($_POST["distlider"])) {
     $correde = $_SESSION['correde'];
     $distlider = $_SESSION['distlider'];
     
+    
 }
 
 
 require('../conexao.php');
 
 
-$sql = "SELECT DISTINCT `area_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `distrito_lider` like '$distlider'";
+$sql = "SELECT DISTINCT `area_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `distrito_lider` like '$distlider' and data_lider >= '$dtini' ";
 
 $result = mysqli_query($conexao, $sql);
 
@@ -55,7 +56,7 @@ $result = mysqli_query($conexao, $sql);
 <body>
 
     <div class="sessao">
-        <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
+        <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
         <h3>Sup. de área da rede <?php echo $correde; ?>.</h3>
     </div>
     <form method="POST" name="pesquisar" id="form" action="area.php">

@@ -15,22 +15,20 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     exit;
 }
 
-if (isset($_SESSION['POST'])) {
-
+if (!empty($_POST["setorlider"])) {
     $nome = $_SESSION['nome'];
     $dtini = $_SESSION['dtini'];
     $arealider = $_SESSION['arealider'];
     $correde = $_SESSION['correde'];
-    $setorlider = $_SESSION['setorlider'];
-    unset($_SESSION['setorlider']);
+    $_SESSION['setorlider'] = $setorlider = $_POST['setorlider'];
     
 } else {
     $nome = $_SESSION['nome'];
     $dtini = $_SESSION['dtini'];
     $arealider = $_SESSION['arealider'];
     $correde = $_SESSION['correde'];
-    $setorlider = $_POST['setorlider'];
-    
+    $setorlider = $_SESSION['setorlider'];
+    unset($_SESSION['setorlider']);
 }
 
 require('../conexao.php');
@@ -38,7 +36,7 @@ require('../conexao.php');
 
 
 $corQuery = "SELECT DISTINCT `nome_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `area_lider` like '$arealider' 
-and setor_lider like '$setorlider'";
+and setor_lider like '$setorlider' and data_lider >= '$dtini' ";
 
 $result = mysqli_query($conexao, $corQuery);
 
@@ -79,6 +77,9 @@ $result = mysqli_query($conexao, $corQuery);
         </table>
         <tr>
             <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('area.php');"></td>
+        </tr>
+        <tr>
+            <td><input class="botaoadmin" type="button" value="Detalhes" onClick="JavaScript: location.replace('detalhes.php');"></td>
         </tr>
 
     </div>

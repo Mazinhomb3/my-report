@@ -12,16 +12,17 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     // Redireciona o visitante de volta pro login
     header("Location: index.php");
     exit;
-}
+} 
 
 if (!empty($_POST["redelider"])) {
     $_SESSION['redelider'] = $redelider = $_POST['redelider'];
     $correde = $_SESSION['correde'];
+    $dtini = $_SESSION['dtini'];
     
 } else {
     $redelider = $_SESSION['redelider'];
     $correde = $_SESSION['correde'];
-    // unset($_SESSION['distlider']);
+    $dtini = $_SESSION['dtini'];
   
 }
 
@@ -29,7 +30,7 @@ require('../conexao.php');
 
 
 
-$corQuery = "SELECT DISTINCT  `distrito_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `rede_lider` like '$redelider'";
+$corQuery = "SELECT DISTINCT  `distrito_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `rede_lider` like '$redelider' and data_lider >= '$dtini' ";
 
 $result = mysqli_query($conexao, $corQuery);
 

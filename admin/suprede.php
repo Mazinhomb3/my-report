@@ -19,14 +19,15 @@ require('../conexao.php');
 
 $nome = $_SESSION['nome'];
 $correde = $_SESSION['correde'];
+$dtini = $_SESSION['dtini'];
 
 
-$sql = "SELECT DISTINCT rede_lider FROM `tbl_dados` WHERE `supervisor_rede_lider` like '$nome' and cor_rede_lider like '$correde' ";
+$sql = "SELECT DISTINCT rede_lider FROM `tbl_dados` WHERE `supervisor_rede_lider` like '$nome' and cor_rede_lider like '$correde' and data_lider like '$dtini' ";
 
 $result = mysqli_query($conexao, $sql);
 
 ?>
- 
+
 
 
 <!DOCTYPE html>

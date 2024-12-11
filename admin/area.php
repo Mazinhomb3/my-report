@@ -25,11 +25,13 @@ if (!empty($_POST["arealider"])) {
     $_SESSION['arealider'] = $arealider = $_POST['arealider'];
     $correde = $_SESSION['correde'];
     
+    
 } else {
     $nome = $_SESSION['nome'];
     $dtini = $_SESSION['dtini'];
     $arealider = $_SESSION['arealider'];
     $correde = $_SESSION['correde'];
+   
     
 }
 
@@ -39,7 +41,7 @@ require('../conexao.php');
 
 
 
-$corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE  cor_rede_lider like '$correde' and `area_lider` like '$arealider'";
+$corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE  cor_rede_lider like '$correde' and `area_lider` like '$arealider' and data_lider >= '$dtini' ";
 
 $result = mysqli_query($conexao, $corQuery);
 

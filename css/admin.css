@@ -440,4 +440,27 @@
         font-size: 20px;
     }
 
+    .tb_detalhes {
+        border: 1px solid black;
+        border-collapse: collapse;
+
+        th{
+            background-color: black;
+            height: 60px;
+          
+        }
+        .num{
+            background-color: gray;
+            width: 20px;
+           
+        }
+        .nome{
+            background-color: gray;
+            width: 150px;
+            
+        }
+       
+    }
+
+
 }
