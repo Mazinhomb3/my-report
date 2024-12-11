@@ -16,6 +16,7 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     exit;
 }
 
+
 require('../conexao.php');
 
 
@@ -56,7 +57,7 @@ $result = mysqli_query($conexao, $corQuery);
         <table border="0" align="center">
             <tr>
                 <td>
-                    <select name="setorlider" id="setorlider" align="center" class="respostas">
+                    <select class="select" name="setorlider" id="setorlider" align="center" class="respostas">
                         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                             <option value="<?php echo $row['setor_lider']; ?>"><?php echo $row['setor_lider']; ?></option>
                         <?php } ?>

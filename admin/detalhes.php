@@ -1,4 +1,5 @@
 <?php
+/*
 if (!isset($_SESSION))
     session_start();
 
@@ -12,7 +13,7 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] <= $nivel_necessario)) {
     header("Location: index.php");
     exit;
 }
-
+*/
 require('../conexao.php');
 
 
@@ -50,12 +51,19 @@ $result = mysqli_query($conexao, $corQuery);
         <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
         <h3>Líderes de células</h3>
     </div>
-    <table border="0" align="center">
-        <tr>
-            <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-               
-        </tr>
-    <?php } ?>
+    <table border="1" align="center">
+    <thead>
+        <th>Total de Membros</th>
+        <th>Membros Presentes</th>
+        <th>Conv. Presentes</th>
+        <th>Crianças Presentes</th>
+        <th>Tipo de Célula</th>
+        </thead>
+        <tbody>
+            
+        </tbody>
+
+
     </table>
     <div class="divbotao">
         <a href="distrito.php" align="center" class="botao" id="voltar">Voltar</a>

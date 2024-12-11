@@ -18,13 +18,25 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
 }
 
 
+if (!empty($_POST["distlider"])) {
+
+    $nome = $_SESSION['nome'];
+    $dtini = $_SESSION['dtini'];
+    $correde = $_SESSION['correde'];
+    $_SESSION['distlider'] = $distlider = $_POST['nome'];
+    
+} else {
+
+    $nome = $_SESSION['nome'];
+    $dtini = $_SESSION['dtini'];
+    $correde = $_SESSION['correde'];
+    $_SESSION['distlider'] = $distlider = $_SESSION['nome'];
+    
+}
 
 require('../conexao.php');
 
-$nome = $_SESSION['nome'];
-$dtini = $_SESSION['dtini'];
-$correde = $_SESSION['correde'];
-$distlider = $_SESSION['nome']; 
+
 
 echo $correde;
 $sql = "SELECT DISTINCT `area_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `distrito_lider` like '$distlider'";
@@ -54,7 +66,7 @@ $result = mysqli_query($conexao, $sql);
         <table border="0" align="center">
             <tr>
                 <td>
-                    <select name="arealider" id="arealider" align="center" class="respostas">
+                    <select class="select" name="arealider" id="arealider" align="center" class="respostas">
                         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                             <option value="<?php echo $row['area_lider']; ?>"><?php echo $row['area_lider']; ?></option>
                         <?php } ?>
