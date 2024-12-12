@@ -24,21 +24,17 @@ if (!empty($_POST["arealider"])) {
     $dtini = $_SESSION['dtini'];
     $_SESSION['arealider'] = $arealider = $_POST['arealider'];
     $correde = $_SESSION['correde'];
-    
-    
 } else {
     $nome = $_SESSION['nome'];
     $dtini = $_SESSION['dtini'];
     $arealider = $_SESSION['arealider'];
     $correde = $_SESSION['correde'];
-   
-    
 }
 
 require('../conexao.php');
 
 
-
+header("refresh: 60; url=https://my-report.site/admin");
 
 
 $corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE  cor_rede_lider like '$correde' and `area_lider` like '$arealider' and data_lider >= '$dtini' ";
@@ -81,14 +77,15 @@ $result = mysqli_query($conexao, $corQuery);
             </tr>
         </table>
         <tr>
-            <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td>
+            <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td><br>
         </tr>
         <tr>
             <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('distrito.php');"></td>
         </tr>
     </form>
-
+    <tr>
+        <td><input class="botaoadmin" type="button" value="Detalhes" onClick="JavaScript: location.replace('detarea.php');"></td>
+    </tr>
 </body>
 
 </html>
-

@@ -35,6 +35,7 @@ if (!empty($_POST["distlider"])) {
 
 require('../conexao.php');
 
+header("refresh: 60; url=https://my-report.site/admin");
 
 $sql = "SELECT DISTINCT `area_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `distrito_lider` like '$distlider' and data_lider >= '$dtini' ";
 
@@ -74,7 +75,7 @@ $result = mysqli_query($conexao, $sql);
             </tr>
         </table>
         <tr>
-            <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td>
+            <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td><br>
         </tr>
         <tr>
             <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('rede.php');"></td>

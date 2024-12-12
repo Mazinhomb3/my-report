@@ -28,7 +28,7 @@ if (!empty($_POST["redelider"])) {
 
 require('../conexao.php');
 
-
+header("refresh: 60; url=https://my-report.site/admin");
 
 $corQuery = "SELECT DISTINCT  `distrito_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `rede_lider` like '$redelider' and data_lider >= '$dtini' ";
 
@@ -76,3 +76,5 @@ $result = mysqli_query($conexao, $corQuery);
 </body>
 
 </html>
+
+

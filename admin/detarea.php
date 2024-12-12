@@ -26,12 +26,16 @@ $rede = $_SESSION['rede'];
 $arealider = $_SESSION['arealider'];
 $setorlider = $_SESSION["setorlider"];
 $dtini = $_SESSION['dtini'];
+$distlider = $_SESSION['distlider'];
 
 header("refresh: 180; url=https://my-report.site/admin");
 
-$corQuery = "SELECT DATE_FORMAT(data_lider,'%d/%m/%Y') AS data_lider, nome_lider , membros_celula, membroscomp_celula, convidadospres_celula, criancas_celula, totalpres_celula, oferta_celula, 	tipo_cel_dados FROM `tbl_dados` WHERE  `area_lider` like '$arealider' and setor_lider like '$setorlider' and data_lider >= '$dtini' ";
+$corQuery = "SELECT DATE_FORMAT(data_lider,'%d/%m/%Y') AS data_lider, nome_lider , membros_celula, membroscomp_celula, convidadospres_celula, criancas_celula, totalpres_celula, oferta_celula, 	tipo_cel_dados FROM `tbl_dados` WHERE  `area_lider` like '$arealider' and distrito_lider like '$distlider' and data_lider >= '$dtini' order by data_lider asc ";
 
 $result = mysqli_query($conexao, $corQuery);
+
+
+
 
 ?>
 
@@ -49,7 +53,7 @@ $result = mysqli_query($conexao, $corQuery);
 <body>
     <div class="sessao">
         <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
-        <h3>Líderes de células do setor de <?php echo $_SESSION["setorlider"] ?></h3>
+        <h3>Líderes de células da Área de <?php echo $_SESSION["arealider"] ?></h3>
     </div>
     <div class="divtb"></div>
     <table class="tb_detalhes" border="1" align="center">
@@ -70,14 +74,14 @@ $result = mysqli_query($conexao, $corQuery);
                 <td class="num"><?php echo $row['convidadospres_celula']; ?></td>
                 <td class="num"><?php echo $row['criancas_celula']; ?></td>
                 <td class="nome"><?php echo $row['tipo_cel_dados']; ?></td>
-                <td class="nome"><?php echo $row['data_lider'] ; ?></td>
+                <td class="nome"><?php echo $row['data_lider']; ?></td>
                 
             </tbody>
         <?php } ?>
 
     </table>
     <div class="divbotao">
-        <a href="setor.php" align="center" class="botao" id="voltar">Voltar</a>
+        <a href="distrito.php" align="center" class="botao" id="voltar">Voltar</a>
     </div>
 </body>
 

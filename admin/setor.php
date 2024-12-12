@@ -21,19 +21,18 @@ if (!empty($_POST["setorlider"])) {
     $arealider = $_SESSION['arealider'];
     $correde = $_SESSION['correde'];
     $_SESSION['setorlider'] = $setorlider = $_POST['setorlider'];
-    
 } else {
     $nome = $_SESSION['nome'];
     $dtini = $_SESSION['dtini'];
     $arealider = $_SESSION['arealider'];
     $correde = $_SESSION['correde'];
     $setorlider = $_SESSION['setorlider'];
-    unset($_SESSION['setorlider']);
+    //unset($_SESSION['setorlider']);
 }
 
 require('../conexao.php');
 
-
+header("refresh: 60; url=https://my-report.site/admin");
 
 $corQuery = "SELECT DISTINCT `nome_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `area_lider` like '$arealider' 
 and setor_lider like '$setorlider' and data_lider >= '$dtini' ";
@@ -76,10 +75,10 @@ $result = mysqli_query($conexao, $corQuery);
         <?php   } ?>
         </table>
         <tr>
-            <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('area.php');"></td>
+            <td><input class="botaoadmin" type="button" value="Detalhes" onClick="JavaScript: location.replace('detalhes.php');"></td><br>
         </tr>
         <tr>
-            <td><input class="botaoadmin" type="button" value="Detalhes" onClick="JavaScript: location.replace('detalhes.php');"></td>
+            <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('area.php');"></td>
         </tr>
 
     </div>

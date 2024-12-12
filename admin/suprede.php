@@ -21,6 +21,8 @@ $nome = $_SESSION['nome'];
 $correde = $_SESSION['correde'];
 $dtini = $_SESSION['dtini'];
 
+header("refresh: 60; url=https://my-report.site/admin");
+
 
 $sql = "SELECT DISTINCT rede_lider FROM `tbl_dados` WHERE `supervisor_rede_lider` like '$nome' and cor_rede_lider like '$correde' and data_lider like '$dtini' ";
 
@@ -69,3 +71,6 @@ $result = mysqli_query($conexao, $sql);
 </body>
 
 </html>
+
+
+<?php header("refresh: 30; url=index.php"); ?>

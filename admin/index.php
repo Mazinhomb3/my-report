@@ -54,7 +54,7 @@ $resultcor = mysqli_query($conexao, $sql);
                         <?php } ?>
                 </td>
                 </select>
-
+ 
             </tr>
 
                 <tr>
