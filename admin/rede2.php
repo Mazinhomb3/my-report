@@ -25,7 +25,7 @@ echo $correde;
 $corQuery = "SELECT DISTINCT  `distrito_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `rede_lider` like '$redelider'";
 
 $result = mysqli_query($conexao, $corQuery);
- 
+
 ?>
 
 
@@ -42,9 +42,9 @@ $result = mysqli_query($conexao, $corQuery);
 </head>
 
 <body>
-  
+
     <div class="sessao">
-    <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
+        <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
         <h3>Pr. de Distrito</h3>
     </div>
     <form method="POST" name="pesquisar" id="form" action="distrito.php">

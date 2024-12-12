@@ -36,7 +36,7 @@ $resultcor = mysqli_query($conexao, $sql);
                 <tr>
                     <td class="inputs">Nome: </td>
                     <td><input name="usuario" id="usuario" type="text" class="respostas" required>
-                </td>
+                    </td>
                 </tr>
 
                 <tr>
@@ -46,16 +46,16 @@ $resultcor = mysqli_query($conexao, $sql);
                     </td>
                 </tr>
                 <tr>
-                <td class="inputs">Rede: </td>
-                <td>
-                    <select  class="select" name="cor_rede" id="cor_rede" align="center" class="respostas">
-                        <?php while ($row = mysqli_fetch_assoc($resultcor)) { ?>
-                            <option value="<?php echo $row['cor_rede']; ?>"><?php echo $row['cor_rede']; ?></option>
-                        <?php } ?>
-                </td>
-                </select>
- 
-            </tr>
+                    <td class="inputs">Rede: </td>
+                    <td>
+                        <select class="select" name="cor_rede" id="cor_rede" align="center" class="respostas">
+                            <?php while ($row = mysqli_fetch_assoc($resultcor)) { ?>
+                                <option value="<?php echo $row['cor_rede']; ?>"><?php echo $row['cor_rede']; ?></option>
+                            <?php } ?>
+                    </td>
+                    </select>
+
+                </tr>
 
                 <tr>
                     <td class="inputs">

@@ -1,7 +1,7 @@
 <?php
 if (!isset($_SESSION))
 
-session_start();
+    session_start();
 // Estabelece o nivel da sessao
 $nivel_necessario = 1;
 
@@ -46,7 +46,7 @@ $result = mysqli_query($conexao, $corQuery);
         <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?><br>
         <?php echo "Rede, " . $_SESSION['rede'] . "!" ?><br>
 
-    </div> 
+    </div>
 
 
     <div class="titulo">
@@ -62,8 +62,8 @@ $result = mysqli_query($conexao, $corQuery);
             <?php } ?>
         </table>
         <tr>
-                <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('index.php');"></td>
-            </tr>
+            <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('index.php');"></td>
+        </tr>
     </div>
 </body>
 

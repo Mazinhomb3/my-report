@@ -12,18 +12,16 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     // Redireciona o visitante de volta pro login
     header("Location: index.php");
     exit;
-} 
+}
 
 if (!empty($_POST["redelider"])) {
     $_SESSION['redelider'] = $redelider = $_POST['redelider'];
     $correde = $_SESSION['correde'];
     $dtini = $_SESSION['dtini'];
-    
 } else {
     $redelider = $_SESSION['redelider'];
     $correde = $_SESSION['correde'];
     $dtini = $_SESSION['dtini'];
-  
 }
 
 require('../conexao.php');
@@ -76,5 +74,3 @@ $result = mysqli_query($conexao, $corQuery);
 </body>
 
 </html>
-
-

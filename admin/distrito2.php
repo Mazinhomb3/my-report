@@ -13,8 +13,6 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     // Redireciona o visitante de volta pro login
     header("Location: index.php");
     exit;
-
-    
 }
 
 
@@ -24,14 +22,12 @@ if (!empty($_POST["distlider"])) {
     $dtini = $_SESSION['dtini'];
     $correde = $_SESSION['correde'];
     $_SESSION['distlider'] = $distlider = $_POST['nome'];
-    
 } else {
 
     $nome = $_SESSION['nome'];
     $dtini = $_SESSION['dtini'];
     $correde = $_SESSION['correde'];
     $_SESSION['distlider'] = $distlider = $_SESSION['nome'];
-    
 }
 
 require('../conexao.php');
@@ -48,7 +44,7 @@ $result = mysqli_query($conexao, $sql);
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/admin.css">

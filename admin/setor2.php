@@ -43,7 +43,7 @@ $result = mysqli_query($conexao, $corQuery);
     <link rel="shortcut icon" href="../img/logo_paz.ico" type="image/x-icon">
     <title>Paz Santarém</title>
 </head>
- 
+
 <body>
 
     <div class="sessao">
@@ -53,20 +53,20 @@ $result = mysqli_query($conexao, $corQuery);
 
     </div>
     <div>
-       
-            <table border="0" align="center">
-                <tr>
-                    <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                        <td>
-                        <td class="respostas"><?php echo $row['nome_lider']; ?><br></td>
-                        </td>
-                </tr>
-            <?php } ?>
-            </table>
+
+        <table border="0" align="center">
             <tr>
-                <td><input type="button" value="Voltar" onClick="JavaScript: location.replace('index.php');"></td>
+                <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                    <td>
+                    <td class="respostas"><?php echo $row['nome_lider']; ?><br></td>
+                    </td>
             </tr>
-      
+        <?php } ?>
+        </table>
+        <tr>
+            <td><input type="button" value="Voltar" onClick="JavaScript: location.replace('index.php');"></td>
+        </tr>
+
     </div>
 </body>
 

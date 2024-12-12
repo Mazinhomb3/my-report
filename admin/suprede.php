@@ -14,7 +14,7 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     header("Location: index.php");
     exit;
 }
- 
+
 require('../conexao.php');
 
 $nome = $_SESSION['nome'];
@@ -42,18 +42,18 @@ $result = mysqli_query($conexao, $sql);
     <link rel="shortcut icon" href="../img/logo_paz.ico" type="image/x-icon">
     <title>Paz Santarém</title>
 </head>
- 
-<body> 
+
+<body>
 
     <div class="sessao">
-    <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
+        <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
         <h3>Pr. de Rede da Rede <?php echo $correde; ?>.</h3>
     </div>
     <form method="POST" name="pesquisar" id="form" action="rede.php">
         <table border="0" align="center">
             <tr>
                 <td>
-                    <select  class="select" name="redelider" id="redelider" align="center" class="respostas">
+                    <select class="select" name="redelider" id="redelider" align="center" class="respostas">
                         <?php while ($row = mysqli_fetch_assoc($result)) {  ?>
 
                             <option class="respostas" value="<?php echo $row['rede_lider']; ?>"><?php echo $row['rede_lider']; ?></option>

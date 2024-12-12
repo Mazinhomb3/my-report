@@ -62,7 +62,7 @@ $result = mysqli_query($conexao, $corQuery);
             <th>Tipo de Célula</th>
             <th>Data</th>
         </thead>
-        <?php while ($row = mysqli_fetch_assoc($result)) {?>
+        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
             <tbody>
                 <td class="nome"><?php echo $row['nome_lider']; ?></td>
                 <td class="num"><?php echo $row['membros_celula']; ?></td>
@@ -70,8 +70,8 @@ $result = mysqli_query($conexao, $corQuery);
                 <td class="num"><?php echo $row['convidadospres_celula']; ?></td>
                 <td class="num"><?php echo $row['criancas_celula']; ?></td>
                 <td class="nome"><?php echo $row['tipo_cel_dados']; ?></td>
-                <td class="nome"><?php echo $row['data_lider'] ; ?></td>
-                
+                <td class="nome"><?php echo $row['data_lider']; ?></td>
+
             </tbody>
         <?php } ?>
 

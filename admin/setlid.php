@@ -14,7 +14,7 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     header("Location: index.php");
     exit;
 }
- 
+
 require('../conexao.php');
 
 $nome = $_SESSION['nome'];

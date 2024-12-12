@@ -12,7 +12,7 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     session_destroy();
     // Redireciona o visitante de volta pro login
     header("Location: index.php");
-    exit; 
+    exit;
 }
 
 if (!empty($_POST["distlider"])) {
@@ -21,15 +21,12 @@ if (!empty($_POST["distlider"])) {
     $dtini = $_SESSION['dtini'];
     $correde = $_SESSION['correde'];
     $_SESSION['distlider'] = $distlider = $_POST['distlider'];
-    
 } else {
 
     $nome = $_SESSION['nome'];
     $dtini = $_SESSION['dtini'];
     $correde = $_SESSION['correde'];
     $distlider = $_SESSION['distlider'];
-    
-    
 }
 
 

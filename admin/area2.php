@@ -34,7 +34,7 @@ $result = mysqli_query($conexao, $corQuery);
 
 ?>
 
- 
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -46,7 +46,7 @@ $result = mysqli_query($conexao, $corQuery);
     <link rel="shortcut icon" href="../img/logo_paz.ico" type="image/x-icon">
     <title>Paz Santarém</title>
 </head>
-  
+
 <body>
 
     <div class="sessao">
@@ -69,10 +69,9 @@ $result = mysqli_query($conexao, $corQuery);
         <tr>
             <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td>
         </tr>
-       
+
     </form>
-  
+
 </body>
 
 </html>
-

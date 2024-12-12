@@ -151,7 +151,7 @@
         font-size: 20px;
     }
 
-    .divtb{
+    .divtb {
         text-align: center;
         align-content: center;
     }
@@ -160,22 +160,24 @@
         border: 1px solid black;
         border-collapse: collapse;
 
-        th{
+        th {
             background-color: black;
             height: 60px;
-          
+
         }
-        .num{
+
+        .num {
             background-color: gray;
             width: 20px;
-           
+
         }
-        .nome{
+
+        .nome {
             background-color: gray;
             width: 100px;
-            
+
         }
-       
+
     }
 }
 
@@ -343,22 +345,24 @@
         border: 1px solid black;
         border-collapse: collapse;
 
-        th{
+        th {
             background-color: black;
             height: 60px;
-          
+
         }
-        .num{
+
+        .num {
             background-color: gray;
             width: 20px;
-           
+
         }
-        .nome{
+
+        .nome {
             background-color: gray;
             width: 150px;
-            
+
         }
-       
+
     }
 
 }
@@ -380,7 +384,7 @@
         text-align: center;
         margin: 0;
         font-family: 'Peace';
- 
+
     }
 
     .divi-img {
@@ -505,22 +509,24 @@
         border: 1px solid black;
         border-collapse: collapse;
 
-        th{
+        th {
             background-color: black;
             height: 60px;
-          
+
         }
-        .num{
+
+        .num {
             background-color: gray;
             width: 20px;
-           
+
         }
-        .nome{
+
+        .nome {
             background-color: gray;
             width: 150px;
-            
+
         }
-       
+
     }
 
 
