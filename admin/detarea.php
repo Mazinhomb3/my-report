@@ -24,7 +24,6 @@ require('../conexao.php');
 $nome = $_SESSION['nome'];
 $rede = $_SESSION['rede'];
 $arealider = $_SESSION['arealider'];
-$setorlider = $_SESSION["setorlider"];
 $dtini = $_SESSION['dtini'];
 $distlider = $_SESSION['distlider'];
 
@@ -56,7 +55,7 @@ $result = mysqli_query($conexao, $corQuery);
         <h3>Líderes de células da Área de <?php echo $_SESSION["arealider"] ?></h3>
     </div>
     <div class="divtb"></div>
-    <table class="tb_detalhes" border="1" align="center">
+    <table class="tb_detalhes"  align="center">
         <thead>
             <th>Lider</th>
             <th>Total Membros</th>

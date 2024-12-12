@@ -33,22 +33,18 @@ $resultcor = mysqli_query($conexao, $sql);
         <form id="form" name="cadastrar" method="POST" action="login.php">
 
             <table align="center" border="0" class="table">
-                <tr>
-                    <td class="inputs">Nome: </td>
-                    <td><input name="usuario" id="usuario" type="text" class="respostas" required>
-                    </td>
-                </tr>
 
                 <tr>
-                    <td class="inputs">Senha: </td>
+                    <td class="inputs">ID: </td>
                     <td>
-                        <input name="senha" id="senha" type="number" class="respostas">
+                        <input name="senha" id="senha" type="number" class="respostas" required>
                     </td>
                 </tr>
                 <tr>
                     <td class="inputs">Rede: </td>
                     <td>
-                        <select class="select" name="cor_rede" id="cor_rede" align="center" class="respostas">
+                        <select class="select" name="cor_rede" id="cor_rede" align="center" class="respostas" required>
+                            <option value=""></option>
                             <?php while ($row = mysqli_fetch_assoc($resultcor)) { ?>
                                 <option value="<?php echo $row['cor_rede']; ?>"><?php echo $row['cor_rede']; ?></option>
                             <?php } ?>
@@ -62,7 +58,7 @@ $resultcor = mysqli_query($conexao, $sql);
                         Data Inicial:
                     </td>
                     <td>
-                        <input name="dtini" type="date" id="dtini" class="respostas">
+                        <input name="dtini" type="date" id="dtini" class="respostas" required>
                     </td>
                 </tr>
 
