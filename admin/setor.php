@@ -85,3 +85,5 @@ $result = mysqli_query($conexao, $corQuery);
 </body>
 
 </html>
+
+<?php header("refresh: 60; ") ?>
