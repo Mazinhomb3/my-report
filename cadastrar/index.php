@@ -26,7 +26,6 @@
                     <td>Senha: </td>
                     <td><input name="senha" type="password" class="respostas" placeholder="senha" require></td>
                 </tr>
-            
             <div class="divbuton">
             <tr>
                 <td></td>
