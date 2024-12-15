@@ -16,7 +16,6 @@ exit;
 }
 
 
-
 require('../conexao.php');
 
 $corQuery = "SELECT DISTINCT rede FROM tbl_login_sup ORDER BY rede ASC";
@@ -108,7 +107,8 @@ $result1 = mysqli_query($conexao, $corQuery);
                         <label>Rede: </label>
                     </td>
                     <td>
-                        <select name="rede" id="rede" align="center" class="respostas">
+                        <select name="rede" id="rede" align="center" class="respostas" required>
+                            <option value=""></option>
                             <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                                 <option value="<?php echo $row['rede']; ?>"><?php echo $row['rede']; ?></option>
                             <?php } ?>
@@ -122,14 +122,17 @@ $result1 = mysqli_query($conexao, $corQuery);
                         <label>Função: </label>
                     </td>
                     <td>
-                        <select name="funcao" id="funcao" align="center" class="respostas">
-                            <?php while ($row = mysqli_fetch_assoc($result1)) { ?>
+                        <select name="funcao" id="funcao" align="center" class="respostas" required>
+                            <?php while ($row = mysqli_fetch_assoc($result1)) { 
+                                ?>
                                 <option value="<?php echo $row['funcao']; ?>"><?php echo $row['funcao']; ?></option>
                             <?php } ?>
                         </select>
                     </td>
                 </tr>
 
+
+       
         </table>
         <div class="botaocentro">
             <tr>

@@ -67,6 +67,7 @@ $result = mysqli_query($conexao, $corQuery);
             <tr>
                 <td>
                     <select class="select" name="setorlider" id="setorlider" align="center">
+                        <option value=""></option>
                         <?php while ($row = mysqli_fetch_assoc($result)) {  ?>
 
                             <option value="<?php echo $row['setor_lider']; ?>"><?php echo $row['setor_lider']; ?></option>

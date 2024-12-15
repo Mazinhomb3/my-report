@@ -32,12 +32,9 @@ if (!empty($_POST["setorlider"])) {
 
 require('../conexao.php');
 
-header("refresh: 60; url=https://my-report.site/admin");
+//header("refresh: 60; url=https://my-report.site/admin");
 
-$corQuery = "SELECT DISTINCT `nome_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `area_lider` like '$arealider' 
-and setor_lider like '$setorlider' and data_lider >= '$dtini' ";
 
-$result = mysqli_query($conexao, $corQuery);
 
 
 
@@ -65,15 +62,53 @@ $result = mysqli_query($conexao, $corQuery);
     </div>
     <div>
 
-        <table border="0" align="center">
+        <table border="0" align="center" id="primeira">
             <tr>
-                <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+
+                <?php
+                $corQuery = "SELECT DISTINCT `nome_lider`, cod_lider_rede FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `area_lider` like '$arealider' 
+                and setor_lider like '$setorlider' and data_lider >= '$dtini' order by nome_lider asc ";
+
+                $result = mysqli_query($conexao, $corQuery);
+
+                while ($row1 = mysqli_fetch_assoc($result)) { ?>
                     <td>
-                    <td class="respostas"><?php echo $row['nome_lider']; ?><br>
+                        <?php $id  = $row1['cod_lider_rede'];
+
+                        ?>
+                    <td class="respostas"><?php echo $row1['nome_lider']; ?><br>
                     </td>
             </tr>
         <?php   } ?>
         </table>
+
+
+        <table border="0" align="center" id="segunda" >
+            <tr>
+                <?php
+                $corQuery = "SELECT `lider_cel_rede`, cod_lider_rede FROM `tbl_redes` WHERE cor_rede like '$correde' and `area_rede` like '$arealider' 
+                and setor_rede like '$setorlider' ORDER BY lider_cel_rede ASC ";
+
+                $result = mysqli_query($conexao, $corQuery);
+
+                while ($row = mysqli_fetch_assoc($result)) { ?>
+                    <td>
+                        <?php $id2 = $row['cod_lider_rede'];
+                        if ($row['cod_lider_rede'] != $row1['nome_lider']) {
+                            $cor="respostasverd";
+                        }else{
+                            $cor= "respostas";
+                        
+                        echo $cor;
+                        }
+                        ?>
+                    <td class="<?php echo $cor ?>"><?php echo $row["lider_cel_rede"] ?><br>
+                    </td>
+                  
+            </tr>
+        <?php   } ?>
+        </table>
+
         <tr>
             <td><input class="botaoadmin" type="button" value="Detalhes" onClick="JavaScript: location.replace('detalhes.php');"></td><br>
         </tr>
@@ -85,5 +120,3 @@ $result = mysqli_query($conexao, $corQuery);
 </body>
 
 </html>
-
-<?php header("refresh: 60; ") ?>

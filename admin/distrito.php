@@ -62,6 +62,7 @@ $result = mysqli_query($conexao, $sql);
             <tr>
                 <td>
                     <select class="select" name="arealider" id="arealider" align="center" class="respostas">
+                        <option value=""></option>
                         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
 
                             <option class="respostas" value="<?php echo $row['area_lider']; ?>"><?php echo $row['area_lider']; ?></option>

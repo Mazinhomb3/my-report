@@ -34,12 +34,12 @@ require('../conexao.php');
 
 //header("refresh: 60; url=https://my-report.site/admin");
 
-$corQuery = "SELECT t1.lider_cel_rede, t1.cod_lider_rede AS cor_tabela1, t2.cod_lider_rede AS cor_tabela2 FROM tbl_redes t1  INNER JOIN tbl_dados t2 ON t1.cod_lider_rede = t2.cod_lider_rede WHERE cor_rede_lider='verde laguna' AND setor_lider = 'bruno' AND data_lider>='2024-12-02'";
-
-$result = mysqli_query($conexao, $corQuery);
-
+$sql = "SELECT DISTINCT nome_lider, cod_lider_rede FROM tbl_dados WHERE cor_rede_lider='verde laguna' AND area_lider='bruno' and setor_lider='bruno' AND data_lider>='2024-12-02' order by nome_lider asc ";
+$result2 = mysqli_query($conexao, $sql);
 
 
+$sqlnome = "SELECT DISTINCT lider_cel_rede, cod_lider_rede FROM tbl_redes WHERE cor_rede='verde laguna' AND area_rede='bruno' and setor_rede='bruno' order by lider_cel_rede asc";
+$result1 = mysqli_query($conexao, $sqlnome);
 
 ?>
 
@@ -60,36 +60,38 @@ $result = mysqli_query($conexao, $corQuery);
 
     <div class="sessao">
         <?php echo "Bem-vindo, " . $_SESSION['nome'] ?><br>
-        <h3>Lider de Célula da Rede <?php echo $correde; ?>.</h3>
+        <h3>Lideres de Célula de setor da Rede <?php echo $correde; ?>.</h3>
 
     </div>
     <div>
 
         <table border="0" align="center">
             <tr>
-                <?php while ($row = mysqli_fetch_assoc($result)) { 
-                    if ($row["cor_tabela1"] == $row["cor_tabela2"]) {
-                        $cor="respostasverd";
-                    }else {
-                        $cor= "respostas";
-                    }
-                    ?>
-                    <td class="<?php echo $cor ?>"><?php echo $row["lider_cel_rede"] ?><br>
+                <?php while ($row1 = $result1->fetch_assoc()) {
+                  //$cor="respostas";
+                ?>
+                    <td class="<?php echo $cor ?>"><?php echo $row1["lider_cel_rede"]; ?><br>
                     </td>
+
             </tr>
         <?php   }  ?>
         <tr>
-        <?php
-                $sql = "SELECT `lider_cel_rede`, cod_lider_rede FROM `tbl_redes` WHERE cor_rede like 'verde laguna' and `area_rede` like 'bruno' and setor_rede like 'bruno' ORDER BY lider_cel_rede ASC ";
-
-                $resultlider = mysqli_query($conexao, $sql);
-
-                while ($rowlider = mysqli_fetch_assoc($resultlider)) { ?>
-
-                <td class="<?php echo $cor ?>"><?php echo $rowlider["lider_cel_rede"] ?><br>
-                </td>
+            <td>
+                <h3>Relatórios enviados</h3>
+            </td>
         </tr>
-        <?php   } ?>
+        <tr>
+            <?php while ($row2 = $result2->fetch_assoc()) {
+                if ($row2["nome_lider"]==$row1["lider_cel_rede"]) {
+                    $cor="respostasverd";
+                }else {
+                    $cor="respostas";
+                }
+                ?>
+                <td class="respostasverd"><?php echo $row2["nome_lider"]; ?></td>
+                
+        </tr>
+    <?php } ?>
         </table>
         <tr>
             <td><input class="botaoadmin" type="button" value="Detalhes" onClick="JavaScript: location.replace('detalhes.php');"></td><br>

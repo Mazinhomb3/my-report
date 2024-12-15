@@ -19,7 +19,7 @@ class Users extends Connection
      */
     public array $formData;
 
-     /**
+    /**
      * ID do usuário para operações específicas (visualização).
      * @var int
      */
@@ -36,7 +36,7 @@ class Users extends Connection
         $this->formData = $formData;
     }
 
-     /**
+    /**
      * Define o ID do usuário para operações que necessitam de um identificador específico.
      * 
      * @param int $id Identificador único do usuário.
@@ -77,11 +77,12 @@ class Users extends Connection
      */
     public function create(): bool
     {
+
         // Estabelece a conexão com o banco de dados.
         $this->conn = $this->connect();
 
         // Consulta SQL para inserir um novo usuário.
-        $sql = "INSERT INTO tbl_login_sup (nome, nome_login, rede, senha, funcao, data_user) VALUES (:nome, md5(:nome_login), :rede, MD5(:senha), :funcao, :data_user)";
+        $sql = "INSERT INTO tbl_login_sup (nome, nome_login, rede, senha, funcao, data_user, nivel) VALUES (:nome, md5(:nome_login), :rede, MD5(:senha), :funcao, :data_user, :nivel)";
 
         // Prepara a consulta SQL para inserção de dados.
         $addUser = $this->conn->prepare($sql);
@@ -92,10 +93,31 @@ class Users extends Connection
         $addUser->bindParam(':rede', $this->formData['rede']);
         $addUser->bindParam(':senha', $this->formData['senha']);
         $addUser->bindParam(':funcao', $this->formData['funcao']);
-        $data_user=date('Y-m-d');
+        $data_user = date('Y-m-d');
         $addUser->bindParam(':data_user', $data_user);
-        
-       
+        $funcao = $_POST['funcao'];
+
+        $um = 1;
+        $dois = 2;
+        $tres = 3;
+        $quatro = 4;
+        $cinco = 5;
+        $seis = 6;
+
+        if ($funcao == 'Setor') {
+            $addUser->bindParam(':nivel', $um);
+        } elseif ($funcao == 'Área') {
+            $addUser->bindParam(':nivel', $dois);
+        } elseif ($funcao == 'Distrito') {
+            $addUser->bindParam(':nivel', $tres);
+        } elseif ($funcao == 'Rede') {
+            $addUser->bindParam(':nivel', $quatro);
+        } elseif ($funcao == 'Sup. de Rede') {
+            $addUser->bindParam(':nivel', $cinco);
+        } elseif ($funcao == 'Editor') {
+            $addUser->bindParam(':nivel', $seis);
+        }
+
 
         // Executa a consulta SQL.
         $addUser->execute();
@@ -108,7 +130,7 @@ class Users extends Connection
         }
     }
 
-     /**
+    /**
      * Visualiza os detalhes de um usuário específico.
      * 
      * @return array|false Retorna um array contendo os dados do usuário se encontrado, ou false se não existir.
@@ -158,7 +180,7 @@ class Users extends Connection
         $editUser->bindParam(':rede', $this->formData['rede']);
         $editUser->bindParam(':senha', $this->formData['senha']);
         $editUser->bindParam(':funcao', $this->formData['funcao']);
-        $data_user=date('Y-m-d');
+        $data_user = date('Y-m-d');
         $editUser->bindParam(':data_user', $data_user);
         $editUser->bindParam(':id', $this->formData['id']);
 
@@ -190,6 +212,4 @@ class Users extends Connection
         // Executa a consulta SQL.
         return $deleteUser->execute();
     }
-
-
 }
