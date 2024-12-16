@@ -82,3 +82,4 @@ $result = mysqli_query($conexao, $sql);
 </body>
 
 </html>
+<?php header("refresh: 60; ") ?>

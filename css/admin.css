@@ -1,4 +1,4 @@
-@media only screen and (min-width: 300px) and (max-device-width: 768px) {
+@media only screen and (min-width: 300px){
     @font-face {
         font-family: 'Peace';
         src: url('../Peace and love.ttf') format(truetype);
@@ -70,6 +70,31 @@
         color: rgb(0, 0, 0);
         border-radius: 5px;
 
+    }
+
+    .respostasverm {
+        width: 160px;
+        height: 18px;
+        font-size: 12px;
+        text-align: center;
+        margin-bottom: 3px;
+        font-family: sans-serif;
+        font-weight: bolder;
+        background-color: rgb(255, 62, 62);
+        color: rgb(255, 255, 255);
+        border-radius: 5px;
+
+    }
+
+    .respostasverd {
+        width: 160px;
+        font-family: 'Peace';
+        font-size: 12px;
+        text-align: center;
+        margin-bottom: 3px;
+        background-color: rgb(0, 154, 0);
+        color: rgb(255, 255, 255);
+        border-radius: 5px;
     }
 
     .botaoadmin {
@@ -167,13 +192,17 @@
         }
 
         .num {
-            background-color: gray;
+            
+            color: black;
+            background-color: rgb(255, 255, 255);
             width: 20px;
 
         }
 
         .nome {
-            background-color: gray;
+            
+            color: black;
+            background-color: rgb(255, 255, 255);
             width: 100px;
 
         }
@@ -256,6 +285,32 @@
         color: rgb(0, 0, 0);
         border-radius: 5px;
 
+    }
+
+    .respostasverm {
+
+        width: 180px;
+        height: 22px;
+        font-family: sans-serif;
+        font-size: 18px;
+        text-align: center;
+        align-content: center;
+        margin-bottom: 3px;
+        background-color: rgb(255, 62, 62);
+        color: rgb(255, 255, 255);
+        border-radius: 5px;
+
+    }
+
+    .respostasverd {
+        width: 180px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 3px;
+        background-color: rgb(0, 154, 0);
+        color: rgb(255, 255, 255);
+        border-radius: 5px;
     }
 
     .botaoadmin {
@@ -352,13 +407,15 @@
         }
 
         .num {
-            background-color: gray;
+            color: black;
+            background-color: rgb(255, 255, 255);
             width: 20px;
 
         }
 
         .nome {
-            background-color: gray;
+            color: black;
+            background-color: rgb(255, 255, 255);
             width: 150px;
 
         }
@@ -401,7 +458,7 @@
     .titulo {
         text-align: center;
         font-size: 18px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Peace';
     }
 
     .form {
@@ -416,7 +473,7 @@
 
     .respostas {
         width: 180px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Peace' ;
         font-size: 18px;
         text-align: center;
         margin-bottom: 3px;
@@ -425,14 +482,25 @@
         border-radius: 5px;
     }
 
-    .respostasverd {
+    .respostasverm {
         width: 180px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Peace' ;
         font-size: 18px;
         text-align: center;
         margin-bottom: 3px;
-        background-color: rgb(0, 255, 0);
-        color: rgb(0, 0, 0);
+        background-color: rgb(255, 62, 62);
+        color: rgb(255, 255, 255);
+        border-radius: 5px;
+    }
+
+    .respostasverd {
+        width: 180px;
+        font-family: 'Peace';
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 3px;
+        background-color: rgb(0, 154, 0);
+        color: rgb(255, 255, 255);
         border-radius: 5px;
     }
 
@@ -518,9 +586,7 @@
 
     .tb_detalhes {
         border: 1px solid black;
-        border-collapse: collapse;
-
-        
+        border-collapse: collapse;  
     
         th {
             background-color: black;
@@ -528,7 +594,7 @@
             border-collapse: collapse;
         }
 
-        .num {
+        .num { 
             color: black;
             background-color: rgb(255, 255, 255);
             width: 20px;

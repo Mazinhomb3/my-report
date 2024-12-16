@@ -32,7 +32,7 @@ if (!empty($_POST["setorlider"])) {
 
 require('../conexao.php');
 
-//header("refresh: 60; url=https://my-report.site/admin");
+header("refresh: 180; url=https://my-report.site/admin");
 
 $cor = "";
 
@@ -81,7 +81,7 @@ $cor = "";
                     if ($quantidade > 1) {
                         $cor = "respostasverd"; // Cor de fundo para repetidas
                     } else {
-                        $cor =  "respostas";
+                        $cor =  "respostasverm";
                     }
 
                 ?>
@@ -89,6 +89,7 @@ $cor = "";
                     <td class="<?php echo $cor ?>"><?php echo $row1["lider_cel_rede"] ?><br>
                        
                     </td>
+                    <td class="<?php echo $cor ?>"><?php echo $row1["cod_lider_rede"] ?></td>
 
             </tr>
         <?php   } ?>

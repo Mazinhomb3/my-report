@@ -74,4 +74,4 @@ $result = mysqli_query($conexao, $sql);
 </html>
 
 
-<?php header("refresh: 30; url=index.php"); ?>
+<?php header("refresh: 60; ") ?>
