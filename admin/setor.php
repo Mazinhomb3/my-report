@@ -34,8 +34,7 @@ require('../conexao.php');
 
 //header("refresh: 60; url=https://my-report.site/admin");
 
-
-
+$cor="";
 
 
 ?>
@@ -62,28 +61,10 @@ require('../conexao.php');
     </div>
     <div>
 
-        <table border="0" align="center" id="primeira">
-            <tr>
 
-                <?php
-                $corQuery = "SELECT DISTINCT `nome_lider`, cod_lider_rede FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `area_lider` like '$arealider' 
-                and setor_lider like '$setorlider' and data_lider >= '$dtini' order by nome_lider asc ";
+        <h3>Celulas setor do <?php echo $_SESSION['setorlider'] ?></h3>
 
-                $result = mysqli_query($conexao, $corQuery);
-
-                while ($row1 = mysqli_fetch_assoc($result)) { ?>
-                    <td>
-                        <?php $id  = $row1['cod_lider_rede'];
-
-                        ?>
-                    <td class="respostas"><?php echo $row1['nome_lider']; ?><br>
-                    </td>
-            </tr>
-        <?php   } ?>
-        </table>
-
-
-        <table border="0" align="center" id="segunda" >
+        <table border="0" align="center" id="segunda">
             <tr>
                 <?php
                 $corQuery = "SELECT `lider_cel_rede`, cod_lider_rede FROM `tbl_redes` WHERE cor_rede like '$correde' and `area_rede` like '$arealider' 
@@ -91,22 +72,48 @@ require('../conexao.php');
 
                 $result = mysqli_query($conexao, $corQuery);
 
-                while ($row = mysqli_fetch_assoc($result)) { ?>
-                    <td>
-                        <?php $id2 = $row['cod_lider_rede'];
-                        if ($row['cod_lider_rede'] != $row1['nome_lider']) {
-                            $cor="respostasverd";
-                        }else{
-                            $cor= "respostas";
-                        
-                        echo $cor;
-                        }
+                while ($row1 = mysqli_fetch_assoc($result)) { ?>
+                    
+                    <td class="respostas"><?php echo $row1["lider_cel_rede"] ?><br>
+                        <?php
+                        $id1 = array($row1['cod_lider_rede']);
                         ?>
-                    <td class="<?php echo $cor ?>"><?php echo $row["lider_cel_rede"] ?><br>
                     </td>
-                  
+
             </tr>
         <?php   } ?>
+        
+        </table>
+
+        <h3>Relatórios enviados.</h3>
+        <table border="0" align="center" id="primeira">
+            <tr>
+
+                <?php
+                $corQuery = "SELECT DISTINCT nome_lider, cod_lider_rede FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `area_lider` like '$arealider' 
+                and setor_lider like '$setorlider' and data_lider >= '$dtini' order by nome_lider asc ";
+
+                $result = mysqli_query($conexao, $corQuery);
+
+                while ($row2 = mysqli_fetch_assoc($result)) { 
+                    $id2 = array($row2['cod_lider_rede']);
+                    
+                    foreach ($id2 as $n) {
+                        foreach ($id1 as $n2) {
+                            if ($n == $n2) {
+                                 echo"verde";
+                            }
+                        }
+                    }
+                    ?>
+                    <td>
+
+                    <td class="<?php echo $cor ?>"><?php echo $row2['nome_lider']; ?><br>
+                    </td>
+            </tr>
+
+        <?php   } ?>
+                   
         </table>
 
         <tr>
@@ -120,3 +127,4 @@ require('../conexao.php');
 </body>
 
 </html>
+

@@ -34,12 +34,14 @@ require('../conexao.php');
 
 //header("refresh: 60; url=https://my-report.site/admin");
 
-$corQuery = "SELECT t1.lider_cel_rede, t1.cod_lider_rede AS cor_tabela1, t2.cod_lider_rede AS cor_tabela2 FROM tbl_redes t1  INNER JOIN tbl_dados t2 ON t1.cod_lider_rede = t2.cod_lider_rede WHERE cor_rede_lider='verde laguna' AND setor_lider = 'bruno' AND data_lider>='2024-12-02'";
+$corQuery = "SELECT nome_lider, cod_lider_rede, id_rede FROM `tbl_dados` WHERE cor_rede_lider='verde laguna' AND area_lider='bruno'AND setor_lider='bruno' AND data_lider>='2024-12-02'";
 
 $result = mysqli_query($conexao, $corQuery);
 
-
-
+while ($row = mysqli_fetch_assoc($result)) {
+    $nome1 = $row['nome_lider'];
+    print_r($nome1);
+}
 
 ?>
 
@@ -66,30 +68,23 @@ $result = mysqli_query($conexao, $corQuery);
     <div>
 
         <table border="0" align="center">
-            <tr>
-                <?php while ($row = mysqli_fetch_assoc($result)) { 
-                    if ($row["cor_tabela1"] == $row["cor_tabela2"]) {
-                        $cor="respostasverd";
-                    }else {
-                        $cor= "respostas";
-                    }
-                    ?>
-                    <td class="<?php echo $cor ?>"><?php echo $row["lider_cel_rede"] ?><br>
-                    </td>
-            </tr>
-        <?php   }  ?>
-        <tr>
-        <?php
-                $sql = "SELECT `lider_cel_rede`, cod_lider_rede FROM `tbl_redes` WHERE cor_rede like 'verde laguna' and `area_rede` like 'bruno' and setor_rede like 'bruno' ORDER BY lider_cel_rede ASC ";
 
-                $resultlider = mysqli_query($conexao, $sql);
+            <?php
+            $sql = "SELECT `lider_cel_rede`, cod_lider_rede FROM `tbl_redes` WHERE cor_rede like 'verde laguna' and `area_rede` like 'bruno' and setor_rede like 'bruno' ORDER BY lider_cel_rede ASC ";
 
-                while ($rowlider = mysqli_fetch_assoc($resultlider)) { ?>
+            $resultlider = mysqli_query($conexao, $sql);
+
+            while ($rowlider = mysqli_fetch_assoc($resultlider)) {
+
+                $nome2=array($rowlider["lider_cel_rede"]);
+              
+
+            ?>
 
                 <td class="<?php echo $cor ?>"><?php echo $rowlider["lider_cel_rede"] ?><br>
                 </td>
-        </tr>
-        <?php   } ?>
+                </tr>
+            <?php   } ?>
         </table>
         <tr>
             <td><input class="botaoadmin" type="button" value="Detalhes" onClick="JavaScript: location.replace('detalhes.php');"></td><br>
@@ -102,3 +97,17 @@ $result = mysqli_query($conexao, $corQuery);
 </body>
 
 </html>
+
+<?php
+foreach ($result as $n) {
+    foreach ($resultlider as $n2) {
+        if ($n == $n2) {
+            $nome3[] = $n2;
+        }
+    }
+} 
+//var_dump($n);
+//var_dump($n2);
+//var_dump($result);
+
+?>
