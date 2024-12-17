@@ -37,7 +37,7 @@ require('../conexao.php');
 header("refresh: 60; url=https://my-report.site/admin");
 
 
-$corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE  cor_rede_lider like '$correde' and `area_lider` like '$arealider' and data_lider >= '$dtini' ";
+$corQuery = "SELECT DISTINCT `setor_rede` FROM `tbl_redes` WHERE  cor_rede like '$correde' and `area_rede` like '$arealider' ";
 
 $result = mysqli_query($conexao, $corQuery);
 
@@ -70,7 +70,7 @@ $result = mysqli_query($conexao, $corQuery);
                         <option value=""></option>
                         <?php while ($row = mysqli_fetch_assoc($result)) {  ?>
 
-                            <option value="<?php echo $row['setor_lider']; ?>"><?php echo $row['setor_lider']; ?></option>
+                            <option value="<?php echo $row['setor_rede']; ?>"><?php echo $row['setor_rede']; ?></option>
                         <?php } ?>
                 </td>
                 </select>
@@ -84,9 +84,7 @@ $result = mysqli_query($conexao, $corQuery);
             <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('distrito.php');"></td>
         </tr>
     </form>
-    <tr>
-        <td><input class="botaoadmin" type="button" value="Detalhes" onClick="JavaScript: location.replace('detarea.php');"></td>
-    </tr>
+    
 </body>
 
 </html>

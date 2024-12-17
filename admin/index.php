@@ -40,6 +40,17 @@ $resultcor = mysqli_query($conexao, $sql);
                         <input name="senha" id="senha" type="number" class="respostas" required>
                     </td>
                 </tr>
+             
+
+                <tr>
+                    <td class="inputs">
+                        Data Inicial:
+                    </td>
+                    <td>
+                        <input name="dtini" type="date" id="dtini" class="respostas" required>
+                    </td>
+                </tr>
+
                 <tr>
                     <td class="inputs">Rede: </td>
                     <td>
@@ -51,15 +62,6 @@ $resultcor = mysqli_query($conexao, $sql);
                     </td>
                     </select>
 
-                </tr>
-
-                <tr>
-                    <td class="inputs">
-                        Data Inicial:
-                    </td>
-                    <td>
-                        <input name="dtini" type="date" id="dtini" class="respostas" required>
-                    </td>
                 </tr>
 
             </table>

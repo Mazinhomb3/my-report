@@ -57,12 +57,12 @@ header("refresh: 180; url=https://my-report.site/admin");
     <div class="sessao">
         <?php echo "Bem-vindo, " . $_SESSION['nome'] ?><br>
         <h3>Lider de Célula da Rede <?php echo $correde; ?>.</h3>
-
+        <h3 >Celulas setor de <?php echo $_SESSION['setorlider'] . "."?></h3>
     </div>
     <div>
 
 
-        <h3>Celulas setor de <?php echo $_SESSION['setorlider'] . "."?></h3>
+        
 
         <table border="0" align="center" id="segunda">
             <tr>

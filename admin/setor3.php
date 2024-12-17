@@ -100,7 +100,7 @@ require('../conexao.php');
         <tr>
             <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('area3.php');"></td>
         </tr>
-
+ 
     </div>
 </body>
 

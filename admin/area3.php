@@ -68,11 +68,9 @@ $result = mysqli_query($conexao, $corQuery);
         <tr>
             <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td><br>
         </tr>
-        <tr>
-        <td><input class="botaoadmin" type="button" value="Detalhes" onClick="JavaScript: location.replace('detarea.php');"></td>
-    </tr>
+        
 </body>
-
+ 
 </html>
 
 <?php header("refresh: 60; "); ?>

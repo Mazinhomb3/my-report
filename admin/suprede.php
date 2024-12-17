@@ -24,7 +24,7 @@ $dtini = $_SESSION['dtini'];
 header("refresh: 60; url=https://my-report.site/admin");
 
 
-$sql = "SELECT DISTINCT rede_lider FROM `tbl_dados` WHERE `supervisor_rede_lider` like '$nome' and cor_rede_lider like '$correde' and data_lider like '$dtini' ";
+$sql = "SELECT DISTINCT pr_rede FROM `tbl_redes` WHERE `superv_rede` like '$nome' and cor_rede like '$correde'";
 
 $result = mysqli_query($conexao, $sql);
 
@@ -57,7 +57,7 @@ $result = mysqli_query($conexao, $sql);
 
                         <?php while ($row = mysqli_fetch_assoc($result)) {  ?>
 
-                            <option class="respostas" value="<?php echo $row['rede_lider']; ?>"><?php echo $row['rede_lider']; ?></option>
+                            <option class="respostas" value="<?php echo $row['pr_rede']; ?>"><?php echo $row['pr_rede']; ?></option>
 
                         <?php } ?>
                 </td>

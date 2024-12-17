@@ -28,7 +28,7 @@ require('../conexao.php');
 
 header("refresh: 60; url=https://my-report.site/admin");
 
-$corQuery = "SELECT DISTINCT  `distrito_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `rede_lider` like '$redelider' and data_lider >= '$dtini' order by distrito_lider asc ";
+$corQuery = "SELECT DISTINCT  `distrito_rede` FROM `tbl_redes` WHERE cor_rede like '$correde' and `pr_rede` like '$redelider' order by distrito_rede asc ";
 
 $result = mysqli_query($conexao, $corQuery);
 
@@ -61,7 +61,7 @@ $result = mysqli_query($conexao, $corQuery);
                         <option value=""></option>
                         <?php while ($row = mysqli_fetch_assoc($result)) {  ?>
 
-                            <option class="respostas" value="<?php echo $row['distrito_lider']; ?>"><?php echo $row['distrito_lider']; ?></option>
+                            <option class="respostas" value="<?php echo $row['distrito_rede']; ?>"><?php echo $row['distrito_rede']; ?></option>
                         <?php } ?>
                 </td>
                 </select>
@@ -69,7 +69,10 @@ $result = mysqli_query($conexao, $corQuery);
             </tr>
         </table>
         <tr>
-            <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td>
+            <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td><br>
+        </tr>
+        <tr>
+            <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('suprede.php');"></td>
         </tr>
     </form>
 </body>

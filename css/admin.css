@@ -1,4 +1,4 @@
-@media only screen and (min-width: 300px){
+@media only screen and (min-width: 300px) and (max-width: 769px){
     @font-face {
         font-family: 'Peace';
         src: url('../Peace and love.ttf') format(truetype);
@@ -15,17 +15,17 @@
         text-align: center;
         font-family: 'Peace';
         font-size: 10px;
-        border: 0;
+        
 
     }
 
     .div-img {
         text-align: center;
-        margin-top: 10px;
+        margin-top: 10%;
     }
 
     .divi-img {
-        margin-top: 0;
+        margin-top: 10%;
     }
 
     .img {
@@ -119,7 +119,7 @@
     .sessao {
         align-content: center;
         text-align: center;
-        margin-top: 10px;
+        margin-top: 20%;
         margin-bottom: 10px;
     }
 
@@ -225,36 +225,31 @@
     body {
         background-color: rgb(0, 0, 180);
         background-image: url(../img/gradient_2.jpg);
-        background-size: cover;
+        align-content: cover;
         min-height: 100vh;
         color: white;
         text-align: center;
         margin: 0;
         font-family: 'Peace';
+        
 
     }
 
     .divi-img {
         text-align: center;
-        margin-top: 5px;
+        margin-top: 10px;
     }
-
-    .div-img {
-        text-align: center;
-        margin-top: 5%;
-    }
-
-
 
     .img {
-        width: 125px;
-        height: 125px;
+        width: 80px;
+        height: 80px;
+        margin-top: 10px;
     }
 
     .titulo {
         text-align: center;
-        font-size: 20px;
-        font-family: sans-serif;
+        font-size: 10px;
+        font-family: 'Peace';
     }
 
     .form {
@@ -262,54 +257,45 @@
     }
 
     .inputs {
-        width: 120px;
-        font-size: 20px;
+        width: 100px;
+        font-size: 10px;
         text-align: right;
-        font-family: sans-serif;
-        align-content: center;
-    }
-
-    .select {
-        width: 180px;
-        text-align: center;
-        font-family: 'Peace';
-        border-radius: 5px;
     }
 
     .respostas {
-
-        width: 180px;
-        height: 22px;
-        font-family: sans-serif;
-        font-size: 18px;
+        width: 130px;
+        font-family: 'Peace' ;
+        font-size: 10px;
         text-align: center;
-        align-content: center;
         margin-bottom: 3px;
         background-color: rgb(255, 255, 255);
         color: rgb(0, 0, 0);
         border-radius: 5px;
+    }
 
+    .select {
+        width: 130px;
+        text-align: center;
+        font-family: 'Peace';
+        border-radius: 5px;
+        font-size: 10px;
     }
 
     .respostasverm {
-
-        width: 180px;
-        height: 22px;
-        font-family: sans-serif;
-        font-size: 18px;
+        width: 130px;
+        font-family: 'Peace' ;
+        font-size: 10px;
         text-align: center;
-        align-content: center;
         margin-bottom: 3px;
         background-color: rgb(255, 62, 62);
         color: rgb(255, 255, 255);
         border-radius: 5px;
-
     }
 
     .respostasverd {
-        width: 180px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 18px;
+        width: 130px;
+        font-family: 'Peace';
+        font-size: 10px;
         text-align: center;
         margin-bottom: 3px;
         background-color: rgb(0, 154, 0);
@@ -317,31 +303,32 @@
         border-radius: 5px;
     }
 
+   
+
     .botaoadmin {
         display: inline-block;
         background-color: darkcyan;
         color: #ffffff;
         border: none;
-        padding: 10px 20px;
-        font-family: sans-serif;
-        font-size: 15px;
+        padding: 5px 10px;
+        font-size: 12px;
         font-weight: bold;
         text-decoration: none;
         cursor: pointer;
         border-radius: 15px;
-        width: 130px;
+        width: 80px;
         /* largura do botão */
-        margin-top: 8px;
+        margin-top: 3px;
         margin-right: 0px;
         margin-bottom: 3px;
     }
-
+ 
     .sessao {
         align-content: center;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         text-align: center;
         margin-top: 10px;
         margin-bottom: 10px;
+        font-size: 12px;
     }
 
     .botao {
@@ -349,14 +336,13 @@
         background-color: darkcyan;
         color: #fff;
         border: none;
-        padding: 10px 15px;
-        font-family: sans-serif;
-        font-size: 17px;
+        padding: 10px 10px;
+        font-size: 12px;
         font-weight: bold;
         text-decoration: none;
         cursor: pointer;
         border-radius: 15px;
-        width: 100px;
+        width: 80px;
         /* largura do botão */
         margin-top: 0;
         margin-right: 0%;
@@ -370,7 +356,6 @@
         color: #fff;
         border: none;
         padding: 15px 25px;
-        font-family: sans-serif;
         font-size: 17px;
         font-weight: bold;
         text-decoration: none;
@@ -394,43 +379,42 @@
         font-size: 20px;
     }
 
-    .erro {
-        text-align: center;
-        margin-top: 10%;
-        font-size: 20px;
-    }
-
     .tb_detalhes {
         border: 1px solid black;
         border-collapse: collapse;
+        font-size: 12px;
 
+        
+    
         th {
             background-color: black;
             height: 60px;
-            font-size: 12px;
-
+            border-collapse: collapse;
+            text-align: center;
         }
 
-        .num {
+        .num { 
             color: black;
             background-color: rgb(255, 255, 255);
-            width: 10px;
-            font-size: 12px;
-
+            width: 20px;
+            border-collapse: collapse;
+            border-bottom: 1px solid black;
+            border: 1px solid black;
+            text-align: center;
         }
 
         .nome {
             color: black;
             background-color: rgb(255, 255, 255);
-            width: 100px;
-            font-size: 12px;
-
+            width: 150px;
+            border-collapse: collapse;
+            border-bottom: 1px solid black;
+            border: 1px solid black;
+            text-align: center;
         }
 
     }
-
 }
-
 @media only screen and (min-width: 1200px) {
     @font-face {
         font-family: 'Peace';
@@ -464,7 +448,7 @@
 
     .titulo {
         text-align: center;
-        font-size: 18px;
+        font-size: 12px;
         font-family: 'Peace';
     }
 
@@ -474,14 +458,14 @@
 
     .inputs {
         width: 100px;
-        font-size: 18px;
+        font-size: 12px;
         text-align: right;
     }
 
     .respostas {
-        width: 180px;
+        width: 130px;
         font-family: 'Peace' ;
-        font-size: 18px;
+        font-size: 10px;
         text-align: center;
         margin-bottom: 3px;
         background-color: rgb(255, 255, 255);
@@ -489,10 +473,17 @@
         border-radius: 5px;
     }
 
+    .select {
+        width: 130px;
+        text-align: center;
+        font-family: 'Peace';
+        border-radius: 5px;
+    }
+
     .respostasverm {
         width: 180px;
         font-family: 'Peace' ;
-        font-size: 18px;
+        font-size: 12px;
         text-align: center;
         margin-bottom: 3px;
         background-color: rgb(255, 62, 62);
@@ -503,7 +494,7 @@
     .respostasverd {
         width: 180px;
         font-family: 'Peace';
-        font-size: 18px;
+        font-size: 12px;
         text-align: center;
         margin-bottom: 3px;
         background-color: rgb(0, 154, 0);
@@ -511,25 +502,20 @@
         border-radius: 5px;
     }
 
-    .select {
-        width: 180px;
-        text-align: center;
-        font-family: 'Peace';
-        border-radius: 5px;
-    }
+   
 
     .botaoadmin {
         display: inline-block;
         background-color: darkcyan;
         color: #ffffff;
         border: none;
-        padding: 10px 20px;
-        font-size: 15px;
+        padding: 5px 10px;
+        font-size: 12px;
         font-weight: bold;
         text-decoration: none;
         cursor: pointer;
         border-radius: 15px;
-        width: 130px;
+        width: 70px;
         /* largura do botão */
         margin-top: 3px;
         margin-right: 0px;
@@ -601,6 +587,7 @@
             background-color: black;
             height: 60px;
             border-collapse: collapse;
+            text-align: center;
         }
 
         .num { 
@@ -609,7 +596,8 @@
             width: 20px;
             border-collapse: collapse;
             border-bottom: 1px solid black;
-           
+            border: 1px solid black;
+            text-align: center;
         }
 
         .nome {
@@ -618,6 +606,8 @@
             width: 150px;
             border-collapse: collapse;
             border-bottom: 1px solid black;
+            border: 1px solid black;
+            text-align: center;
         }
 
     }

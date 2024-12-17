@@ -23,7 +23,6 @@ $arealider = $_SESSION['arealider'];
 $setorlider = $_SESSION['setorlider'];
 $dtini = $_SESSION['dtini'];
 
-echo $correde;
 
 header("refresh: 300; url=https://my-report.site/admin");
 
