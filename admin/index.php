@@ -1,7 +1,7 @@
 <?php
 require('../conexao.php');
 
-$sql = "SELECT DISTINCT cor_rede FROM tbl_redes ";
+$sql = "SELECT DISTINCT cor_rede FROM tbl_redes order by cor_rede ASC ";
 $resultcor = mysqli_query($conexao, $sql);
 
 

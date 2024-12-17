@@ -1,6 +1,5 @@
 <?php
 
-
 if (!isset($_SESSION))
     session_start();
 
@@ -35,7 +34,7 @@ if (!empty($_POST["setorlider"])) {
 
 require('../conexao.php');
 
-header("refresh: 180; url=https://my-report.site/admin");
+//header("refresh: 180; url=https://my-report.site/admin");
 
 
 ?>
@@ -73,7 +72,7 @@ header("refresh: 180; url=https://my-report.site/admin");
 
                 while ($row1 = mysqli_fetch_assoc($result)) {
 
-                    $sql_verificar = "SELECT cod_lider_rede FROM tbl_dados WHERE nome_lider = '" . $row1["lider_cel_rede"] . "' and data_lider BETWEEN '$dtini' AND TIMESTAMPADD(DAY, 7, '$dtini') ";
+                    $sql_verificar = "SELECT cod_lider_rede FROM tbl_dados WHERE   nome_lider = '" . $row1["lider_cel_rede"] . "' AND cod_lider_rede = '" . $row1["cod_lider_rede"] . "' AND data_lider BETWEEN '$dtini' AND TIMESTAMPADD(DAY, 7, '$dtini') ";
                     $result_verificar = $conexao->query($sql_verificar);
                     $quantidade = mysqli_fetch_assoc($result_verificar);
 

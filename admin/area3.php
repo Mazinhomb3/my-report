@@ -16,20 +16,15 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     exit;
 }
 
-
-
     $nome = $_SESSION['nome'];
     $dtini = $_SESSION['dtini'];
     $arealider = $_SESSION['arealider']=$nome;
     $correde = $_SESSION['correde'];
 
-
-
-
 require('../conexao.php');
 
 
-header("refresh: 60; url=https://my-report.site/admin");
+//header("refresh: 60; url=https://my-report.site/admin");
 
 
 $corQuery = "SELECT DISTINCT `setor_rede` FROM `tbl_redes` WHERE  cor_rede like '$correde' and `area_rede` like '$arealider'";

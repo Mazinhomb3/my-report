@@ -77,7 +77,7 @@ $result = mysqli_query($conexao, $corQuery);
 
                 while ($row1 = mysqli_fetch_assoc($result)) {
 
-                    $sql_verificar = "SELECT cod_lider_rede FROM tbl_dados WHERE nome_lider = '" . $row1["lider_cel_rede"] . "' and data_lider BETWEEN '$dtini' AND TIMESTAMPADD(DAY, 7, '$dtini') ";
+                    $sql_verificar = "SELECT cod_lider_rede FROM tbl_dados WHERE nome_lider = '" . $row1["lider_cel_rede"] . "' AND cod_lider_rede = '" . $row1["cod_lider_rede"] . "' and data_lider BETWEEN '$dtini' AND TIMESTAMPADD(DAY, 7, '$dtini') ";
                     $result_verificar = $conexao->query($sql_verificar);
                     $quantidade = mysqli_fetch_assoc($result_verificar);
 

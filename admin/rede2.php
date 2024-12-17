@@ -24,7 +24,7 @@ $dtini = $_SESSION['dtini'];
 
 echo $correde;
 
-$corQuery = "SELECT DISTINCT  `distrito_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `rede_lider` like '$redelider'";
+$corQuery = "SELECT DISTINCT  `distrito_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `rede_lider` like '$redelider' order by distrito_lider asc  ";
 
 $result = mysqli_query($conexao, $corQuery);
 
