@@ -17,15 +17,24 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
 }
 
 
+
+if (!empty($_POST["arealider"])) {
+
+    $nome = $_SESSION['nome'];
+    $dtini = $_SESSION['dtini'];
+    $_SESSION['arealider'] = $arealider = $_POST['arealider'];
+    $correde = $_SESSION['correde'];
+} else {
+    $nome = $_SESSION['nome'];
+    $dtini = $_SESSION['dtini'];
+    $arealider = $_SESSION['arealider'];
+    $correde = $_SESSION['correde'];
+}
+
 require('../conexao.php');
 
 
-
-$nome = $_SESSION['nome'];
-$dtini = $_SESSION['dtini'];
-$arealider = $_SESSION['nome'];
-$correde = $_SESSION['correde'];
-$_SESSION['arealider'] = $arealider;
+header("refresh: 60; url=https://my-report.site/admin");
 
 
 $corQuery = "SELECT DISTINCT `setor_lider` FROM `tbl_dados` WHERE  cor_rede_lider like '$correde' and `area_lider` like '$arealider'";
@@ -53,7 +62,7 @@ $result = mysqli_query($conexao, $corQuery);
         <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
         <h3>Sup. de Setor</h3>
     </div>
-    <form method="POST" name="pesquisar" id="form" action="setor.php">
+    <form method="POST" name="pesquisar" id="form" action="setor2.php">
         <table border="0" align="center">
             <tr>
                 <td>
@@ -67,11 +76,13 @@ $result = mysqli_query($conexao, $corQuery);
             </tr>
         </table>
         <tr>
-            <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td>
+            <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td><br>
         </tr>
-
-    </form>
-
+        <tr>
+        <td><input class="botaoadmin" type="button" value="Detalhes" onClick="JavaScript: location.replace('detarea.php');"></td>
+    </tr>
 </body>
 
 </html>
+
+<?php header("refresh: 60; "); ?>

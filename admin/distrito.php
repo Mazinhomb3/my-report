@@ -20,7 +20,9 @@ if (!empty($_POST["distlider"])) {
     $nome = $_SESSION['nome'];
     $dtini = $_SESSION['dtini'];
     $correde = $_SESSION['correde'];
-    $_SESSION['distlider'] = $distlider = $_POST['distlider'];
+    $distlider = $_POST['distlider'];
+    echo $distlider;
+    $_SESSION['distlider'] = $distlider; 
 } else {
 
     $nome = $_SESSION['nome'];
@@ -34,7 +36,7 @@ require('../conexao.php');
 
 header("refresh: 60; url=https://my-report.site/admin");
 
-$sql = "SELECT DISTINCT `area_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `distrito_lider` like '$distlider' and data_lider >= '$dtini' ";
+$sql = "SELECT DISTINCT `area_rede` FROM `tbl_redes` WHERE cor_rede like '$correde' and `distrito_rede` like '$distlider' ORDER BY area_rede ASC ";
 
 $result = mysqli_query($conexao, $sql);
 
@@ -65,7 +67,7 @@ $result = mysqli_query($conexao, $sql);
                         <option value=""></option>
                         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
 
-                            <option class="respostas" value="<?php echo $row['area_lider']; ?>"><?php echo $row['area_lider']; ?></option>
+                            <option class="respostas" value="<?php echo $row['area_rede']; ?>"><?php echo $row['area_rede']; ?></option>
                         <?php } ?>
                 </td>
                 </select>

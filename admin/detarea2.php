@@ -80,7 +80,7 @@ $result = mysqli_query($conexao, $corQuery);
 
     </table>
     <div class="divbotao">
-        <a href="distrito.php" align="center" class="botao" id="voltar">Voltar</a>
+        <a href="distrito2.php" align="center" class="botao" id="voltar">Voltar</a>
     </div>
 </body>
 

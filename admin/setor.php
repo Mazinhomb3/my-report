@@ -34,7 +34,7 @@ require('../conexao.php');
 
 header("refresh: 180; url=https://my-report.site/admin");
 
-$cor = "";
+
 
 
 ?>
@@ -62,7 +62,7 @@ $cor = "";
     <div>
 
 
-        <h3>Celulas setor do <?php echo $_SESSION['setorlider'] ?></h3>
+        <h3>Celulas setor de <?php echo $_SESSION['setorlider'] . "."?></h3>
 
         <table border="0" align="center" id="segunda">
             <tr>
@@ -74,7 +74,7 @@ $cor = "";
 
                 while ($row1 = mysqli_fetch_assoc($result)) {
 
-                    $sql_verificar = "SELECT id_rede FROM tbl_dados WHERE nome_lider = '" . $row1["lider_cel_rede"] . "' AND data_Lider>='2024-12-02'";
+                    $sql_verificar = "SELECT id_rede FROM tbl_dados WHERE nome_lider = '" . $row1["lider_cel_rede"] . "' and data_lider BETWEEN '$dtini' AND TIMESTAMPADD(DAY, 7, '$dtini') ";
                     $result_verificar = $conexao->query($sql_verificar);
                     $quantidade = mysqli_fetch_assoc($result_verificar);
 
@@ -89,7 +89,7 @@ $cor = "";
                     <td class="<?php echo $cor ?>"><?php echo $row1["lider_cel_rede"] ?><br>
                        
                     </td>
-                    <td class="<?php echo $cor ?>"><?php echo $row1["cod_lider_rede"] ?></td>
+                    
 
             </tr>
         <?php   } ?>

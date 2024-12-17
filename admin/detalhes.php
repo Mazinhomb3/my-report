@@ -33,7 +33,7 @@ header("refresh: 300; url=https://my-report.site/admin");
 
 $corQuery = "SELECT DATE_FORMAT(data_lider,'%d/%m/%Y') AS data_lider, nome_lider , membros_celula, membroscomp_celula, convidadospres_celula, 
 criancas_celula, totalpres_celula, oferta_celula, tipo_cel_dados FROM `tbl_dados` WHERE cor_rede_lider ='$correde' AND `area_lider` like '$arealider'
- and setor_lider like '$setorlider' and data_lider BETWEEN '$dtini' AND DATE_ADD('$dtini', INTERVAL 7 DAY)";
+ and setor_lider like '$setorlider' and data_lider BETWEEN '$dtini' AND TIMESTAMPADD(DAY, 7, '$dtini')";
 
 $result = mysqli_query($conexao, $corQuery);
 

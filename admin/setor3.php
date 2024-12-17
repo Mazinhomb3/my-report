@@ -31,16 +31,13 @@ if (!empty($_POST["setorlider"])) {
     //unset($_SESSION['setorlider']);
 }
 
+
+
+
 require('../conexao.php');
 
 header("refresh: 180; url=https://my-report.site/admin");
 
-
-
-$corQuery = "SELECT DISTINCT `nome_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `area_lider` like '$arealider' 
-and setor_lider like '$setorlider'";
-
-$result = mysqli_query($conexao, $corQuery);
 
 ?>
 
@@ -103,7 +100,7 @@ $result = mysqli_query($conexao, $corQuery);
             <td><input class="botaoadmin" type="button" value="Detalhes" onClick="JavaScript: location.replace('detalhes2.php');"></td><br>
         </tr>
         <tr>
-            <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('area2.php');"></td>
+            <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('area3.php');"></td>
         </tr>
 
     </div>

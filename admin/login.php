@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
   if ($nivel == 1) {
     header('Location: lider.php');
   } elseif ($nivel == 2) {
-    header('Location: area2.php');
+    header('Location: area3.php');
   } elseif ($nivel == 3) {
     header('Location: distrito2.php');
   } elseif ($nivel == 4) {

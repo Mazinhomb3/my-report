@@ -1,9 +1,11 @@
 <?php
 
+
 if (!isset($_SESSION))
     session_start();
 
-$nivel_necessario = 4;
+$nivel_necessario = 2;
+
 
 // Verifica se não há a variável da sessão que identifica o usuário
 if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
@@ -14,17 +16,23 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] < $nivel_necessario)) {
     exit;
 }
 
+
+
+    $nome = $_SESSION['nome'];
+    $dtini = $_SESSION['dtini'];
+    $arealider = $_SESSION['arealider']=$nome;
+    $correde = $_SESSION['correde'];
+
+
+
+
 require('../conexao.php');
 
-$redelider = $_SESSION['nome'];
-$correde = $_SESSION['correde'];
-$nome = $_SESSION['nome'];
-$dtini = $_SESSION['dtini'];
+
+header("refresh: 60; url=https://my-report.site/admin");
 
 
-echo $correde;
-
-$corQuery = "SELECT DISTINCT  `distrito_lider` FROM `tbl_dados` WHERE cor_rede_lider like '$correde' and `rede_lider` like '$redelider'";
+$corQuery = "SELECT DISTINCT `setor_rede` FROM `tbl_redes` WHERE  cor_rede like '$correde' and `area_rede` like '$arealider'";
 
 $result = mysqli_query($conexao, $corQuery);
 
@@ -47,16 +55,15 @@ $result = mysqli_query($conexao, $corQuery);
 
     <div class="sessao">
         <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>
-        <h3>Pr. de Distrito</h3>
+        <h3>Sup. de Setor</h3>
     </div>
-    <form method="POST" name="pesquisar" id="form" action="distrito2.php">
+    <form method="POST" name="pesquisar" id="form" action="setor3.php">
         <table border="0" align="center">
             <tr>
                 <td>
-                    <select class="select" name="distlider" id="distlider" align="center" class="respostas">
-                        <option value=""></option>
-                        <?php while ($row = mysqli_fetch_assoc($result)) {  ?>
-                            <option value="<?php echo $row['distrito_lider']; ?>"><?php echo $row['distrito_lider']; ?></option>
+                    <select class="select" name="setorlider" id="setorlider" align="center" class="respostas">
+                        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                            <option value="<?php echo $row['setor_rede']; ?>"><?php echo $row['setor_rede']; ?></option>
                         <?php } ?>
                 </td>
                 </select>
@@ -64,9 +71,13 @@ $result = mysqli_query($conexao, $corQuery);
             </tr>
         </table>
         <tr>
-            <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td>
+            <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td><br>
         </tr>
-    </form>
+        <tr>
+        <td><input class="botaoadmin" type="button" value="Detalhes" onClick="JavaScript: location.replace('detarea.php');"></td>
+    </tr>
 </body>
 
 </html>
+
+<?php header("refresh: 60; "); ?>
