@@ -21,7 +21,7 @@ require('../conexao.php');
 
 
 
-$nome = $_SESSION['nome'];
+$nome = $_SESSION['nome']; 
 $rede = $_SESSION['rede'];
 $correde = $_SESSION['correde'];
 $arealider = $_SESSION['arealider'];

@@ -53,7 +53,7 @@ $result = mysqli_query($conexao, $sql);
 </head>
 
 <body>
-
+ 
     <div class="sessao">
         <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
         <h3>Sup. de área</h3>

@@ -29,7 +29,7 @@ $corQuery = "SELECT DISTINCT `nome_lider` FROM tbl_dados where cor_rede_lider li
 $result = mysqli_query($conexao, $corQuery);
 
 ?>
-
+ 
 <!DOCTYPE html>
 <html lang="pt-BR">
 

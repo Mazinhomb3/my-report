@@ -70,7 +70,7 @@ $result = mysqli_query($conexao, $sql);
         </tr>
     </form>
 </body>
-
+ 
 </html>
 
 

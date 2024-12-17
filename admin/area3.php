@@ -33,7 +33,7 @@ $result = mysqli_query($conexao, $corQuery);
 
 ?>
 
-
+ 
 
 <!DOCTYPE html>
 <html lang="pt-BR">

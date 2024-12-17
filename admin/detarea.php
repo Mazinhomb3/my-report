@@ -12,7 +12,7 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] <= $nivel_necessario)) {
     // Redireciona o visitante de volta pro login
     header("Location: index.php");
     exit;
-}
+} 
 
 
 

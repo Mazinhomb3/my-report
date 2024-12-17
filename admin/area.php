@@ -56,7 +56,7 @@ $result = mysqli_query($conexao, $corQuery);
     <title>Paz Santarém</title>
 </head>
 
-<body>
+<body> 
 
     <div class="sessao">
         <?php echo "Bem-vindo, " . $_SESSION['nome'] . "!" ?>

@@ -75,7 +75,7 @@ $result1 = mysqli_query($conexao, $sqlnome);
 
             </tr>
         <?php   }  ?>
-        <tr>
+        <tr> 
             <td>
                 <h3>Relatórios enviados</h3>
             </td>

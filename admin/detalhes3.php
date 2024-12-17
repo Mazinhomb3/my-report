@@ -56,7 +56,7 @@ $result = mysqli_query($conexao, $corQuery);
             <th>Lider</th>
             <th>Total Membros</th>
             <th>Membros Presentes</th> 
-            <th>Convidados Presentes</th>
+            <th>Convidados Presentes</th> 
             <th>Crianças</th>
             <th>Tipo de Célula</th>
             <th>Data</th>

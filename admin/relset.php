@@ -27,7 +27,7 @@ $corQuery = "SELECT DISTINCT * FROM tbl_dados where cor_rede_lider like '$rede' 
 $result = mysqli_query($conexao, $corQuery);
 
 ?>
-
+ 
 
 <!DOCTYPE html>
 <html lang="pt-BR">

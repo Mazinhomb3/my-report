@@ -83,7 +83,7 @@ header("refresh: 180; url=https://my-report.site/admin");
                     } else {
                         $cor =  "respostasverm";
                     }
-
+ 
                 ?>
 
                     <td class="<?php echo $cor ?>"><?php echo $row1["lider_cel_rede"] ?><br>

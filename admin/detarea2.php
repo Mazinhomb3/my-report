@@ -14,7 +14,7 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] <= $nivel_necessario)) {
     exit;
 }
 
-
+ 
 
 
 require('../conexao.php');
