@@ -74,7 +74,7 @@ header("refresh: 180; url=https://my-report.site/admin");
 
                 while ($row1 = mysqli_fetch_assoc($result)) {
 
-                    $sql_verificar = "SELECT id_rede FROM tbl_dados WHERE nome_lider = '" . $row1["lider_cel_rede"] . "' and data_lider BETWEEN '$dtini' AND TIMESTAMPADD(DAY, 7, '$dtini') ";
+                    $sql_verificar = "SELECT cod_lider_rede FROM tbl_dados WHERE nome_lider = '" . $row1["lider_cel_rede"] . "' and data_lider BETWEEN '$dtini' AND TIMESTAMPADD(DAY, 7, '$dtini')";
                     $result_verificar = $conexao->query($sql_verificar);
                     $quantidade = mysqli_fetch_assoc($result_verificar);
 

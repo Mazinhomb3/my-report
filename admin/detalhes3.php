@@ -29,6 +29,9 @@ $setorlider = $_SESSION["setorlider"];
 $dtini = $_SESSION['dtini'];
 
 echo $correde;
+
+
+
 header("refresh: 300; url=https://my-report.site/admin");
 
 $corQuery = "SELECT DATE_FORMAT(data_lider,'%d/%m/%Y') AS data_lider, nome_lider , membros_celula, membroscomp_celula, convidadospres_celula, 
@@ -81,7 +84,7 @@ $result = mysqli_query($conexao, $corQuery);
 
     </table>
     <div class="divbotao">
-        <a href="setor2.php" align-"center" class="botao" id="voltar">Voltar</a>
+        <a href="setor3.php" align-"center" class="botao" id="voltar">Voltar</a>
     </div>
 </body>
 

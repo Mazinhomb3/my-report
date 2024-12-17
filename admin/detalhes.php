@@ -55,8 +55,8 @@ $result = mysqli_query($conexao, $corQuery);
         <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
         <h3>Líderes de células do setor de <?php echo $_SESSION["setorlider"] ?></h3>
     </div>
-    <div class="divtb"></div>
-    <table class="tb_detalhes" border="1" align="center">
+    <div class="divtb">
+    <table class="tb_detalhes" border="1" align="center" >
         <thead>
             <th>Lider</th>
             <th>Total Membros</th>
@@ -80,6 +80,7 @@ $result = mysqli_query($conexao, $corQuery);
         <?php } ?>
 
     </table>
+    </div>
     <div class="divbotao">
         <a href="setor.php" align-"center" class="botao" id="voltar">Voltar</a>
     </div>

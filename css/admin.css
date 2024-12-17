@@ -1,4 +1,4 @@
-@media only screen and (min-width: 300px){
+@media only screen and (min-width: 300px) and (max-width: 769px){
     @font-face {
         font-family: 'Peace';
         src: url('../Peace and love.ttf') format(truetype);
@@ -192,7 +192,6 @@
         }
 
         .num {
-            
             color: black;
             background-color: rgb(255, 255, 255);
             width: 20px;
@@ -200,7 +199,6 @@
         }
 
         .nome {
-            
             color: black;
             background-color: rgb(255, 255, 255);
             width: 100px;
@@ -403,20 +401,23 @@
         th {
             background-color: black;
             height: 60px;
+            font-size: 12px;
 
         }
 
         .num {
             color: black;
             background-color: rgb(255, 255, 255);
-            width: 20px;
+            width: 10px;
+            font-size: 12px;
 
         }
 
         .nome {
             color: black;
             background-color: rgb(255, 255, 255);
-            width: 150px;
+            width: 100px;
+            font-size: 12px;
 
         }
 
@@ -586,7 +587,9 @@
 
     .tb_detalhes {
         border: 1px solid black;
-        border-collapse: collapse;  
+        border-collapse: collapse;
+
+        
     
         th {
             background-color: black;
