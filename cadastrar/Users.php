@@ -82,7 +82,7 @@ class Users extends Connection
         $this->conn = $this->connect();
 
         // Consulta SQL para inserir um novo usuário.
-        $sql = "INSERT INTO tbl_login_sup (nome, nome_login, rede, senha, funcao, data_user, nivel) VALUES (:nome, md5(:nome_login), :rede, MD5(:senha), :funcao, :data_user, :nivel)";
+        $sql = "INSERT INTO tbl_login_sup (nome, nome_login, rede, senha, funcao, data_user, nivel) VALUES (:nome, :nome_login, :rede, MD5(:senha), :funcao, :data_user, :nivel)";
 
         // Prepara a consulta SQL para inserção de dados.
         $addUser = $this->conn->prepare($sql);

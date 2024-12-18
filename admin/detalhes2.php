@@ -14,7 +14,7 @@ if (!isset($_SESSION["nome"]) or ($_SESSION["nivel"] <= $nivel_necessario)) {
     exit;
 }
 
- 
+
 
 
 require('../conexao.php');
@@ -31,11 +31,6 @@ $dtini = $_SESSION['dtini'];
 echo $correde;
 header("refresh: 300; url=https://my-report.site/admin");
 
-$corQuery = "SELECT DATE_FORMAT(data_lider,'%d/%m/%Y') AS data_lider, nome_lider , membros_celula, membroscomp_celula, convidadospres_celula, 
-criancas_celula, totalpres_celula, oferta_celula, tipo_cel_dados FROM `tbl_dados` WHERE cor_rede_lider ='$correde' AND `area_lider` like '$arealider'
- and setor_lider like '$setorlider' and data_lider BETWEEN '$dtini' AND TIMESTAMPADD(DAY, 7, '$dtini')";
-
-$result = mysqli_query($conexao, $corQuery);
 
 ?>
 
@@ -66,7 +61,14 @@ $result = mysqli_query($conexao, $corQuery);
             <th>Tipo de Célula</th>
             <th>Data</th>
         </thead>
-        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+        <?php
+        $corQuery = "SELECT DATE_FORMAT(data_lider,'%d/%m/%Y') AS data_lider, nome_lider , membros_celula, membroscomp_celula, convidadospres_celula, 
+        criancas_celula, totalpres_celula, oferta_celula, tipo_cel_dados FROM `tbl_dados` WHERE cor_rede_lider ='$correde' AND `area_lider` like '$arealider'
+         and setor_lider like '$setorlider' and data_lider BETWEEN '$dtini' AND TIMESTAMPADD(DAY, 7, '$dtini') order by nome_lider ";
+
+        $result = mysqli_query($conexao, $corQuery);
+
+        while ($row = mysqli_fetch_assoc($result)) { ?>
             <tbody>
                 <td class="nome"><?php echo $row['nome_lider']; ?></td>
                 <td class="num"><?php echo $row['membros_celula']; ?></td>
@@ -74,7 +76,7 @@ $result = mysqli_query($conexao, $corQuery);
                 <td class="num"><?php echo $row['convidadospres_celula']; ?></td>
                 <td class="num"><?php echo $row['criancas_celula']; ?></td>
                 <td class="nome"><?php echo $row['tipo_cel_dados']; ?></td>
-                <td class="nome"><?php echo $row['data_lider']; ?></td> 
+                <td class="nome"><?php echo $row['data_lider']; ?></td>
 
             </tbody>
         <?php } ?>

@@ -34,7 +34,7 @@ if ($result->num_rows > 0) {
   } elseif ($nivel == 3) {
     header('Location: distrito2.php');
   } elseif ($nivel == 4) {
-    header('location: rede2.php');
+    header('location: rede1.php');
   } elseif ($nivel == 5) {
     header('location: suprede.php');
   }

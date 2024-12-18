@@ -15,6 +15,7 @@
         text-align: center;
         font-family: 'Peace';
         font-size: 10px;
+        align-content:center;
         
 
     }
@@ -29,9 +30,9 @@
     }
 
     .img {
-        width: 30%;
-        height: 30%;
-        margin-top: 10%;
+        width: 20%;
+        height: 20%;
+        margin-top: 0;
     }
 
     .titulo {
@@ -119,7 +120,7 @@
     .sessao {
         align-content: center;
         text-align: center;
-        margin-top: 20%;
+        margin-top: 0;
         margin-bottom: 10px;
     }
 
@@ -128,13 +129,13 @@
         background-color: darkcyan;
         color: #fff;
         border: none;
-        padding: 10px 15px;
+        padding: 5px 10px;
         font-size: 17px;
         font-weight: bold;
         text-decoration: none;
         cursor: pointer;
         border-radius: 15px;
-        width: 100px;
+        width: 60px;
         /* largura do botão */
         margin-top: 0;
         margin-right: 0%;
@@ -327,7 +328,7 @@
         align-content: center;
         text-align: center;
         margin-top: 10px;
-        margin-bottom: 10px;
+        margin-top: 10%;
         font-size: 12px;
     }
 
@@ -448,7 +449,7 @@
 
     .titulo {
         text-align: center;
-        font-size: 12px;
+        font-size: 16px;
         font-family: 'Peace';
     }
 
@@ -458,14 +459,14 @@
 
     .inputs {
         width: 100px;
-        font-size: 12px;
+        font-size: 16px;
         text-align: right;
     }
 
     .respostas {
         width: 130px;
         font-family: 'Peace' ;
-        font-size: 10px;
+        font-size: 14px;
         text-align: center;
         margin-bottom: 3px;
         background-color: rgb(255, 255, 255);
@@ -478,12 +479,13 @@
         text-align: center;
         font-family: 'Peace';
         border-radius: 5px;
+        font-size: 14px;
     }
 
     .respostasverm {
         width: 180px;
         font-family: 'Peace' ;
-        font-size: 12px;
+        font-size: 14px;
         text-align: center;
         margin-bottom: 3px;
         background-color: rgb(255, 62, 62);
@@ -494,7 +496,7 @@
     .respostasverd {
         width: 180px;
         font-family: 'Peace';
-        font-size: 12px;
+        font-size: 14px;
         text-align: center;
         margin-bottom: 3px;
         background-color: rgb(0, 154, 0);
@@ -515,7 +517,7 @@
         text-decoration: none;
         cursor: pointer;
         border-radius: 15px;
-        width: 70px;
+        width: 80px;
         /* largura do botão */
         margin-top: 3px;
         margin-right: 0px;
@@ -525,7 +527,7 @@
     .sessao {
         align-content: center;
         text-align: center;
-        margin-top: 10px;
+        margin-top: 10%;
         margin-bottom: 10px;
     }
 
@@ -588,6 +590,7 @@
             height: 60px;
             border-collapse: collapse;
             text-align: center;
+            font-size: 12px;
         }
 
         .num { 
@@ -598,6 +601,7 @@
             border-bottom: 1px solid black;
             border: 1px solid black;
             text-align: center;
+            font-size: 14px;
         }
 
         .nome {
@@ -608,6 +612,7 @@
             border-bottom: 1px solid black;
             border: 1px solid black;
             text-align: center;
+            font-size: 14px;
         }
 
     }

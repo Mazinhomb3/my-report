@@ -27,14 +27,11 @@ if (!empty($_POST["distlider"])) {
     $nome = $_SESSION['nome'];
     $dtini = $_SESSION['dtini'];
     $correde = $_SESSION['correde'];
-    $_SESSION['distlider'] = $distlider = $_SESSION['nome'];
+    $_SESSION['distlider'] = $distlider = $_SESSION['distlider'];
 }
 
 require('../conexao.php');
 
-
-
-echo $correde;
 $sql = "SELECT DISTINCT `area_rede` FROM `tbl_redes` WHERE cor_rede like '$correde' and `distrito_rede` like '$distlider' ORDER BY area_rede ASC ";
 
 $result = mysqli_query($conexao, $sql);
@@ -58,7 +55,7 @@ $result = mysqli_query($conexao, $sql);
         <?php echo "Bem-vindo, " . $_SESSION['nome'] ?>
         <h3>Sup. de área</h3>
     </div>
-    <form method="POST" name="pesquisar" id="form" action="area2.php">
+    <form method="POST" name="pesquisar" id="form" action="area1.php">
         <table border="0" align="center">
             <tr>
                 <td>
@@ -76,7 +73,7 @@ $result = mysqli_query($conexao, $sql);
             <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Pesquisar"></td><br>
         </tr>
         <tr>
-            <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('rede2.php');"></td>
+            <td><input class="botaoadmin" type="button" value="Voltar" onClick="JavaScript: location.replace('rede1.php');"></td>
         </tr>
     </form>
 </body>

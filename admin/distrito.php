@@ -21,7 +21,6 @@ if (!empty($_POST["distlider"])) {
     $dtini = $_SESSION['dtini'];
     $correde = $_SESSION['correde'];
     $distlider = $_POST['distlider'];
-    echo $distlider;
     $_SESSION['distlider'] = $distlider; 
 } else {
 
