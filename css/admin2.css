@@ -1,0 +1,146 @@
+@media only screen and (min-width: 300px) and (max-width: 769px){
+
+    @font-face {
+        font-family: 'Peace';
+        src: url('../Peace and love.ttf') format(truetype);
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+        background-color: rgb(0, 0, 180);
+        background-image: url(../img/gradient_2.jpg);
+        align-content: cover;
+        min-height: 100vh;
+        color: white;
+        text-align: center;
+        margin: 0;
+        font-family: 'Peace';
+
+    }
+ 
+
+    .divi-img {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .img {
+        width: 150px;
+        height: 150px;
+        margin-top: 10px;
+    }
+
+    .botao {
+        text-align: center;
+        margin-bottom: 10px;
+        background-color: darkcyan;
+        color: aliceblue;
+        border: none;
+        padding: 10px 10px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 15px;
+        margin-top: 3%;
+        
+    }
+}
+
+@media only screen and (min-width: 769px) {
+
+    @font-face {
+        font-family: 'Peace';
+        src: url('../Peace and love.ttf') format(truetype);
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+        background-color: rgb(0, 0, 180);
+        background-image: url(../img/gradient_2.jpg);
+        align-content: cover;
+        min-height: 100vh;
+        color: white;
+        text-align: center;
+        margin: 0;
+        font-family: 'Peace';
+
+    }
+
+
+    .divi-img {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .img {
+        width: 150px;
+        height: 150px;
+        margin-top: 10px;
+    }
+
+    .botao {
+        text-align: center;
+        margin-bottom: 10px;
+        background-color: darkcyan;
+        color: aliceblue;
+        border: none;
+        padding: 10px 10px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 15px;
+        margin-top: 3%;
+        
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+
+    @font-face {
+        font-family: 'Peace';
+        src: url('../Peace and love.ttf') format(truetype);
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+        background-color: rgb(0, 0, 180);
+        background-image: url(../img/gradient_2.jpg);
+        align-content: cover;
+        min-height: 100vh;
+        color: white;
+        text-align: center;
+        margin: 0;
+        font-family: 'Peace';
+
+    }
+
+
+    .divi-img {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .img {
+        width: 150px;
+        height: 150px;
+        margin-top: 10px;
+    }
+
+    .botao {
+        text-align: center;
+        margin-bottom: 10px;
+        background-color: darkcyan;
+        color: aliceblue;
+        border: none;
+        padding: 10px 10px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 15px;
+        margin-top: 3%;
+        
+    }
+}

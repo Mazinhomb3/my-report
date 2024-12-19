@@ -1,10 +1,6 @@
 <?php
 
-/**
- * Classe para listar e criar usuários no banco de dados.
- * 
- * @author Cesar <cesar@celke.com.br>
- */
+
 class Users extends Connection
 {
     /**

@@ -1,12 +1,4 @@
-<?php
-require('../conexao.php');
 
-$sql = "SELECT DISTINCT cor_rede FROM tbl_redes ";
-$resultcor = mysqli_query($conexao, $sql);
-
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -14,69 +6,32 @@ $resultcor = mysqli_query($conexao, $sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/admin.css">
-    <link rel="shortcut icon" href="../img/logo_paz.ico" type="image/x-icon">
-    <title>Administrador</title>
+    <link rel="stylesheet" type="text/css" href="../css/medias.css">
+    <link rel="shortcut icon" href="/img/logo_paz.ico" type="image/x-icon">
+    <title>Paz Santarém</title>
 </head>
 
 <body>
 
-    <div class="divi-img">
-        <img src="../img/logo_paz.png" alt="" class="img">
-    </div>
-    <div class="titulo">
-        <h4>Bem vindo!</h4>
-        <h4>Aqui você terá acesso as dados de sua Rede.</h4>
-        <h4>Informe data inicial!</h4>
-    </div>
-    <div class="form">
-        <form id="form" name="cadastrar" method="POST" action="login.php">
+    <div class="logo">
+        <img src="../img/logosup.png" class="logopaz" alt="">
 
-            <table align="center" border="0" class="table">
-                <tr>
-                    <td class="inputs">Nome: </td>
-                    <td><input name="usuario" id="usuario" type="text" class="respostas" required>
-                </td>
-                </tr>
-
-                <tr>
-                    <td class="inputs">Senha: </td>
-                    <td>
-                        <input name="senha" id="senha" type="password" class="respostas">
-                    </td>
-                </tr>
-                <tr>
-                <td class="inputs">Rede: </td>
-                <td>
-                    <select name="cor_rede" id="cor_rede" align="center" class="respostas">
-                        <?php while ($row = mysqli_fetch_assoc($resultcor)) { ?>
-                            <option value="<?php echo $row['cor_rede']; ?>"><?php echo $row['cor_rede']; ?></option>
-                        <?php } ?>
-                </td>
-                </select>
-
-            </tr>
-
-                <tr>
-                    <td class="inputs">
-                        Data Inicial:
-                    </td>
-                    <td>
-                        <input name="dtini" type="date" id="dtini" class="respostas">
-                    </td>
-                </tr>
-
-            </table>
-
-            <tr>
-                <td><input class="botaoadmin" type="submit" width="90" id="enviar" value="Login"></td>
-            </tr>
-
-        </form>
     </div>
 
+    <div class="cadsup">
+        <h3 class="cadsup">Bem vindo supervisor faça seu cadastro na sua específica função ministerial.  </h3>
+    </div>
 
-    <div class=""></div>
+    <div class="div-botao1">
+        <ul class="link">
+            <a href="suprede.php" class="botao">Sup. de Rede</a><br>
+            <a href="rede.php" class="botao">Rede</a><br>
+            <a href="distrito.php" class="botao">Distrito</a><br>
+            <a href="area.php" class="botao">Área</a><br>
+            <a href="setor.php" class="botao">Setor</a><br>
+        </ul>
+    </div>
+
 
 </body>
 
